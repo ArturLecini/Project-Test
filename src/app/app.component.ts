@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Users-Management';
+ // constructor(authService: AuthService, router: Router) {
+   // if (authService.isLoggedIn()) {
+  //    router.navigate(['dashboard']);
+  //  }
+//  }
 }

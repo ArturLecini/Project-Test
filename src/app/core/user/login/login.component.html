@@ -1,6 +1,6 @@
 
 <div class='login-div'>
-       <div class='logo'>  </div>
+       <div class='logo'> </div>
           <div class='title'>Login</div>
   <div class='form'>
 
@@ -10,7 +10,7 @@
 
         <mat-form-field appearance="fill" [style.width.px]=227>
           <mat-label>Enter your email</mat-label>
-          <input sclass="same" matInput placeholder="pat@example.com" [formControl]="email" required>
+          <input class="same" matInput placeholder="pat@example.com" [formControl]="email" required>
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
         </div>
@@ -18,9 +18,11 @@
 
         <mat-form-field appearance="fill" [style.width.px]=227>
       <mat-label>Enter your password</mat-label>
-      <input class="same" matInput [type]="hide ? 'password' : 'text'">
+      <input class="same" matInput  placeholder="Password!1." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
+      <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      
       </button>
     </mat-form-field>
            </div>
@@ -29,7 +31,7 @@
        </div>
        <div class="notmember">
            Dont have an account? 
-           <a class='btn'routerLink='sign-up'mat-button color='accent'> Sign up</a>
+           <a routerLink='sign-up'mat-button color='accent' class='btn'> Sign up</a>
        </div>
       
         </div>

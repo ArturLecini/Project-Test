@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddUserComponent } from './add-user/add-user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-
+import { HomeComponent } from './modules/home/pages/home/home.component';
+import { LoginComponent } from './core/user/login/login.component';
+import { AddUserComponent } from './core/admin/add-user/add-user.component';
+import { EditUserComponent } from './core/admin/edit-user/edit-user.component';
+import { SignUpComponent } from './core/user/sign-up/sign-up.component';
 const routes: Routes = [
-  {path: 'home', component : HomeComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  //{path: 'home', component : HomeComponent  ,canActivate:[LoginActivate]},
   {path :'login', component : LoginComponent},
   {path: 'add-user', component : AddUserComponent},
   {path: 'edit-user', component : EditUserComponent},

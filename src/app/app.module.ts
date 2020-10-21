@@ -4,18 +4,20 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { AddUserComponent } from './add-user/add-user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import { ListUserComponent } from './list-user/list-user.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+
+import { HomeComponent } from './modules/home/pages/home/home.component';
+import { LoginComponent } from './core/user/login/login.component';
+import { AddUserComponent } from './core/admin/add-user/add-user.component';
+import { EditUserComponent } from './core/admin/edit-user/edit-user.component';
+import { ListUserComponent } from './core/admin/list-user/list-user.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SignUpComponent } from './core/user/sign-up/sign-up.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from './material/material.module';
+import { MaterialModule } from './styles/material/material.module';
 import { ReactiveFormsModule} from '@angular/forms';
+import { AboutComponent } from './modules/home/about/about.component';
 
 
 
@@ -31,6 +33,7 @@ import { ReactiveFormsModule} from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     SignUpComponent,
+    AboutComponent,
       
   ],
   imports: [
