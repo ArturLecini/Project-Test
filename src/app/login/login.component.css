@@ -1,0 +1,38 @@
+
+
+.login-div{
+  margin:100px auto;
+  width: 250px;
+  background-color:whitesmoke;
+  padding: 60px;
+ height: 350px;
+}
+.title{
+text-align: center;
+text-shadow: teal;
+font-size:xx-large;
+margin-bottom: 20px;
+font-family: monospace;
+}  
+.username{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  }
+  .password{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+.same{
+ width:200px ;
+ flex-direction: row;
+}
+.notmember{
+  margin-top: 5px;
+
+  margin-bottom: 5px;
+  }
+  .btn{
+    margin-top: 5px;
+
+    margin-bottom: 5px;
+  }
