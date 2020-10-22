@@ -1,14 +1,16 @@
 
 
+
+
 .login-div{
   margin:50px auto;
   width: 250px;
-  background-color: whitesmoke;
+  background-color:azure;
   padding: 60px;
  height: 350px;
  border-style: outset;
- border-color:grey;
- border-bottom: darkslategrey;
+ border-color:white;
+ border-bottom: rgb(103, 187, 187);
 }
 .title{
 text-align: center;

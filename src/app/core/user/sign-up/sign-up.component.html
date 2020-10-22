@@ -4,18 +4,17 @@
        <div class='title'>Sign Up</div>
 <div class='form'>
 <div class="name">
-   
-
+  
         <mat-form-field appearance="fill" [style.width.px]=120>
           <mat-label>Enter first name</mat-label>
-          <input class="same" matInput placeholder="name"  >
+          <input  class="same" matInput placeholder="name"  >
         </mat-form-field>
     </div>
         <div class="lastname">
         
             <mat-form-field appearance="fill" [style.width.px]=120>
               <mat-label>Enter last name</mat-label>
-              <input class="same" matInput placeholder="lastname"  >
+              <input autofocus class="same" matInput placeholder="lastname"  >
             </mat-form-field>
             
         </div>
@@ -23,7 +22,7 @@
 
      <mat-form-field appearance="fill" [style.width.px]=245>
        <mat-label>Enter your email</mat-label>
-       <input class="same" matInput placeholder="pat@example.com" [formControl]="email" required>
+       <input  class="same" matInput placeholder="name@example.com" [formControl]="email" required>
        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
      </mat-form-field>
      </div>
