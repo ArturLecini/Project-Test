@@ -13,11 +13,13 @@ import { ListUserComponent } from './core/admin/list-user/list-user.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SignUpComponent } from './core/user/sign-up/sign-up.component';
+import { AboutComponent } from './modules/home/about/about.component';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './styles/material/material.module';
 import { ReactiveFormsModule} from '@angular/forms';
-import { AboutComponent } from './modules/home/about/about.component';
+
 
 
 

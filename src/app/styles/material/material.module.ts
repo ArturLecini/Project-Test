@@ -72,6 +72,7 @@ import { MatTreeModule } from '@angular/material/tree';
         MatTreeModule,
         MatNativeDateModule
     ],
+
     exports: [
         MatAutocompleteModule,
         MatBadgeModule,
@@ -108,8 +109,8 @@ import { MatTreeModule } from '@angular/material/tree';
         MatTreeModule,
         MatNativeDateModule
     ],
-    providers: [     
-    ]
+
+    providers: [ ]
 })
 export class MaterialModule {
     constructor(public matIconRegistry: MatIconRegistry) {

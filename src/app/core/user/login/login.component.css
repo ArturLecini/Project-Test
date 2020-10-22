@@ -6,6 +6,9 @@
   background-color: whitesmoke;
   padding: 60px;
  height: 350px;
+ border-style: outset;
+ border-color:grey;
+ border-bottom: darkslategrey;
 }
 .title{
 text-align: center;

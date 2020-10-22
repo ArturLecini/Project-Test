@@ -1,5 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl,Validators} from '@angular/forms';
 @Component({ 
     selector: 'app-login',
     templateUrl: 'login.component.html' ,
@@ -8,6 +8,10 @@ import {FormControl, Validators} from '@angular/forms';
 
 })
 export class LoginComponent implements OnInit {
+ errorpasw(){
+   return 'enter identic pasword';
+ }
+  
     hide = true;
     email = new FormControl('', [Validators.required, Validators.email]);
     password = new FormControl('', [Validators.required,Validators.minLength(6)]);
@@ -18,17 +22,13 @@ export class LoginComponent implements OnInit {
         return  'Not a valid email'  ;
       }}
       getpErrorMessage() {
-       if (this.password.hasError('required')) {
-        return 'You must enter your password';
+          if (this.password.hasError('required')) {
+            return  'Please must enter your password ';
       }
      
-        return  'Please continue more  than 6'  ;
-      
-      
-  
-      
- 
+        return  'Your password is more  than "6" characters'  ;
     }
+ 
     constructor() { }
 
     ngOnInit(): void {
