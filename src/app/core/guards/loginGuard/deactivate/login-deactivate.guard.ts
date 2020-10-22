@@ -12,7 +12,7 @@ export class LoginDeactivateGuard implements CanDeactivate<LoginComponent> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (login.name !=""){
-      return window.confirm("Do you want to leave login now?")
+      return window.confirm("Do you want to redirect to page?")
     }
       return true;
   }

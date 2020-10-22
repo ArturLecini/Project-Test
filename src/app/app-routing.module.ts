@@ -11,14 +11,15 @@ import { LoginDeactivateGuard } from './core/guards/loginGuard/deactivate/login-
 import { LayoutComponent } from './core/layout/layout.component';
 
 const routes: Routes = [
+  
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  {path: 'home', component : HomeComponent  ,canActivate:[AuthGuard], data:['ADMIN']},
-  {path :'login', component : LoginComponent,canDeactivate:[LoginDeactivateGuard]},
+  {path: 'home', component : HomeComponent  },
+  {path :'login', component : LoginComponent,canActivate:[AuthGuard], data: ["ADMIN"],canDeactivate:[LoginDeactivateGuard]},
   {path: 'add-user', component : AddUserComponent},
   {path: 'edit-user', component : EditUserComponent},
   {path : 'sign-up', component: SignUpComponent},
   {path : 'about-us', component: AboutComponent},
-  {path : 'layout', component: LayoutComponent},
+  {path : 'layout', component: LayoutComponent ,canActivate:[AuthGuard], data:['ADMIN']},
 ];
 
 @NgModule({

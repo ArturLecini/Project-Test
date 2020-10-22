@@ -1,3 +1,14 @@
+.mat-toolbar.mat-primary {
+    background: #1d2b3a;
+    color: #fff;
+  }
+.toolbar{
+    flex-direction: column;
+min-width: 415px;}
+.main{
+    color: darkslategray;
+    max-width: auto;
+}
 .spacer{
     flex: 1 1 auto;
 }
@@ -5,3 +16,11 @@
     display: table-cell;
     width: 490section }
    
+    .mat-icon {
+        margin-top: 5px;
+        transform: scale(1.5);
+        margin-left: 10px;
+        margin-left: 5px;
+      transform-origin: left;
+      transition-duration: 25ms;
+    }
