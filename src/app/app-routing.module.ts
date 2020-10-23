@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './modules/home/home/home.component';
+
 import { LoginComponent } from './modules/user/login/login.component';
 import { AddUserComponent } from './modules/admin/add-user/add-user.component';
 import { EditUserComponent } from './modules/admin/edit-user/edit-user.component';
@@ -12,11 +12,14 @@ import { LayoutComponent } from './core/layout/layout.component';
 import { AccountComponent } from './modules/user/account/account.component';
 
 import { ServiceComponent } from './shared/service/service.component';
+import { MainHomeComponent } from './modules/home/main-home/main-home.component';
+import { HomeComponent } from './modules/home/home.component';
 
 const routes: Routes = [
   
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  {path: 'home', component : HomeComponent  },
+  {path: 'home-root', component : MainHomeComponent },
+  {path: 'home', component : HomeComponent },
   {path :'login', component : LoginComponent,canActivate:[AuthGuard], data: ["ADMIN"],canDeactivate:[LoginDeactivateGuard]},
   {path: 'add-user', component : AddUserComponent},
   {path: 'edit-user', component : EditUserComponent},

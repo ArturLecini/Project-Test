@@ -8,6 +8,8 @@
    border-style: outset;
    border-color:grey;
    border-bottom: darkslategrey;
+   
+
   }
   .title{
   text-align: center;
@@ -42,4 +44,15 @@
   
       margin-bottom: 5px;
     }
-  
+
+    .btn-style{
+      background-color: rgb(230, 9, 9);
+        background-repeat: no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+        font-size: 0.9em;
+        padding: 0px;
+        width: 80px;
+    }

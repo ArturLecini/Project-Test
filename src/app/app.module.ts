@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './modules/home/home/home.component';
-
 import { AddUserComponent } from './modules/admin/add-user/add-user.component';
 import { EditUserComponent } from './modules/admin/edit-user/edit-user.component';
 import { ListUserComponent } from './modules/admin/list-user/list-user.component';
@@ -27,6 +25,10 @@ import { LoginComponent } from './modules/user/login/login.component';
 import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
 import { AccountComponent } from './modules/user/account/account.component';
 import { ServiceComponent } from './shared/service/service.component';
+import { MainHomeComponent } from './modules/home/main-home/main-home.component';
+import { HomeComponent } from './modules/home/home.component';
+import { MinitoolbarComponent } from './core/layout/minitoolbar/minitoolbar.component';
+import { ButtonComponent } from './core/layout/button/button.component';
 
 
 
@@ -37,7 +39,6 @@ import { ServiceComponent } from './shared/service/service.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     AddUserComponent,
     EditUserComponent,
     ListUserComponent,
@@ -49,8 +50,11 @@ import { ServiceComponent } from './shared/service/service.component';
       LoginComponent,
       SignUpComponent,
       AccountComponent,
-      ServiceComponent
-      
+      ServiceComponent,
+      MainHomeComponent,
+      HomeComponent,
+      MinitoolbarComponent,
+      ButtonComponent
 
   ],
   imports: [

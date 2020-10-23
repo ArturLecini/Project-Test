@@ -1,0 +1,11 @@
+.mat-toolbar.mat-primary {
+    background: transparent;
+    color: rgb(229, 238, 240);
+ max-width: width auto;
+}.toolbar{
+    flex-direction: column;
+min-width: 315px;}
+
+.spacer{
+    flex: 1 1 auto;
+}

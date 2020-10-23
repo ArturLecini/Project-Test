@@ -1,1 +1,50 @@
-<p>edit-user works!</p>
+<app-button></app-button>
+<app-list-user></app-list-user>
+<div class='edit-div'>
+    <div class='logo'> </div>
+    <div class='title'>Edit User<mat-icon>edit</mat-icon></div>
+
+<div class='form'>
+<div class="name">
+  
+        <mat-form-field appearance="fill" [style.width.px]=220>
+          <mat-label>Enter first name</mat-label>
+          <input  class="same" matInput placeholder="name"  >
+        </mat-form-field>
+    </div>
+        <div class="lastname">
+        
+            <mat-form-field appearance="fill" [style.width.px]=220>
+              <mat-label>Enter last name</mat-label>
+              <input autofocus class="same" matInput placeholder="lastname"  >
+            </mat-form-field>
+            
+        </div>
+    <div class="username">
+
+     <mat-form-field appearance="fill" [style.width.px]=445>
+       <mat-label>Enter your email</mat-label>
+       <input  class="same" matInput placeholder="name@example.com" [formControl]="email" required>
+       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+     </mat-form-field>
+     </div>
+     <div class='pssword'>
+
+     <mat-form-field appearance="fill" [style.width.px]=445>
+   <mat-label>Enter your password</mat-label>
+   <input class="same" matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
+   <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
+   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+   
+   </button>
+ </mat-form-field>
+        </div>
+        
+   <div class='btn'>
+   <button class="btn-style" mat-raised-button color="accent"><mat-icon>edit</mat-icon>Edit</button>
+    </div>
+   
+   
+     </div>
+<div > 

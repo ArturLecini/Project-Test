@@ -1,0 +1,7 @@
+.mat-toolbar.mat-primary {
+    background: rgba(255, 0, 13, 0.849) ;
+    color:  white;
+ max-width: width auto;
+}.spacer{
+    flex: 1 1 auto;
+}

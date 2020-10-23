@@ -1,0 +1,55 @@
+.edit-div{
+    margin:50px auto;
+    width: 450px;
+    background-color: whitesmoke;
+    padding: 60px;
+   height: 300px;
+   border-style: outset;
+  border-bottom-left-radius: 5px;
+  border-radius: 5px;
+  }
+  .title{
+  text-align: center;
+  text-shadow: teal;
+  font-size:xx-large;
+  margin-bottom: 20px;
+  font-family: monospace;
+  }  
+  .name{
+    position: absolute;
+    padding-left: 240px;
+  }
+  .username{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+    .password{
+      margin-top: 5px;
+      margin-bottom: 5px;
+      
+    }
+  .same{
+   width:200px ;
+   flex-direction: row;
+  }
+  .notmember{
+    margin-top: 5px;
+  
+    margin-bottom: 5px;
+    }
+    .btn{
+      margin-top: 5px;
+  
+      margin-bottom: 5px;
+    }
+  .btn-style{
+      background-color: green;
+        background-repeat: no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+        font-size: 0.9em;
+        padding: 0px;
+        width: 70px;
+  }

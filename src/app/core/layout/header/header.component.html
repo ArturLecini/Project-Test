@@ -1,6 +1,6 @@
 
 <div class="toolbar" style="height: 100vh;">
-    <mat-toolbar class="main" color="primary" class='mat-elevation-z5'>
+    <mat-toolbar  color="primary" class='mat-elevation-z5'>
       <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
           <mat-icon>menu</mat-icon>
@@ -14,8 +14,8 @@
             <a routerLink='/home' mat-button ><mat-icon>home</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
              <a routerLink='/account' mat-button>
              <mat-icon>account_box</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp; My Account</a>
-            <a mat-button class="logout-btn" routerLink='/login' > <mat-icon>logout</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Exit</a>
-         
+            <a mat-button class="logout-btn" routerLink='/login' > <mat-icon>logout</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Log Out</a>
+        
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
@@ -33,6 +33,7 @@
           <a (click)="sidenav.toggle()" mat-list-item><mat-icon>close</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Hide Menu</a>
         </mat-nav-list>
       </mat-sidenav>
-     
+      <app-main-home></app-main-home>
     </mat-sidenav-container>
   </div>
+  <app-main-home></app-main-home>
