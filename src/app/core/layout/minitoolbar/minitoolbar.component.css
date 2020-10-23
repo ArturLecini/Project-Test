@@ -1,5 +1,5 @@
 .mat-toolbar.mat-primary {
-    background: transparent;
+    background: gray;
     color: rgb(229, 238, 240);
  max-width: width auto;
  display: grid;
