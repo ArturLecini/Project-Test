@@ -9,6 +9,15 @@
    border-bottom: darkslategrey;
    border-radius: 5px;
   }
+.logo{
+  margin-top: 0%;
+  width: 170px;
+  height: 100px;
+  position: top;
+  margin-left: 65px;
+  margin-bottom: 10px;
+}
+
   .title{
   text-align: center;
   text-shadow: teal;

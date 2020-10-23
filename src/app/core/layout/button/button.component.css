@@ -1,7 +1,18 @@
 .mat-toolbar.mat-primary {
-    background: rgba(255, 0, 13, 0.849) ;
+    background:transparent ;
     color:  white;
  max-width: width auto;
-}.spacer{
+ 
+ 
+}
+
+   
+.spacer{
     flex: 1 1 auto;
+}
+.btn{display: grid; 
+    color: rgb(238, 229, 229);
+    background-color:rgb(206, 5, 5);
+margin:2px;
+border-radius: 9px;
 }

@@ -2,10 +2,21 @@
     background: #1d2b3a;
     color: rgb(229, 238, 240);
  max-width: width auto;
+
+} .mat-sidenav-container{
+    background-image:url(src/assets/img/bg2.png);
+  
+background-size: cover;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-position: center ;
 }
 .toolbar{
     flex-direction: column;
-min-width: 315px;}
+min-width: 315px;
+}
 
 .spacer{
     flex: 1 1 auto;

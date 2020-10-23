@@ -2,10 +2,20 @@
     background: transparent;
     color: rgb(229, 238, 240);
  max-width: width auto;
+ display: grid;
+ 
+
 }.toolbar{
     flex-direction: column;
-min-width: 315px;}
+min-width: 315px;
+display: grid;}
 
 .spacer{
     flex: 1 1 auto;
+}
+.btn{
+    color: white;
+    background-color:rgb(51, 56, 51);
+margin:2px;
+border-radius: 9px;
 }

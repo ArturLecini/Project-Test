@@ -3,14 +3,16 @@
     font-family: Raleway /* Replace with your custom font */, sans-serif !important; 
     /* Add !important to overwrite all elements */
   }
-html, body { height: 100%;
+html, body { 
+    
     background-color: lightslategrey; 
-    background-image: url();
-   
+    background-image:url(src/assets/img/bg4.png);
+    background-size:50%;
+
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    background-position: center bottom;
+    background-position: right bottom;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
    

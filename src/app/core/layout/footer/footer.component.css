@@ -3,5 +3,9 @@
     color: rgb(245, 228, 228);
   max-height: 300px;
     max-width: auto;
-    height: 200px;}
-  
+    height: 300px;
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;}
+    
