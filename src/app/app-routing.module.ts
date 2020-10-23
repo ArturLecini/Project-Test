@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './modules/home/pages/home/home.component';
-import { LoginComponent } from './core/user/login/login.component';
-import { AddUserComponent } from './core/admin/add-user/add-user.component';
-import { EditUserComponent } from './core/admin/edit-user/edit-user.component';
-import { SignUpComponent } from './core/user/sign-up/sign-up.component';
+import { HomeComponent } from './modules/home/home/home.component';
+import { LoginComponent } from './modules/user/login/login.component';
+import { AddUserComponent } from './modules/admin/add-user/add-user.component';
+import { EditUserComponent } from './modules/admin/edit-user/edit-user.component';
+import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { AboutComponent } from './modules/home/about/about.component';
+import { AboutComponent } from './shared/about/about.component';
 import { LoginDeactivateGuard } from './core/guards/loginGuard/deactivate/login-deactivate.guard';
 import { LayoutComponent } from './core/layout/layout.component';
-import { AccountComponent } from './core/user/account/account.component';
-import { ServiceService } from './core/services/service.service';
+import { AccountComponent } from './modules/user/account/account.component';
+
 import { ServiceComponent } from './shared/service/service.component';
 
 const routes: Routes = [

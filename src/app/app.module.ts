@@ -5,14 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './modules/home/pages/home/home.component';
+import { HomeComponent } from './modules/home/home/home.component';
 
-import { AddUserComponent } from './core/admin/add-user/add-user.component';
-import { EditUserComponent } from './core/admin/edit-user/edit-user.component';
-import { ListUserComponent } from './core/admin/list-user/list-user.component';
+import { AddUserComponent } from './modules/admin/add-user/add-user.component';
+import { EditUserComponent } from './modules/admin/edit-user/edit-user.component';
+import { ListUserComponent } from './modules/admin/list-user/list-user.component';
 import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
-import { AboutComponent } from './modules/home/about/about.component';
+import { AboutComponent } from './shared/about/about.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
@@ -22,10 +22,10 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { LayoutComponent } from './core/layout/layout.component';
 import { LoginDeactivateGuard } from './core/guards/loginGuard/deactivate/login-deactivate.guard';
 import { MaterialModule } from './styles/material/material.module';
-import { UserComponent } from './core/user/user.component';
-import { LoginComponent } from './core/user/login/login.component';
-import { SignUpComponent } from './core/user/sign-up/sign-up.component';
-import { AccountComponent } from './core/user/account/account.component';
+import { UserComponent } from './modules/user/user.component';
+import { LoginComponent } from './modules/user/login/login.component';
+import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
+import { AccountComponent } from './modules/user/account/account.component';
 import { ServiceComponent } from './shared/service/service.component';
 
 
