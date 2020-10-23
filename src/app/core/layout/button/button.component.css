@@ -1,6 +1,6 @@
 .mat-toolbar.mat-primary {
-    background:gray ;
-    color:  white;
+    background: #1d2b3a;
+    color: rgb(229, 238, 240);
  max-width: width auto;
  
  
@@ -11,8 +11,7 @@
     flex: 1 1 auto;
 }
 .btn{display: grid; 
-    color: rgb(238, 229, 229);
-    background-color:rgb(206, 5, 5);
+  
 margin:2px;
 border-radius: 9px;
 }
