@@ -1,49 +1,55 @@
 <app-button></app-button>
 
-<div class='edit-div'>
-    <div class='logo'> </div>
+<div class='add-div'>
+    <div class='logo'><img alt="Image " class ="logo" src="assets/img/add.png" > </div>
     <div class='title'>Add User&nbsp;<mat-icon>add</mat-icon></div>
-  <div class='form'>
-    <div class="name">
   
-        <mat-form-field appearance="fill" [style.width.px]=220>
+    <div class='form'>
+
+      <div >
+  
+        <mat-form-field class="name"appearance="standard" [style.width.px]=220>
           <mat-label>Enter first name</mat-label>
           <input  class="same" matInput placeholder="name"  >
         </mat-form-field>
     </div>
         <div class="lastname">
         
-            <mat-form-field appearance="fill" [style.width.px]=220>
+            <mat-form-field appearance="standard" [style.width.px]=220>
               <mat-label>Enter last name</mat-label>
               <input autofocus class="same" matInput placeholder="lastname"  >
             </mat-form-field>
             
         </div>
-    <div class="username">
 
-     <mat-form-field appearance="fill" [style.width.px]=465>
+    <div >
+     <mat-form-field class="email"appearance="standard" >
        <mat-label>Enter your email</mat-label>
        <input  class="same" matInput placeholder="name@example.com" [formControl]="email" required>
        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
      </mat-form-field>
      </div>
-     <div class='pssword'>
 
-     <mat-form-field appearance="fill" [style.width.px]=465>
+     <div >
+     <mat-form-field appearance="standard"class='password' >
    <mat-label>Enter your password</mat-label>
-   <input class="same" matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
+   <input matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
    <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-   
    </button>
  </mat-form-field>
         </div>
-        
+      
+          <mat-form-field class="phone">
+            <mat-label>Telephone</mat-label>
+            <span matPrefix>+355 &nbsp;</span>
+            <input type="tel" matInput placeholder="68-555-5654">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
    <div class='btn'>
    <button class="btn-style"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add</button>
     </div>
    
-   
      </div>
-<div > 
+    </div > 

@@ -7,14 +7,14 @@
 <div class='form'>
 <div class="name">
   
-        <mat-form-field appearance="fill" [style.width.px]=220>
+        <mat-form-field appearance="standard" [style.width.px]=220>
           <mat-label>Enter first name</mat-label>
           <input  class="same" matInput placeholder="name"  >
         </mat-form-field>
     </div>
         <div class="lastname">
         
-            <mat-form-field appearance="fill" [style.width.px]=220>
+            <mat-form-field appearance="standard" [style.width.px]=220>
               <mat-label>Enter last name</mat-label>
               <input autofocus class="same" matInput placeholder="lastname"  >
             </mat-form-field>
@@ -22,7 +22,7 @@
         </div>
     <div class="username">
 
-     <mat-form-field appearance="fill" [style.width.px]=445>
+     <mat-form-field appearance="standard" [style.width.px]=445>
        <mat-label>Enter your email</mat-label>
        <input  class="same" matInput placeholder="name@example.com" [formControl]="email" required>
        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -30,7 +30,7 @@
      </div>
      <div class='pssword'>
 
-     <mat-form-field appearance="fill" [style.width.px]=445>
+     <mat-form-field appearance="standard" [style.width.px]=445>
    <mat-label>Enter your password</mat-label>
    <input class="same" matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
    <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>

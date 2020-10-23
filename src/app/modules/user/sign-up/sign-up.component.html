@@ -1,26 +1,32 @@
 
-<div class='login-div'>
+<div class='signup-div'>
     <div class='logo'> </div>
        <div class='title'>Sign Up</div>
 <div class='form'>
 <div class="name">
   
-        <mat-form-field appearance="fill" [style.width.px]=120>
+        <mat-form-field appearance="standard" [style.width.px]=120>
           <mat-label>Enter first name</mat-label>
           <input  class="same" matInput placeholder="name"  >
         </mat-form-field>
     </div>
         <div class="lastname">
         
-            <mat-form-field appearance="fill" [style.width.px]=120>
+            <mat-form-field appearance="standard" [style.width.px]=120>
               <mat-label>Enter last name</mat-label>
               <input autofocus class="same" matInput placeholder="lastname"  >
             </mat-form-field>
             
         </div>
-    <div class="username">
+        <mat-form-field class="phone">
+                <mat-label>Telephone</mat-label>
+                <span matPrefix>+355 &nbsp;</span>
+                <input type="tel" matInput placeholder="68-555-5654">
+                <mat-icon matSuffix>mode_edit</mat-icon>
+              </mat-form-field>
+    <div class="email">
 
-     <mat-form-field appearance="fill" [style.width.px]=245>
+     <mat-form-field appearance="standard" [style.width.px]=245>
        <mat-label>Enter your email</mat-label>
        <input  class="same" matInput placeholder="name@example.com" [formControl]="email" required>
        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -28,7 +34,7 @@
      </div>
      <div class='pssword'>
 
-     <mat-form-field appearance="fill" [style.width.px]=245>
+     <mat-form-field appearance="standard"[style.width.px]=245>
    <mat-label>Enter your password</mat-label>
    <input class="same" matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
    <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
@@ -40,7 +46,7 @@
         </div>
         <div class='pssword'>
 
-            <mat-form-field appearance="fill" [style.width.px]=245>
+            <mat-form-field appearance="standard" [style.width.px]=245>
           <mat-label>Confirm your password</mat-label>
           <input class="same" matInput  placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" [formControl]="confirm" required>
           <mat-error *ngIf="confirm.invalid">{{getcErrorMessage()}}</mat-error>
@@ -51,6 +57,7 @@
           </button>
         </mat-form-field>
                </div>
+               
    <div class='btn'>
    <button class="btn-style"mat-raised-button color="accent">Register</button>
     </div>

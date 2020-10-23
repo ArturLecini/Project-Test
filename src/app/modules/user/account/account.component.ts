@@ -7,10 +7,7 @@ export interface DataUser {
   email: string;
   addres: string;
   phone: string;
- 
-  
 }
-
 const ELEMENT_DATA: DataUser[] = [
   {position: 2, name: 'Hydrogen', email:'Artur.lecini98@gmail.com', addres:'kavaje',phone:"0685158629" }, 
   {position: 2, name: 'Hydrogen', email:'Artur.lecini98@gmail.com', addres:'kavaje',phone:"0685158629" }, 

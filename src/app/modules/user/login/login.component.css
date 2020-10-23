@@ -1,13 +1,20 @@
 
 
-
+.logo{
+  margin-top: 0%;
+  width: 170px;
+  height: 160px;
+  position: top;
+  margin-left: 23px;
+  margin-bottom: 10px;
+}
 
 .login-div{
   margin:50px auto;
-  width: 250px;
+  width: 270px;
   background-color:azure;
-  padding: 60px;
- height: 350px;
+  padding: 27px;
+ height: 480px;
  border-style: outset;
  border-color:white;
  border-bottom: rgb(103, 187, 187);
@@ -16,7 +23,7 @@
 text-align: center;
 text-shadow: teal;
 font-size:xx-large;
-margin-bottom: 20px;
+margin-bottom: 25px;
 font-family: monospace;
 }  
 .username{
@@ -38,7 +45,7 @@ font-family: monospace;
   margin-bottom: 5px;
   }
   .btn{
-    margin-top: 5px;
+    margin-top: 10px;
 
     margin-bottom: 5px;
   }
@@ -52,4 +59,5 @@ font-family: monospace;
       font-size: 0.9em;
       padding: 0px;
       width: 80px;
+      margin-bottom: 2px;
   }

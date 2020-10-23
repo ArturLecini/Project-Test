@@ -1,4 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');* You can add global styles to this file, and also import other style files */
+* {
+    font-family: Raleway /* Replace with your custom font */, sans-serif !important; 
+    /* Add !important to overwrite all elements */
+  }
+html, body { height: 100%;
+    background-color: lightslategrey; 
+    background-image: url();
+   
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-html, body { height: 100%;background-color: lightslategrey;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+    background-position: center bottom;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+   
+
+}
