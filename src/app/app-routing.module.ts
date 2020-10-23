@@ -9,6 +9,9 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { AboutComponent } from './modules/home/about/about.component';
 import { LoginDeactivateGuard } from './core/guards/loginGuard/deactivate/login-deactivate.guard';
 import { LayoutComponent } from './core/layout/layout.component';
+import { AccountComponent } from './core/user/account/account.component';
+import { ServiceService } from './core/services/service.service';
+import { ServiceComponent } from './shared/service/service.component';
 
 const routes: Routes = [
   
@@ -19,7 +22,9 @@ const routes: Routes = [
   {path: 'edit-user', component : EditUserComponent},
   {path : 'sign-up', component: SignUpComponent},
   {path : 'about-us', component: AboutComponent},
+  {path : 'account', component: AccountComponent},
   {path : 'layout', component: LayoutComponent ,canActivate:[AuthGuard], data:['ADMIN']},
+  {path : 'services', component:ServiceComponent,}
 ];
 
 @NgModule({

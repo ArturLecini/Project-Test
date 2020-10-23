@@ -25,6 +25,8 @@ import { MaterialModule } from './styles/material/material.module';
 import { UserComponent } from './core/user/user.component';
 import { LoginComponent } from './core/user/login/login.component';
 import { SignUpComponent } from './core/user/sign-up/sign-up.component';
+import { AccountComponent } from './core/user/account/account.component';
+import { ServiceComponent } from './shared/service/service.component';
 
 
 
@@ -45,7 +47,9 @@ import { SignUpComponent } from './core/user/sign-up/sign-up.component';
     LayoutComponent,
       UserComponent,
       LoginComponent,
-      SignUpComponent
+      SignUpComponent,
+      AccountComponent,
+      ServiceComponent
       
 
   ],

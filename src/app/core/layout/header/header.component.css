@@ -1,6 +1,6 @@
 .mat-toolbar.mat-primary {
     background: #1d2b3a;
-    color: #fff;
+    color: rgb(245, 228, 228);
   }
 .toolbar{
     flex-direction: column;

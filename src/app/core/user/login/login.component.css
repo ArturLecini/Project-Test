@@ -30,6 +30,7 @@ font-family: monospace;
 .same{
  width:200px ;
  flex-direction: row;
+
 }
 .notmember{
   margin-top: 5px;
