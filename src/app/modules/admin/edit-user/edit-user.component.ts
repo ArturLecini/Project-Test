@@ -6,9 +6,9 @@ import {FormControl, FormGroup,Validators} from '@angular/forms';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-  hide = true;
+ 
   email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required,Validators.minLength(6)],);
+ 
   
  
   getErrorMessage() {
@@ -18,12 +18,7 @@ export class EditUserComponent implements OnInit {
       return  'Please need a valid email'  ;
     }
   }
-    getpErrorMessage() {
-        if (this.password.hasError('required')) {
-          return  'Please must enter your password ';
-    } 
-      return  'Please continue more  than "6" characters'  ;
-  }
+  
 
   constructor() { }
 

@@ -28,18 +28,12 @@
        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
      </mat-form-field>
      </div>
-     <div class='pssword'>
-
-     <mat-form-field appearance="standard" [style.width.px]=445>
-   <mat-label>Enter your password</mat-label>
-   <input class="same" matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
-   <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
-   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-   
-   </button>
- </mat-form-field>
-        </div>
+     <mat-form-field class="phone">
+      <mat-label>Telephone</mat-label>
+      <span matPrefix>+355 &nbsp;</span>
+      <input type="tel" matInput placeholder="68-555-5654">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
         
    <div class='btn'>
    <button class="btn-style" mat-raised-button color="accent"><mat-icon>edit</mat-icon>Edit</button>
