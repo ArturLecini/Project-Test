@@ -19,11 +19,16 @@ const ELEMENT_DATA: DataUser[] = [
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
+  
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  
-  showFiller = false; 
+
+  showFiller = false;
+
+
+  isActive = false;
+  active = true;
   displayedColumns: string[] = ['position', 'name', 'email','addres', 'phone'];
   dataSource = ELEMENT_DATA;
   constructor() { }

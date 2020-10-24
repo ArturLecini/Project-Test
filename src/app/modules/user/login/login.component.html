@@ -27,7 +27,7 @@
    <div class='btn'>
       <button type="submit" class="btn-style" mat-raised-button color="primary">Login</button>
        </div>
-       <div class="notmember">
+       <div class="notmember" [hidden]="this.isActive "  >
         Don't have an account ?
            <a routerLink='/sign-up'mat-button color='accent' class='btn'  > Sign up</a>
        </div>

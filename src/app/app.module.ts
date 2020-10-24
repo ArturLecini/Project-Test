@@ -54,7 +54,7 @@ import { ButtonComponent } from './core/layout/button/button.component';
       HomeComponent,
       MinitoolbarComponent,
       ButtonComponent,
-    
+    FooterComponent
 
   ],
   imports: [

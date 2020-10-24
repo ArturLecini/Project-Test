@@ -3,10 +3,15 @@
 
 <mat-drawer-container class="bg-container" autosize>
   <mat-drawer #drawer class="bg-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <p> <mat-slide-toggle  class="activesignup" (click)="active" > Active Sign Up!</mat-slide-toggle>
+      
+   
+  </p>
+    <p class="info" *ngIf="showFiller">You are the Admin
+       and you have access to make the users register themselves or not, 
+       be careful if you deactivate the button the users will not be able to register</p>
     <button (click)="showFiller = !showFiller" mat-raised-button>
-      Show more options
+      Click and Read me!
     </button>
   </mat-drawer>
   
