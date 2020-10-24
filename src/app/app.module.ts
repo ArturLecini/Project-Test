@@ -23,7 +23,7 @@ import { MaterialModule } from './styles/material/material.module';
 import { UserComponent } from './modules/user/user.component';
 import { LoginComponent } from './modules/user/login/login.component';
 import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
-import { AccountComponent } from './modules/user/account/account.component';
+import { AccountComponent, DialogContent } from './modules/user/account/account.component';
 import { ServiceComponent } from './shared/service/service.component';
 import { MainHomeComponent } from './modules/home/main-home/main-home.component';
 import { HomeComponent } from './modules/home/home.component';
@@ -54,8 +54,8 @@ import { ButtonComponent } from './core/layout/button/button.component';
       HomeComponent,
       MinitoolbarComponent,
       ButtonComponent,
-    FooterComponent
-
+    FooterComponent,
+DialogContent
   ],
   imports: [
     BrowserModule,

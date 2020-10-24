@@ -24,16 +24,31 @@ const ELEMENT_DATA: DataUser[] = [
 })
 export class AccountComponent implements OnInit {
 
-  showFiller = false;
+  showFiller = false
 
 
   isActive = false;
   active = true;
   displayedColumns: string[] = ['position', 'name', 'email','addres', 'phone'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor(public dialog: MatDialog) {}
 
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   ngOnInit(): void {
   }
 
+}
+@Component({
+  selector: 'dialog-content',
+  templateUrl: './dialog-content.html',
+  styleUrls: ['./dialog-content.css']
+})
+export class DialogContent {
+ 
 }
