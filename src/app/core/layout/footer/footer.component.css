@@ -2,10 +2,9 @@
     background: #1d2b3a;
     color: rgb(245, 228, 228);
   max-height: 300px;
-    max-width: auto;
+  max-width: width auto;
+    min-width: 314;
     height: 300px;
-    display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;}
+    margin: 0; 
+    ;}
     

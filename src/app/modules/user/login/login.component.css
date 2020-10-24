@@ -2,10 +2,10 @@
 
 .logo{
   margin-top: 0%;
-  width: 170px;
+  width: 200px;
   height: 160px;
   position: top;
-  margin-left: 23px;
+  margin-left: 16px;
   margin-bottom: 15px;
 }
 
@@ -32,7 +32,7 @@ text-shadow: teal;
 font-size:xx-large;
 margin-bottom: 15px;
 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-font-size: ;
+
 }  
 .username{
   margin-top: 5px;
@@ -66,6 +66,6 @@ text-align: center;
       outline:none;
       font-size: 0.9em;
       padding: 0px;
-      width: 80px;
+      width: 100px;
       margin-bottom: 2px;
   }

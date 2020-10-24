@@ -6,7 +6,8 @@ html, body {
     background-color: lightslategrey; 
     background-image:url(src/assets/img/bg8.png);
     background-size: cover;
-
+width: 100%;
+margin: auto; 
     background-repeat: no-repeat;
     background-attachment: fixed;
 
@@ -16,3 +17,6 @@ body { margin: 0; font-family: Helvetica Neue, "", sans-serif;
    
 
 }
+
+
+  

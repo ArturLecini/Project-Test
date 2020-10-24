@@ -1,9 +1,22 @@
 <app-minitoolbar></app-minitoolbar>
 
 
-
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-drawer-container class="bg-container" autosize>
+  <mat-drawer #drawer class="bg-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Show more options
+    </button>
+  </mat-drawer>
+  
+  <div class="bg-sidenav-content">
+    <button class="btnmenu"type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
    
     <!-- Position Column -->
@@ -42,3 +55,4 @@
   </table>
   
   
+ <app-footer></app-footer>
