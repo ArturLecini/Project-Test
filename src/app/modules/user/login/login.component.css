@@ -6,25 +6,33 @@
   height: 160px;
   position: top;
   margin-left: 23px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .login-div{
   margin:50px auto;
   width: 270px;
   background-color:azure;
-  padding: 27px;
- height: 480px;
+  padding: 77px;
+ height: 450px;
  border-style: outset;
  border-color:white;
  border-bottom: rgb(103, 187, 187);
+ border-radius: 5px;
+ position: center;
+ border-top-style: solid;
+ border-top-width: 5px;
+ border-top-color:rgb(40, 189, 40) ;
 }
 .title{
-text-align: center;
+  color: green;
+
+  text-align: center;
 text-shadow: teal;
 font-size:xx-large;
 margin-bottom: 15px;
-font-family: monospace;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+font-size: ;
 }  
 .username{
   margin-top: 5px;
@@ -46,7 +54,7 @@ font-family: monospace;
   }
   .btn{
     margin-top: 10px;
-
+text-align: center;
     margin-bottom: 5px;
   }
   .btn-style{

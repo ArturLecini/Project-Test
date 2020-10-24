@@ -7,7 +7,7 @@ import { EditUserComponent } from './modules/admin/edit-user/edit-user.component
 import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { AboutComponent } from './shared/about/about.component';
-import { LoginDeactivateGuard } from './core/guards/loginGuard/deactivate/login-deactivate.guard';
+
 import { LayoutComponent } from './core/layout/layout.component';
 import { AccountComponent } from './modules/user/account/account.component';
 
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'home-root', component : MainHomeComponent },
   {path: 'home', component : HomeComponent },
-  {path :'login', component : LoginComponent,canActivate:[AuthGuard], data: ["ADMIN"],canDeactivate:[LoginDeactivateGuard]},
+  {path :'login', component : LoginComponent,canActivate:[AuthGuard],data:['ADMIN'] },
   {path: 'add-user', component : AddUserComponent},
   {path: 'edit-user', component : EditUserComponent},
   {path : 'sign-up', component: SignUpComponent},

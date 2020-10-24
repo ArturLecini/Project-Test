@@ -2,13 +2,15 @@
     background: #1d2b3a;
     color: rgb(229, 238, 240);
  max-width: width auto;
- display: grid;
+ min-width: 651px;
+
+
  
 
 }.toolbar{
     flex-direction: column;
 min-width: 315px;
-display: grid;}
+}
 
 .spacer{
     flex: 1 1 auto;

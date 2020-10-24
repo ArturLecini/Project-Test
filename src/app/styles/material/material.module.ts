@@ -36,6 +36,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+
 @NgModule({
     imports: [
         FlexLayoutModule,
@@ -72,7 +73,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatToolbarModule,
         MatTooltipModule,
         MatTreeModule,
-        MatNativeDateModule
+        MatNativeDateModule,
+       
     ],
 
     exports: [
@@ -110,7 +112,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatToolbarModule,
         MatTooltipModule,
         MatTreeModule,
-        MatNativeDateModule
+        MatNativeDateModule,
+       
     ],
 
     providers: [ ]

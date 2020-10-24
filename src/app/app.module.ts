@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LayoutComponent } from './core/layout/layout.component';
-import { LoginDeactivateGuard } from './core/guards/loginGuard/deactivate/login-deactivate.guard';
+
 import { MaterialModule } from './styles/material/material.module';
 import { UserComponent } from './modules/user/user.component';
 import { LoginComponent } from './modules/user/login/login.component';
@@ -29,7 +29,6 @@ import { MainHomeComponent } from './modules/home/main-home/main-home.component'
 import { HomeComponent } from './modules/home/home.component';
 import { MinitoolbarComponent } from './core/layout/minitoolbar/minitoolbar.component';
 import { ButtonComponent } from './core/layout/button/button.component';
-
 
 
 
@@ -54,7 +53,8 @@ import { ButtonComponent } from './core/layout/button/button.component';
       MainHomeComponent,
       HomeComponent,
       MinitoolbarComponent,
-      ButtonComponent
+      ButtonComponent,
+    
 
   ],
   imports: [
@@ -75,7 +75,7 @@ import { ButtonComponent } from './core/layout/button/button.component';
   
    MaterialModule
   ],
-  providers: [AuthGuard,LoginDeactivateGuard],
+  providers: [AuthGuard,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
