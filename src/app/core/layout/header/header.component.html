@@ -4,9 +4,12 @@
       <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
           <mat-icon>menu</mat-icon>
-         
         </button>
+
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true"fxHide.lt-md="true">
         <span class="flex">&nbsp;&nbsp;&nbsp;&nbsp;Division5</span> 
+      </button>
+
         <div class="spacer" ></div>
         <span class="example-spacer"></span>
         <div class="btn"fxShow="true" fxHide.lt-md="true">
@@ -14,8 +17,8 @@
             <a routerLink='/home' mat-button ><mat-icon>home</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
            
         </div> 
-        <a routerLink='/account' mat-button>
-          <mat-icon>account_box</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp; <p style="display: inline" fxHide.lt-md="true">My Account</p></a>
+         <a routerLink='/account' mat-button>
+             <mat-icon>account_box</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp; <p style="display: inline" fxHide.lt-md="true">My Account</p></a>
             <a mat-button class="logout-btn" routerLink='/login' > <mat-icon>logout</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;<p style="display: inline" fxHide.lt-md="true">Log Out</p></a>
       </mat-toolbar-row>
         

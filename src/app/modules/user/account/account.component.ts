@@ -22,7 +22,8 @@ const ELEMENT_DATA: DataUser[] = [
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  showFiller = false;
+  
+  showFiller = false; 
   displayedColumns: string[] = ['position', 'name', 'email','addres', 'phone'];
   dataSource = ELEMENT_DATA;
   constructor() { }
