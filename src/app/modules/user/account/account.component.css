@@ -11,15 +11,16 @@ min-width: 20%;
 margin-bottom: 10%;
   }
   th{
-      background: rosybrown;
-      color: white;
+    background: #1d2b3a;
+    color: rgb(229, 238, 240);
   font-size: 15px;
-    }.btn{
-  
+    }.btnadd{
+  border: inset;
+  border-width: 0.1px;
         margin:2px;
-        border-radius: 9px;
-      background-color:whitesmoke;
-      color: black;
+        border-radius: 10px;
+        background: #1d2b3a;
+    color: rgb(229, 238, 240);
     }
     .bg-container {
       width: 100%;
