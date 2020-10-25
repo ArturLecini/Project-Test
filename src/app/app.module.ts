@@ -35,6 +35,7 @@ import { ButtonComponent } from './core/layout/button/button.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,8 +73,8 @@ DialogContent
     FormsModule ,
     FlexLayoutModule ,
    ReactiveFormsModule,
+   MaterialModule,
   
-   MaterialModule
   ],
   providers: [AuthGuard,],
   bootstrap: [AppComponent]

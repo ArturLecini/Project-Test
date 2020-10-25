@@ -18,8 +18,10 @@
       <mat-label>Enter your password</mat-label>
       <input [value]="name"class="same" matInput  placeholder="Password!1." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
       <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
+      <mat-error *ngIf="!hide">{{incorrect()}}</mat-error>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      
       </button>
     </mat-form-field>
            </div>

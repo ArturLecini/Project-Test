@@ -39,14 +39,6 @@ export class AccountComponent implements OnInit {
   constructor(public dialog: MatDialog,private sharedService:SharedService) {}
   
   
-  Showhide() {
-    let x = document.getElementById("myDiv");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
  
 
   openDialog() {
@@ -58,7 +50,7 @@ export class AccountComponent implements OnInit {
   }
   ngOnInit() {  
   }
-  clickMe(){
+  Showhide(){
     this.sharedService.sendClickEvent();
     }
 

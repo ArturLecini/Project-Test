@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
 name: string;
 hide = true;
     email = new FormControl('', [Validators.required, Validators.email]);
-    password = new FormControl('', [Validators.required,Validators.minLength(6)]);
+    password = new FormControl('', [ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
+   
 
    errorpasw(){
    return 'enter identic pasword';
@@ -31,16 +32,23 @@ hide = true;
         return  'Not a valid email'  ;
       }}
       getpErrorMessage() {
-          if (this.password.hasError('required')) {
+       if (this.password.hasError('required')) {
             return  'Please must enter your password ';
+      }else if (this.password.hasError('minlength')) {
+        return  'Please continu more your password is min 8 characters '  ;
       }
-        return  'Your password is more  than "6" characters'  ;
-    }
- 
+      return  'Max length is 12 characters'  ;
+        
+    } 
 
+       
+   
+ 
+    incorrect(){
+      return"  hide pasword "}
 
     constructor(private router: Router,private sharedService:SharedService) { 
-      
+
       this.name= "value";
        this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
         this.Showhide();
@@ -58,8 +66,9 @@ hide = true;
       }
     }
     onSubmit() {if (this.email.valid&&this.password.valid) {
+      if(this.hide){
       return this.router.navigateByUrl('/layout');
-      
+      } 
     } 
     console.log('form error please write your pasword and email');
     
