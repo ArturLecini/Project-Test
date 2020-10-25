@@ -1,40 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup,Validators} from '@angular/forms';
-import {FocusMonitor} from '@angular/cdk/a11y';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {
-  
-  ElementRef,
-  Inject,
-  Input,
-  OnDestroy,
-  Optional,
-  Self,
-  ViewChild
-} from '@angular/core';
-import {
-  AbstractControl,
-  ControlValueAccessor,
-  FormBuilder,
- 
-  NgControl,
-  
-} from '@angular/forms';
-import {MAT_FORM_FIELD, MatFormField, MatFormFieldControl} from '@angular/material/form-field';
-import {Subject} from 'rxjs';
+import {FormControl, FormGroup,Validators,FormBuilder} from '@angular/forms';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']
+  styleUrls: ['./add-user.component.css'],
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: {showError: true}
+  }]
 })
 export class AddUserComponent implements OnInit {
  
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required,Validators.minLength(6)],);
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  isLinear = false;
   
- 
   getErrorMessage() {
     if (this.email.hasError('required') ){
       return 'Please You need a email';
@@ -48,9 +32,13 @@ export class AddUserComponent implements OnInit {
     } 
       return  'Please continue more  than "6" characters'  ;
   }
-  constructor() { }
+  constructor(private _formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]  });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
-
 }

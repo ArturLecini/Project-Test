@@ -1,4 +1,4 @@
-
+<!--
 
 <div class='add-div'>
     <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div>
@@ -52,4 +52,79 @@
     </div>
    
      </div>
-    </div > 
+    </div > -->
+
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup" >
+
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Fill out your name lastname and phone</ng-template>
+          <mat-form-field class="name"appearance="standard" [style.width.px]=220>
+            <mat-label>Enter first name</mat-label>
+            <input  class="same" matInput placeholder="name"  >
+          </mat-form-field>
+        </form> 
+        <form [formGroup]="firstFormGroup">
+          <mat-form-field appearance="standard" [style.width.px]=220>
+            <mat-label>Enter last name</mat-label>
+            <input autofocus class="same" matInput placeholder="lastname"  >
+          </mat-form-field>
+        </form>
+        <form [formGroup]="firstFormGroup">
+          <mat-form-field class="phone">
+            <mat-label>Telephone</mat-label>
+            <span matPrefix>+355 &nbsp;</span>
+            <input type="tel" matInput placeholder="68-555-5654">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+        </form>
+           <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+      </mat-step>
+     
+      <mat-step [stepControl]="secondFormGroup" errorMessage="Email is required."label="Fill out your email address">
+        <form [formGroup]="secondFormGroup">
+          <mat-form-field class="email"appearance="standard" >
+            <mat-label>Enter your email</mat-label>
+            <input formControlName="secondCtrl" class="same" matInput placeholder="name@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step  [stepControl]="secondFormGroup" label="Fill out your password" errorMessage="Password is required.">
+        <form [formGroup]="secondFormGroup">
+          <mat-form-field appearance="standard"class='password' >
+            <mat-label>Enter your password</mat-label>
+            <input formControlName="secondCtrl" matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
+            <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+     
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        <div class='btn'>
+          <button class="btn-style"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add</button>
+           </div></div>
+        
+      </mat-step>
+    </mat-horizontal-stepper>
+     

@@ -23,16 +23,7 @@
   margin-bottom: 20px;
   font-family: monospace;
   }  
-  .name{
-    position: absolute;
-    padding-left: 245px;
-   
-  }
-  .lastname{
-    margin-top: 5px;
-    margin-bottom: 5px;
- 
-    }
+  
     .password{
       margin-top: 5px;
       margin-bottom: 5px;
@@ -67,4 +58,11 @@
         font-size: 0.9em;
         padding: 0px;
         width: 120px;
+  }
+  .mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
   }
