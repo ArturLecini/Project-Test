@@ -3,9 +3,9 @@
 
 <mat-drawer-container class="bg-container" autosize>
   <mat-drawer #drawer class="bg-sidenav" mode="side">
-    <p> <mat-slide-toggle  class="activesignup" (click)="active" > Active Sign Up!</mat-slide-toggle>
-      
-   
+    <p>
+      <mat-slide-toggle  [color]="color"
+      [checked]="checked"  class="activesignup" (click)="Showhide()"> Active Sign Up!</mat-slide-toggle>
   </p>
     <p class="info" *ngIf="showFiller">You are the Admin
        and you have access to make the users register themselves or not, 
@@ -25,7 +25,7 @@
 
 
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table  id="myDiv"  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
    
     <!-- Position Column -->
     <ng-container matColumnDef="position">

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {ThemePalette} from '@angular/material/core';
+import { SharedService } from '@shared/shared.service';
 
 export interface DataUser {
   position: number;
@@ -25,13 +27,27 @@ const ELEMENT_DATA: DataUser[] = [
 export class AccountComponent implements OnInit {
 
   showFiller = false
+  color: ThemePalette = 'warn';
+  checked = true;
 
-
-  isActive = false;
-  active = true;
+  
+  
   displayedColumns: string[] = ['position', 'name', 'email','addres', 'phone'];
   dataSource = ELEMENT_DATA;
-  constructor(public dialog: MatDialog) {}
+
+
+  constructor(public dialog: MatDialog,private sharedService:SharedService) {}
+  
+  
+  Showhide() {
+    let x = document.getElementById("myDiv");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+ 
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogContent);
@@ -40,8 +56,11 @@ export class AccountComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-  ngOnInit(): void {
+  ngOnInit() {  
   }
+  clickMe(){
+    this.sharedService.sendClickEvent();
+    }
 
 }
 @Component({
