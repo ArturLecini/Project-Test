@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   clickEventsubscription:Subscription;
 name: string;
 hide = true;
+
     email = new FormControl('', [Validators.required, Validators.email]);
     password = new FormControl('', [ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
    
@@ -23,8 +24,6 @@ hide = true;
    errorpasw(){
    return 'enter identic pasword';
  }
-
-    
     getErrorMessage() {
       if (this.email.hasError('required') ){
         return 'You must enter your email';

@@ -9,10 +9,10 @@
   border-radius: 5px;
   }.logo{
     margin-top: 0%;
-    width: 170px;
-    height: 160px;
+    width: 270px;
+    height: 260px;
     position: top;
-    margin-left: 65px;
+    margin-left: 165px;
     margin-bottom: 10px;
   }
   
@@ -45,7 +45,7 @@
     }
     .btn{
       margin-top: 5px;
-  
+      margin-left: 160;
       margin-bottom: 5px;
     }
   .btn-style{
@@ -58,6 +58,7 @@
         font-size: 0.9em;
         padding: 0px;
         width: 120px;
+       margin-left: 160;
   }
   .mat-stepper-horizontal {
     margin-top: 8px;

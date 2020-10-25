@@ -117,14 +117,15 @@
      
       <mat-step>
         <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
+      
+        <p></p>
+        <div> <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div><div class='btn'>
+          <button class="btn-style"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add</button>
+           </div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Reset</button>
-        <div class='btn'>
-          <button class="btn-style"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add</button>
-           </div></div>
-        
+        </div>
+         
       </mat-step>
     </mat-horizontal-stepper>
      
