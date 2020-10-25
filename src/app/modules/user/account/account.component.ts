@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ThemePalette} from '@angular/material/core';
 import { SharedService } from '@shared/shared.service';
+
 
 export interface DataUser {
   position: number;
@@ -41,13 +42,16 @@ export class AccountComponent implements OnInit {
   
  
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContent);
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogContent);{
+      width: '250px'}
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
     });
   }
+  
+
   ngOnInit() {  
   }
   Showhide(){
@@ -61,5 +65,9 @@ export class AccountComponent implements OnInit {
   styleUrls: ['./dialog-content.css']
 })
 export class DialogContent {
- 
-}
+  constructor(
+    public dialogRef: MatDialogRef<DialogContent>) {}
+
+  onNoClick(): void {
+    this.dialogRef.close
+}}
