@@ -1,12 +1,11 @@
 .edit-div{
     margin:50px auto;
     width: 450px;
-    background-color: whitesmoke;
+    background-color: rgb(234, 241, 241);
     padding: 100px;
    height: 450px;
    border-style: outset;
-   border-color:grey;
-   border-bottom: darkslategrey;
+ 
    border-radius: 5px;
   }
 .logo{

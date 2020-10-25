@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { AddUserComponent } from './modules/admin/add-user/add-user.component';
 import { EditUserComponent } from './modules/admin/edit-user/edit-user.component';
-import { ListUserComponent } from './modules/admin/list-user/list-user.component';
+
 import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { AboutComponent } from './shared/about/about.component';
@@ -23,12 +23,13 @@ import { MaterialModule } from './styles/material/material.module';
 import { UserComponent } from './modules/user/user.component';
 import { LoginComponent } from './modules/user/login/login.component';
 import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
-import { AccountComponent, DialogContent } from './modules/user/account/account.component';
+import { ListUserComponent,DialogContent } from './modules/admin/list-user/list-user.component';
 import { ServiceComponent } from './shared/service/service.component';
 import { MainHomeComponent } from './modules/home/main-home/main-home.component';
 import { HomeComponent } from './modules/home/home.component';
 import { MinitoolbarComponent } from './core/layout/minitoolbar/minitoolbar.component';
 import { ButtonComponent } from './core/layout/button/button.component';
+import { AccountComponent, } from './modules/user/account/account.component';
 
 
 
@@ -49,14 +50,18 @@ import { ButtonComponent } from './core/layout/button/button.component';
       UserComponent,
       LoginComponent,
       SignUpComponent,
-      AccountComponent,
+      
+
       ServiceComponent,
       MainHomeComponent,
       HomeComponent,
       MinitoolbarComponent,
       ButtonComponent,
     FooterComponent,
+    AccountComponent,
+
 DialogContent
+
   ],
   imports: [
     BrowserModule,
