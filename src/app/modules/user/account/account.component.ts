@@ -1,6 +1,7 @@
 import { Component, OnInit ,Inject} from '@angular/core';
 
 import {ThemePalette} from '@angular/material/core';
+
 import { SharedService } from '@shared/shared.service';
 
 @Component({
@@ -19,11 +20,11 @@ export class AccountComponent implements OnInit {
   
   
 
-  constructor(private sharedService:SharedService) {}
+  constructor(private sharedService:SharedService ,) {}
   
   
 
-  ngOnInit() {  
+  ngOnInit(): void {  
   }
   Showhide(){
     this.sharedService.sendClickEvent();

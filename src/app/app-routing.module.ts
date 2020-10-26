@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './modules/user/login/login.component';
 import { AddUserComponent } from './modules/admin/add-user/add-user.component';
-import { EditUserComponent } from './modules/admin/edit-user/edit-user.component';
+
 import { ListUserComponent } from './modules/admin/list-user/list-user.component';
 import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
 import { AuthGuard } from './core/guards/auth.guard';
@@ -25,7 +25,7 @@ const routes: Routes = [
  
   { path: 'add-user', component: AddUserComponent },
   { path: 'list-user', component: ListUserComponent },
-  { path: 'edit-user', component: EditUserComponent },
+ 
 
   {path: 'home-root', component : MainHomeComponent },
   {path: 'home', component : HomeComponent },

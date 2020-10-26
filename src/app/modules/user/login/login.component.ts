@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 import { SharedService } from '@shared/shared.service';
 import { Subscription } from 'rxjs';
 
-
+import {AccountComponent} from '../account/account.component'
 @Component({ 
     selector: 'app-login',
     templateUrl: './login.component.html' ,
@@ -50,11 +50,10 @@ hide = true;
 
       this.name= "value";
        this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
-        this.Showhide();
-        })
+        this.Showhide() })
     }
 
-    ngOnInit(){ 
+    ngOnInit(): void{ 
     }//after click sign up need hiden
     Showhide() {
       let x = document.getElementById("myDiv");

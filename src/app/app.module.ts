@@ -17,7 +17,7 @@ import { LayoutComponent } from './core/layout/layout.component';
 
 
 import { AddUserComponent } from './modules/admin/add-user/add-user.component';
-import { EditUserComponent } from './modules/admin/edit-user/edit-user.component';
+
 import { UserComponent } from './modules/user/user.component';
 import { LoginComponent } from './modules/user/login/login.component';
 import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
@@ -36,7 +36,8 @@ import { MaterialModule } from './styles/material/material.module';
 import { ApiService } from './core/services/api.service';
 import {TokenInterceptor} from "./core/interceptor";
 
-import { DialogContentComponent } from './modules/admin/list-user/dialog-content/dialog-content.component';
+import { DeleteDialogComponent } from './modules/admin/list-user/delete-dialog/delete-dialog.component';
+import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-dialog.component';
 
 
 
@@ -45,7 +46,7 @@ import { DialogContentComponent } from './modules/admin/list-user/dialog-content
   declarations: [
     AppComponent,
     AddUserComponent,
-    EditUserComponent,
+
     ListUserComponent,
     HeaderComponent,
     FooterComponent,
@@ -68,7 +69,13 @@ import { DialogContentComponent } from './modules/admin/list-user/dialog-content
 
 
 
-DialogContentComponent,
+    DeleteDialogComponent,
+
+
+
+
+
+EditDialogComponent,
 
 
   ],

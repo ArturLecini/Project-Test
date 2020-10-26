@@ -29,7 +29,7 @@
 
      <mat-form-field appearance="standard" [style.width.px]=445>
        <mat-label>Enter your email</mat-label>
-       <input  class="same" matInput placeholder="name@example.com" [formControl]="email" required>
+       <input  class="same" matInput placeholder="name@example.com" [formControl]="email" >
        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
      </mat-form-field>
      </div>
@@ -41,9 +41,13 @@
     </mat-form-field>
         
    <div class='btn'>
-   <button class="btn-style" mat-raised-button color="accent"><mat-icon>edit</mat-icon>Edit</button>
+    <button class="btn-close" mat-button mat-dialog-close >
+        <mat-icon>cancel</mat-icon>&nbsp; cancel</button>
+   <button  class="btn-edit" mat-raised-button color="accent"><mat-icon>edit</mat-icon>Edit</button>
     </div>
    
    
      </div>
 <div > 
+
+  

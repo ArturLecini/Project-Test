@@ -1,11 +1,11 @@
-.edit-div{
+edit-div{
     margin:50px auto;
     width: 450px;
     background-color: rgb(234, 241, 241);
     padding: 100px;
    height: 450px;
    border-style: outset;
- 
+
    border-radius: 5px;
   }
 .logo{
@@ -51,7 +51,7 @@
   
       margin-bottom: 5px;
     }
-    .btn-style{
+    .btn-edit{
         background-color: rgb(230, 9, 9);
           background-repeat: no-repeat;
           border: none;
@@ -60,7 +60,20 @@
           outline:none;
           font-size: 0.9em;
           padding: 0px;
-          width: 120px;
+          width: 100px;
+    }
+    .btn-close{
+        background-color: rgb(238, 214, 214);
+          background-repeat: no-repeat;
+          border: none;
+          cursor:pointer;
+          overflow: hidden;
+          outline:none;
+          font-size: 0.9em;
+          padding: 0px;
+          width: 100px;
+          margin-left: 100px;
+          margin-right: 40px;
     }
     .phone{
       width: 450px;
