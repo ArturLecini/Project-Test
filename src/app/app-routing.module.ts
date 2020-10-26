@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './modules/user/login/login.component';
 import { AddUserComponent } from './modules/admin/add-user/add-user.component';
 import { EditUserComponent } from './modules/admin/edit-user/edit-user.component';
+import { ListUserComponent } from './modules/admin/list-user/list-user.component';
 import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { AboutComponent } from './shared/about/about.component';
@@ -17,16 +18,20 @@ import { HomeComponent } from './modules/home/home.component';
 
 const routes: Routes = [
   
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+   { path: '', redirectTo: '/login', pathMatch: 'full' },
+   {path :'login', component : LoginComponent,canActivate:[AuthGuard],data:['ADMIN'] },
+   {path : 'sign-up', component: SignUpComponent},
+   {path : 'layout', component: LayoutComponent ,canActivate:[AuthGuard], data:['ADMIN']},
+ 
+  { path: 'add-user', component: AddUserComponent },
+  { path: 'list-user', component: ListUserComponent },
+  { path: 'edit-user', component: EditUserComponent },
+
   {path: 'home-root', component : MainHomeComponent },
   {path: 'home', component : HomeComponent },
-  {path :'login', component : LoginComponent,canActivate:[AuthGuard],data:['ADMIN'] },
-  {path: 'add-user', component : AddUserComponent},
-  {path: 'edit-user', component : EditUserComponent},
-  {path : 'sign-up', component: SignUpComponent},
+ 
   {path : 'about-us', component: AboutComponent},
   {path : 'account', component: AccountComponent},
-  {path : 'layout', component: LayoutComponent ,canActivate:[AuthGuard], data:['ADMIN']},
   {path : 'services', component:ServiceComponent,}
 ];
 

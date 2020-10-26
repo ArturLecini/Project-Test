@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup,Validators,FormBuilder} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {Router} from '@angular/router';
+import {ApiService} from '../../../core/services/api.service'
+import { from } from 'rxjs';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -44,20 +46,27 @@ export class AddUserComponent implements OnInit {
   incorrect(){
     return"  hide pasword "}
 
-  constructor(private router: Router,private _formBuilder: FormBuilder) { }
+    constructor(private formBuilder: FormBuilder,private router: Router, private apiService: ApiService) { }
 
-  ngOnInit() {
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]  });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-  }  onSubmit() {if (this.email.valid&&this.password.valid) {
-    if(this.hide){
-    return this.router.navigateByUrl('/layout');
-    } 
-  } 
-  console.log('form error please write your pasword and email');
+    addForm: FormGroup;
   
-}
-}
+    ngOnInit() {
+      this.addForm = this.formBuilder.group({
+      
+        username: ['', Validators.required],
+        password: ['', Validators.required],
+        firstName: ['', ],
+        lastName: ['', ],
+       phone: ['', ],
+      });
+  
+    }
+  
+    onSubmit() {
+      this.apiService.createUser(this.addForm.value)
+        .subscribe( data => {
+          this.router.navigate(['list-user']);
+        });
+    }
+  
+  }

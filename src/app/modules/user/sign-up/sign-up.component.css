@@ -1,30 +1,39 @@
 
 .signup-div{
-    margin:20px auto;
-    width: 260px;
-    background-color: whitesmoke;
-    padding: 85px;
-   height: 550px;
-   border-style: outset;
-   border-color:grey;
-   border-bottom: darkslategrey;
-   }
-   .logo{
-    margin-top: 0%;
-    width: 140px;
-    height: 140px;
-    position: top;
-    margin-left: 32px;
-    margin-bottom: 10px;
-  
-  }
-  .title{
+  margin:50px auto;
+  width: 270px;
+  background-color:azure;
+  padding: 97px;
+ height: 590px;
+ border-style: outset;
+ border-color:white;
+ border-bottom: rgb(103, 187, 187);
+ border-radius: 5px;
+ position: center;
+ border-top-style: solid;
+ border-top-width: 5px;
+ border-top-color:rgb(231, 12, 41) ;
+}
+ 
+.logo{
+  margin-top: 0%;
+  width: 200px;
+  height: 160px;
+  position: top;
+  margin-left: 16px;
+  margin-bottom: 15px;
+}
+
+.title{
+  color: rgb(216, 15, 15);
+
   text-align: center;
-  text-shadow: teal;
-  font-size:xx-large;
-  margin-bottom: 10px;
-  font-family: monospace;
-  }  
+text-shadow: teal;
+font-size:xx-large;
+margin-bottom: 15px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+
+}  
   .name{
     position: absolute;
     padding-left: 139px;
@@ -50,13 +59,13 @@
     margin-bottom: 5px;
     }
     .btn{
-      margin-top: 5px;
-  
+      margin-top: 10px;
+  text-align: center;
       margin-bottom: 5px;
+     color: green;
     }
-
     .btn-style{
-      background-color: rgb(230, 9, 9);
+      background-color :rgb(202, 18, 18);
         background-repeat: no-repeat;
         border: none;
         cursor:pointer;
@@ -64,5 +73,6 @@
         outline:none;
         font-size: 0.9em;
         padding: 0px;
-        width: 80px;
+        width: 100px;
+        margin-bottom: 2px;
     }

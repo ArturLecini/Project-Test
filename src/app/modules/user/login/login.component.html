@@ -1,40 +1,39 @@
-
 <div class='login-div'>
-       <div class='logo'> <img alt="Image " class ="logo" src="assets/img/login.png" ></div>
-          <div class='title'>Login</div>
-  <div class='form'>
-    <form (ngSubmit)="onSubmit()" novalidate >
-            
-       <div class="username">
-        <mat-form-field appearance="standard" [style.width.px]=265>
-          <mat-label>Enter your email</mat-label>
-          <input  autofocus  ="name" class="same" matInput placeholder="name@example.com" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-        </div>
-        
-        <div id="password" class='pssword'>
-        <mat-form-field appearance="standard" [style.width.px]=265>
-      <mat-label>Enter your password</mat-label>
-      <input [value]="name"class="same" matInput  placeholder="Password!1." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
-      <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
-      <mat-error *ngIf="!hide">{{incorrect()}}</mat-error>
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      
-      </button>
-    </mat-form-field>
-           </div>
+  <div class='logo'> <img alt="Image " class ="logo" src="assets/img/login.png" ></div>
+     <div class='title'>Login</div>
+<div class='form'>
+<form (ngSubmit)="onSubmit()" novalidate >
+       
+  <div class="username">
+   <mat-form-field appearance="standard" [style.width.px]=265>
+     <mat-label>Enter your email</mat-label>
+     <input  autofocus  ="name" class="same" matInput placeholder="name@example.com" [formControl]="email" required>
+     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+   </mat-form-field>
+   </div>
+   
+   <div id="password" class='pssword'>
+   <mat-form-field appearance="standard" [style.width.px]=265>
+ <mat-label>Enter your password</mat-label>
+ <input [value]="name"class="same" matInput  placeholder="Password!1." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
+ <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
+ <mat-error *ngIf="!hide">{{incorrect()}}</mat-error>
+ <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+ <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+ 
+ </button>
+</mat-form-field>
+      </div>
 
-   <div class='btn'>
-      <button type="submit" class="btn-style" mat-raised-button color="primary">Login</button>
-       </div>
-       <div class="notmember" id="myDiv" >
-        Don't have an account ?
-           <a routerLink='/sign-up'mat-button color='accent' class='btn'  > Sign up</a>
-       </div>
-      </form>
-        </div> 
-     
-     
+<div class='btn'>
+ <button type="submit" class="btn-style" mat-raised-button color="primary">Login</button>
+  </div>
+  <div class="notmember" id="myDiv" >
+   Don't have an account ?
+      <a routerLink='/sign-up'mat-button color='accent' class='btn'  > Sign up</a>
+  </div>
+ </form>
+   </div> 
+
+
 </div>

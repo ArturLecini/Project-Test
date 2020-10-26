@@ -23,15 +23,21 @@
   margin-bottom: 20px;
   font-family: monospace;
   }  
-  
+  .name{
+    margin: 10px;
+  }
+  .lastname{
+    margin: 10px;
+  }
     .password{
+      margin: 10px;
       margin-top: 5px;
       margin-bottom: 5px;
-      width: 465px;
+      width: 335px;
     }
   .email{
-    width: 465px;
-   
+    width: 335px;
+    margin: 10px;
   }
   .notmember{
     margin-top: 5px;
@@ -41,7 +47,8 @@
     }
  
     .phone{
-      width: 465px;
+      margin: 10px;
+      width: 265px;
     }
     .btn{
       margin-top: 5px;
@@ -66,4 +73,8 @@
   
   .mat-form-field {
     margin-top: 16px;
+  }
+  input { 
+padding: 10px;
+margin: 10px;
   }

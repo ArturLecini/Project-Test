@@ -22,9 +22,6 @@ export class AccountComponent implements OnInit {
   constructor(private sharedService:SharedService) {}
   
   
- 
-
-  
 
   ngOnInit() {  
   }

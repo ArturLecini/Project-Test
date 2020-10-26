@@ -6,6 +6,7 @@ providedIn: 'root'
 })
 export class SharedService {
 private subject = new Subject<any>();
+
 sendClickEvent() {
   this.subject.next();
 }
