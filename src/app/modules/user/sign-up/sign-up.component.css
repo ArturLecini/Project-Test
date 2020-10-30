@@ -3,8 +3,10 @@
   margin:50px auto;
   width: 270px;
   background-color:azure;
-  padding: 97px;
- height: 590px;
+  padding: 77px;
+ height: 580px;
+ min-height: 450px;
+ 
  border-style: outset;
  border-color:white;
  border-bottom: rgb(103, 187, 187);
@@ -14,7 +16,6 @@
  border-top-width: 5px;
  border-top-color:rgb(231, 12, 41) ;
 }
- 
 .logo{
   margin-top: 0%;
   width: 200px;
@@ -26,7 +27,6 @@
 
 .title{
   color: rgb(216, 15, 15);
-
   text-align: center;
 text-shadow: teal;
 font-size:xx-large;
@@ -53,11 +53,7 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
    width:200px ;
    flex-direction: row;
   }
-  .notmember{
-    margin-top: 5px;
-  text-align: top;
-    margin-bottom: 5px;
-    }
+
     .btn{
       margin-top: 10px;
   text-align: center;

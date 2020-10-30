@@ -39,14 +39,10 @@ import {TokenInterceptor} from "./core/interceptor";
 import { DeleteDialogComponent } from './modules/admin/list-user/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-dialog.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     AddUserComponent,
-
     ListUserComponent,
     HeaderComponent,
     FooterComponent,
@@ -55,26 +51,12 @@ import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-
       UserComponent,
       LoginComponent,
       SignUpComponent,
-      
-
+    AccountComponent,
       ServiceComponent,
       MainHomeComponent,
       HomeComponent,
       MinitoolbarComponent,
-    
-    FooterComponent,
-    AccountComponent,
-
-
-
-
-
     DeleteDialogComponent,
-
-
-
-
-
 EditDialogComponent,
 
 
@@ -83,7 +65,6 @@ EditDialogComponent,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule,
     FormsModule ,
     FlexLayoutModule ,
    ReactiveFormsModule,

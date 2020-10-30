@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {User} from "../model/user.model";
+import {User} from "../model/user.interface";
 import {Observable} from "rxjs/index";
 import {ApiResponse} from "../model/api.response";
 
@@ -8,10 +8,10 @@ import {ApiResponse} from "../model/api.response";
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://localhost:3000/users/';
+  baseUrl: string = 'http://localhost:3000/user/';
 
   login(loginPayload) : Observable<ApiResponse> {
-    return this.http.post<ApiResponse>('http://localhost:3000/' + 'token/generate-token', loginPayload);
+    return this.http.post<ApiResponse>('http://localhost:3000/' ,loginPayload);
   }
 
   getUsers() : Observable<ApiResponse> {

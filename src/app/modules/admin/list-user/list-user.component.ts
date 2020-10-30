@@ -1,6 +1,6 @@
 import { Component, OnInit ,Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import{ User} from '../../../core/model/user.model'
+import{ User} from '../../../core/model/user.interface'
 import {Router} from "@angular/router";
 import {ApiService} from "../../../core/services/api.service";
 import { DeleteDialogComponent} from '../list-user/delete-dialog/delete-dialog.component';

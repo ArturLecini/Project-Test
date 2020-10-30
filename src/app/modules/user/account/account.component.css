@@ -1,5 +1,5 @@
 table {
-    width: 80%;
+  width: 80%;
 margin-top: 60px;
 margin-left: 130px;
 margin-right: 50px;
@@ -9,129 +9,130 @@ height: 150%;
 background-position: center;
 min-width: 20%;
 margin-bottom: 10%;
+}
+th{
+  background: #1d2b3a;
+  color: rgb(229, 238, 240);
+font-size: 15px;
+  }.btnadd{
+border: inset;
+border-width: 0.1px;
+      margin:2px;
+      border-radius: 10px;
+      background: #1d2b3a;
+  color: rgb(229, 238, 240);
   }
-  th{
-    background: #1d2b3a;
-    color: rgb(229, 238, 240);
-  font-size: 15px;
-    }.btnadd{
-  border: inset;
-  border-width: 0.1px;
-        margin:2px;
-        border-radius: 10px;
-        background: #1d2b3a;
-    color: rgb(229, 238, 240);
-    }
-    .bg-container {
-      width: 100%;
-      height: 150%;
-      border: 1px solid rgba(0, 0, 0, 0.5);
-      background-image:url(src/assets/img/db.png);
-     margin: 0%;
-     background-size: initial;
+  .bg-container {
+    width: 100%;
+    height: 150%;
+    
+    background-image:url(src/assets/img/db.png);
+   margin: 0%;
+   background-size: initial;
 
-     background-repeat: no-repeat;
-     background-attachment: fixed;
- 
-     background-position: right bottom;
-    background-color: whitesmoke;
-  }
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+
+   background-position: right bottom;
+  background-color: whitesmoke;
+}
+
   
-    
 
-    .bg-sidenav-content {
+  .bg-sidenav-content {
+  
+    height: 100%;
+    align-items: center;
+    justify-content: center;
     
-      height: 100%;
-      align-items: center;
-      justify-content: center;
-      
-    }
-    .btnmenu{
-      color: rgb(235, 235, 214);
-      background-color:transparent;
-   margin-right: 80%;
-    }
-    .btnhide{
-      color: rgb(19, 19, 18);
-      background-color:grey;
-      margin-right: 96%;
-    }
-    .bg-sidenav {
-      padding: 20px;background-color: whitesmoke;
-     
-    }
-    .btnedit{
+  }
+  .btnmenu{
+    color: rgb(235, 235, 214);
+    background-color:transparent;
+ margin-right: 80%;
+  }
+  .btnhide{
+    color: rgb(19, 19, 18);
+    background-color:grey;
+    margin-right: 96%;
+  }
+  .bg-sidenav {
+    padding: 20px;background-color: whitesmoke;
+   
+  }
+  .btnedit{
 
 margin:2px;
-        border-radius: 9px;
-      background-color:whitesmoke;
-      color: black;
-    }
-    .btndelete{
+      border-radius: 9px;
+    background-color:whitesmoke;
+    color: black;
+  }
+  .btndelete{
 width: 100px;
-      margin:2px;
-              border-radius: 9px;
-            background-color:rgb(248, 236, 236);
-            color: rgb(192, 8, 8);
-          }
-          .info{
-            max-width: 250px;
-            text-decoration: initial;
-            text-align: justify;
-          }
-          .activesignup{
-            color: red;
-            
-          }
+    margin:2px;
+            border-radius: 9px;
+          background-color:rgb(248, 236, 236);
+          color: rgb(192, 8, 8);
+        }
+        .info{
+          max-width: 250px;
+          text-decoration: initial;
+          text-align: justify;
+        }
+        .activesignup{
+          color: red;
+          
+        }
 
-          .example-small-box, .example-large-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 16px;
-            padding: 16px;
-            border-radius: 8px;
-          }
-          
-          .example-small-box {
-            height: auto;
-            width: auto;
-          }
-          
-          .example-large-box {
-            height: auto;
-            width: auto;
-          }
-          .tab{
-            background-color: gray;
-          }
-          .mat-toolbar.mat-primary {
-            background: #1d2b3a;
-            color: rgb(229, 238, 240);
-         max-width: width auto;
-         min-width: 651px;
-         height: 30px;
-        
-        
-         
-        
-        }.toolbar{
-            flex-direction: column;
-        min-width: 315px;
+        .example-small-box, .example-large-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 16px;
+          padding: 16px;
+          border-radius: 8px;
         }
         
-        .spacer{
-            flex: 1 1 auto;
+        .example-small-box {
+          height: auto;
+          width: auto;
         }
-        .btn{
-          
-        margin:2px;
-        border-radius: 9px;
+        
+        .example-large-box {
+          height: auto;
+          width: auto;
         }
-        .btn-add{
-          width: 100px;
-      margin:2px;
-              border-radius: 9px;
-            background-color:rgb(248, 236, 236);
-            color: rgb(192, 8, 8);
+        .tab{
+          background-color: gray;
         }
+        .mat-toolbar.mat-primary {
+          background: #1d2b3a;
+          color: rgb(229, 238, 240);
+       max-width: width auto;
+      
+      }.toolbar{
+          flex-direction: column;
+      min-width: 315px;
+      }
+      
+      .spacer{
+          flex: 1 1 auto;
+      }
+      .btn{
+          width: 490section;
+          display: table-cell;
+      }
+      .btn-add{
+        width: 100px;
+    margin:2px;
+            border-radius: 9px;
+          background-color:rgb(248, 236, 236);
+          color: rgb(192, 8, 8);
+      } .mat-icon {
+        margin-top: 5px;
+        transform: scale(1.5);
+        margin-left: 10px;
+        margin-left: 5px;
+      transform-origin: left;
+      transition-duration: 25ms;
+    }

@@ -5,12 +5,10 @@
 
 } .mat-sidenav-container{
     background-image:url(src/assets/img/bg2.png);
-  
+  background-color: #f5f7fa → #c3cfe2;
 background-size: cover;
-
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     background-position: center ;
 }
 .toolbar{
