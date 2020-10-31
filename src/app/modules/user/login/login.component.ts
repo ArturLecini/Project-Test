@@ -1,10 +1,11 @@
 import { Component ,OnInit} from '@angular/core';
-import {FormControl ,Validators} from '@angular/forms';
+import {FormControl ,FormBuilder,Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import { SharedService } from '@shared/shared.service';
 import { Subscription } from 'rxjs';
-
 import {AccountComponent} from '../account/account.component'
+import { AuthService } from '../auth.service';
+
 @Component({ 
     selector: 'app-login',
     templateUrl: './login.component.html' ,
@@ -12,6 +13,9 @@ import {AccountComponent} from '../account/account.component'
 })
 
 export class LoginComponent implements OnInit {
+
+
+
 
   clickEventsubscription:Subscription;
 name: string;
@@ -39,14 +43,14 @@ hide = true;
       return  'Max length is 12 characters'  ;
         
     } 
-
-       
-   
- 
     incorrect(){
       return"  hide pasword "}
+LoginForm = this.fb.group({
+ email: [''],
+  password: [''],
+});
+    constructor(private router: Router,private sharedService:SharedService, private authService: AuthService ,private fb : FormBuilder ) { 
 
-    constructor(private router: Router,private sharedService:SharedService) { 
 
       this.name= "value";
        this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
@@ -54,6 +58,12 @@ hide = true;
     }
 
     ngOnInit(): void{ 
+      const userData ={
+        EMAIL: "artur@artur",
+        PASSWORD: "artur123",
+      };
+      
+this.authService.login(userData).subscribe((res)=> console.log('Login'));
     }//after click sign up need hiden
     Showhide() {
       let x = document.getElementById("myDiv");
@@ -63,13 +73,21 @@ hide = true;
         x.style.display = "none";
       }
     }
-    onSubmit() {if (this.email.valid&&this.password.valid) {
+    onlogin() {
+      
+      const formvalue =this.LoginForm.value;
+      this.authService.login(formvalue).subscribe(res => {
+if(res){
+  this.router.navigateByUrl('/layout');
+}
+      });
+     /* if (this.email.valid&&this.password.valid) {
       if(this.hide){
       return this.router.navigateByUrl('/layout');
       } 
     } 
     console.log('form error please write your pasword and email');
-    
+    */
 }
   }
   

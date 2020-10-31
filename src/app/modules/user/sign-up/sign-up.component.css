@@ -4,7 +4,7 @@
   width: 270px;
   background-color:azure;
   padding: 77px;
- height: 580px;
+ height: 600px;
  min-height: 450px;
  
  border-style: outset;
@@ -60,15 +60,20 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
       margin-bottom: 5px;
      color: green;
     }
-    .btn-style{
+    .btn-style{ 
       background-color :rgb(202, 18, 18);
-        background-repeat: no-repeat;
-        border: none;
-        cursor:pointer;
-        overflow: hidden;
-        outline:none;
-        font-size: 0.9em;
-        padding: 0px;
-        width: 100px;
-        margin-bottom: 2px;
-    }
+      background-repeat: no-repeat;
+      border: none;
+      cursor:pointer;
+      overflow: hidden;
+      outline:none;
+      font-size: 0.9em;
+      padding: 0px;
+      width: 100px;
+      margin-bottom: 2px;
+      color: rgb(253, 247, 247);
+      
+    }.notmember{
+      margin-top: 5px;
+    color: #000;
+      margin-bottom: 5px;}

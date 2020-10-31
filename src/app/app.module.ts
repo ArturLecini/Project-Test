@@ -33,11 +33,10 @@ import { ServiceComponent } from './shared/service/service.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { MaterialModule } from './styles/material/material.module'; 
 
-import { ApiService } from './core/services/api.service';
-import {TokenInterceptor} from "./core/interceptor";
 
 import { DeleteDialogComponent } from './modules/admin/list-user/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-dialog.component';
+import { AuthService } from './modules/user/auth.service';
 
 @NgModule({
   declarations: [
@@ -72,9 +71,7 @@ EditDialogComponent,
     AppRoutingModule
   
   ],
-  providers: [AuthGuard,ApiService,{provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptor,
-    multi : true}],
+  providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

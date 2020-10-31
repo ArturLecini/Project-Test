@@ -49,7 +49,9 @@ border-width: 0.1px;
   .btnmenu{
     color: rgb(235, 235, 214);
     background-color:transparent;
- margin-right: 80%;
+margin-left: 0%;
+ text-align: left;
+ width: 50px;
   }
   .btnhide{
     color: rgb(19, 19, 18);

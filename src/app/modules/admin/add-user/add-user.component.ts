@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup,Validators,FormBuilder} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {Router} from '@angular/router';
-import {ApiService} from '../../../core/services/api.service'
+
 import { from } from 'rxjs';
 @Component({
   selector: 'app-add-user',
@@ -46,7 +46,7 @@ export class AddUserComponent implements OnInit {
   incorrect(){
     return"  hide pasword "}
 
-    constructor(private formBuilder: FormBuilder,private router: Router, private apiService: ApiService) { }
+    constructor(private formBuilder: FormBuilder,private router: Router) { }
 
     addForm: FormGroup;
   
@@ -63,10 +63,9 @@ export class AddUserComponent implements OnInit {
     }
   
     onSubmit() {
-      this.apiService.createUser(this.addForm.value)
-        .subscribe( data => {
+      
           this.router.navigate(['list-user']);
-        });
+        
     }
   
   }

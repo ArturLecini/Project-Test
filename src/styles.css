@@ -2,10 +2,12 @@
 
 
 html, body { 
-    
-    background-color: lightslategrey; 
     background-image:url(src/assets/img/bg8.png);
+    /*background:#64c3db;
+	background: linear-gradient(to bottom, #f8f5f5, #3daa5e) ;
+  */
     background-size: cover;
+
 width: 100%;
 margin: auto; 
     background-repeat: no-repeat;

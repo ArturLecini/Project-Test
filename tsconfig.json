@@ -5,7 +5,10 @@
     "paths": {
       "@shared/*": ["src/app/modules/user/services/shared.service",
       "src/app/core/services"],
-      "@Service/*": [ "src/app/core/services"]
+      "@Service/*": [ "src/app/core/services"],
+      "@env/*": [ "src/environments/"],
+      "@models/*": [ "src/app/shared/models/user.interface.ts"]
+      
   },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

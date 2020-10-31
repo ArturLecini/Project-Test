@@ -2,12 +2,12 @@
   <div class='logo'> <img alt="Image " class ="logo" src="assets/img/login.png" ></div>
      <div class='title'>Login</div>
 <div class='form'>
-<form (ngSubmit)="onSubmit()" novalidate >
+<form [formGroup]="LoginForm" (ngSubmit)="onlogin()" novalidate >
        
   <div class="username">
    <mat-form-field appearance="standard" [style.width.px]=265>
      <mat-label>Enter your email</mat-label>
-     <input  autofocus  ="name" class="same" matInput placeholder="name@example.com" [formControl]="email" required>
+     <input type="email" autofocus  ="name" class="same" matInput placeholder="name@example.com" [formControl]="email" [formControlName]="email"required>
      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
    </mat-form-field>
    </div>
@@ -15,7 +15,7 @@
    <div id="password" class='pssword'>
    <mat-form-field appearance="standard" [style.width.px]=265>
  <mat-label>Enter your password</mat-label>
- <input [value]="name"class="same" matInput  placeholder="Password!1." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
+ <input type="password" [value]="name"class="same" matInput  placeholder="Password!1." [type]="hide ? 'password' : 'text'" [formControlName]="password" [formControl]="password"  required>
  <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
  <mat-error *ngIf="!hide">{{incorrect()}}</mat-error>
  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">

@@ -1,8 +1,8 @@
 import { Component, OnInit ,Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import{ User} from '../../../core/model/user.interface'
+
 import {Router} from "@angular/router";
-import {ApiService} from "../../../core/services/api.service";
+
 import { DeleteDialogComponent} from '../list-user/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from '../list-user/edit-dialog/edit-dialog.component';
 
@@ -33,7 +33,7 @@ export class ListUserComponent  {
 
   displayedColumns: string[] = ['position', 'name', 'email','addres', 'phone'];
   dataSource = ELEMENT_DATA;
-  users: User[];
+  
   constructor(public dialog: MatDialog) {}
   openDialog(): void {
     const dialogRef = this.dialog.open(DeleteDialogComponent);{
