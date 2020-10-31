@@ -54,9 +54,9 @@ hide = true;
         this.Showhide() })
     }
 LoginForm =this.fb.group({
- email: [
+ EMAIL: [
     '', ],
- password: ['', ],
+ PASSWORD: ['', ],
   
 });
     ngOnInit(): void{ 

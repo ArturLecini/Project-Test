@@ -72,7 +72,7 @@ EditDialogComponent,
     AppRoutingModule,
    
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard,AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
