@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 name: string;
 hide = true;
 
-    email = new FormControl('', [Validators.required, Validators.email]);
+   email = new FormControl('', [Validators.required, Validators.email]);
     password = new FormControl('', [ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
    
 
@@ -27,7 +27,7 @@ hide = true;
  }
     getErrorMessage() {
       if (this.email.hasError('required') ){
-        return 'You must enter your email';
+        return 'You must enter youremail';
       } else if (this.email.hasError('email')) {
         return  'Not a valid email'  ;
       }}
@@ -48,15 +48,13 @@ hide = true;
     constructor(private router: Router,private sharedService:SharedService, 
       private authService: AuthService ,private fb : FormBuilder ) { 
 
-
       this.name= "value";
        this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
         this.Showhide() })
     }
 LoginForm =this.fb.group({
- EMAIL: [
-    '', ],
- PASSWORD: ['', ],
+EMAIL: ['' ,],
+ PASSWORD: [''],
   
 });
     ngOnInit(): void{ 
@@ -65,9 +63,9 @@ LoginForm =this.fb.group({
       const formValue = this.LoginForm.value;
       this.subscription.add(
         this.authService.login(formValue).subscribe((res) => {
-          if(res){
+         
             this.router.navigateByUrl('/layout');
-          }
+         
         })
       );
     }
@@ -78,7 +76,7 @@ LoginForm =this.fb.group({
       return this.router.navigateByUrl('/layout');
       } 
     } 
-    console.log('form error please write your pasword and email');
+    console.log('form error please write your pasword andemail');
     */
    //after click sign up need hiden
  Showhide() {

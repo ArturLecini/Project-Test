@@ -29,7 +29,7 @@ export class AuthService {
   }
   login(authData: USER): Observable<UserResponse | void> {
     return this.http
-      .post<UserResponse>(`http://localhost:3000/login`, authData)
+      .post<UserResponse>(`${environment.API_URL}/login`, authData)
       .pipe(
         map((user: UserResponse) => {
           this.saveLocalStorage(user);
@@ -41,11 +41,12 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('user');
+    localStorage.removeItem('auth');
     this.user.next(null);
     this.router.navigate(['/login']);
   }
 
+  
   private checkToken(): void {
     const user = JSON.parse(localStorage.getItem('user')) || null;
 
@@ -59,6 +60,7 @@ export class AuthService {
       }
     }
   }
+
 
   private saveLocalStorage(user: UserResponse): void {
     const {messages,token , ...rest } = user;

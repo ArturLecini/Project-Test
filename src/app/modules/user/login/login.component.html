@@ -6,7 +6,7 @@
        
   <div class="username">
    <mat-form-field appearance="standard" [style.width.px]=265>
-     <mat-label>Enter your email</mat-label>
+     <mat-label>Enter your EMAIL</mat-label>
      <input formControlName="EMAIL" [formControl]="email"  type="email" autofocus  ="name" class="same" matInput placeholder="name@example.com" required>
      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
    </mat-form-field>
@@ -14,11 +14,11 @@
    
    <div id="password" class='pssword'>
    <mat-form-field appearance="standard" [style.width.px]=265>
- <mat-label>Enter your password</mat-label>
- <input formControlName="PASSWORD" type="password" [value]="name"class="same" matInput  placeholder="Password!1." [type]="hide ? 'password' : 'text' "[formControl]="password"  required>
+ <mat-label>Enter your PASSWORD</mat-label>
+ <input formControlName="PASSWORD" type="password" [value]="name"class="same" matInput  placeholder="PASSWORD!1." [type]="hide ? 'PASSWORD' : 'text' "[formControl]="password"  required>
  <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
  <mat-error *ngIf="!hide">{{incorrect()}}</mat-error>
- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+ <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide PASSWORD'" [attr.aria-pressed]="hide">
  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
  
  </button>
