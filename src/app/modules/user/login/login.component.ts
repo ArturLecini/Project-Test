@@ -13,10 +13,7 @@ import { AuthService } from '../auth.service';
 })
 
 export class LoginComponent implements OnInit {
-
-
-
-
+  private subscription: Subscription = new Subscription();
   clickEventsubscription:Subscription;
 name: string;
 hide = true;
@@ -44,43 +41,38 @@ hide = true;
         
     } 
     incorrect(){
-      return"  hide pasword "}
-LoginForm = this.fb.group({
- email: [''],
-  password: [''],
-});
-    constructor(private router: Router,private sharedService:SharedService, private authService: AuthService ,private fb : FormBuilder ) { 
+
+
+      return "  hide pasword "}
+
+    constructor(private router: Router,private sharedService:SharedService, 
+      private authService: AuthService ,private fb : FormBuilder ) { 
 
 
       this.name= "value";
        this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
         this.Showhide() })
     }
-
+LoginForm =this.fb.group({
+ email: [
+    '', ],
+ password: ['', ],
+  
+});
     ngOnInit(): void{ 
-      const userData ={
-        EMAIL: "artur@artur",
-        PASSWORD: "artur123",
-      };
+    }  onlogin(): void {
       
-this.authService.login(userData).subscribe((res)=> console.log('Login'));
-    }//after click sign up need hiden
-    Showhide() {
-      let x = document.getElementById("myDiv");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
+      const formValue = this.LoginForm.value;
+      this.subscription.add(
+        this.authService.login(formValue).subscribe((res) => {
+          if(res){
+            this.router.navigateByUrl('/layout');
+          }
+        })
+      );
     }
-    onlogin() {
-      
-      const formvalue =this.LoginForm.value;
-      this.authService.login(formvalue).subscribe(res => {
-if(res){
-  this.router.navigateByUrl('/layout');
-}
-      });
+   
+ 
      /* if (this.email.valid&&this.password.valid) {
       if(this.hide){
       return this.router.navigateByUrl('/layout');
@@ -88,7 +80,15 @@ if(res){
     } 
     console.log('form error please write your pasword and email');
     */
-}
+   //after click sign up need hiden
+ Showhide() {
+      let x = document.getElementById("myDiv");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
   }
   
  

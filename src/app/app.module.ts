@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core'; 
-import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HTTP_INTERCEPTORS,} from "@angular/common/http";
+
 
 import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
@@ -33,7 +33,7 @@ import { ServiceComponent } from './shared/service/service.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { MaterialModule } from './styles/material/material.module'; 
 
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DeleteDialogComponent } from './modules/admin/list-user/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-dialog.component';
 import { AuthService } from './modules/user/auth.service';
@@ -57,7 +57,7 @@ import { AuthService } from './modules/user/auth.service';
       MinitoolbarComponent,
     DeleteDialogComponent,
 EditDialogComponent,
-
+ 
 
   ],
   imports: [
@@ -68,10 +68,11 @@ EditDialogComponent,
     FlexLayoutModule ,
    ReactiveFormsModule,
    MaterialModule,
-    AppRoutingModule
-  
+
+    AppRoutingModule,
+   
   ],
-  providers: [AuthGuard,AuthService],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
