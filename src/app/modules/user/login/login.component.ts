@@ -18,10 +18,11 @@ export class LoginComponent implements OnInit {
 name: string;
 hide = true;
 
+
+//message if email or password is valid
   EMAIL = new FormControl('', [Validators.required, Validators.email]);
     PASSWORD= new FormControl('', [ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
-   
-
+  
    errorpasw(){
    return 'enter identic pasword';
  }
@@ -38,7 +39,6 @@ hide = true;
         return  'Please continu more your password is min 8 characters '  ;
       }
       return  'Max length is 12 characters'  ;
-        
     } 
     incorrect(){
       return "  hide pasword "}
@@ -49,7 +49,8 @@ hide = true;
       this.name= "value";
        this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
         this.Showhide() })
-    }invalidLogin: boolean = false;
+    }
+    invalidLogin: boolean = false;
     LoginForm: FormGroup;
     ngOnInit(): void{ 
       window.localStorage.removeItem('token');
@@ -58,8 +59,14 @@ hide = true;
        'PASSWORD': this.PASSWORD,
       });
 
-
-    }  onlogin(): void {
+    } 
+     /* 
+      return this.router.navigateByUrl('/layout');
+      } 
+    } 
+    console.log('form error please write your pasword andemail');
+    */ 
+   onlogin(): void {
       if (this.LoginForm.invalid) {
         return;
       }
@@ -68,12 +75,16 @@ hide = true;
         PASSWORD: this.LoginForm.controls.PASSWORD.value
       }
       this.authService.login(loginPayload).subscribe((data) => {
-        debugger;
-        if(data.status === 200) {
-         this.router.navigateByUrl('/layout');
+         this.router.navigateByUrl('/layout')
+          if (this.EMAIL.valid&&this.PASSWORD.valid) {
+             if(this.hide){
+                if(data.status === 200) {
+                ;
           window.localStorage.setItem('token', data.result.token);
-          
-        }else { 
+                }
+            }
+        }
+        else { 
           this.invalidLogin = true;
           alert(data.messages);
         }
@@ -81,13 +92,6 @@ hide = true;
     }
    
  
-     /* if (this.email.valid&&this.password.valid) {
-      if(this.hide){
-      return this.router.navigateByUrl('/layout');
-      } 
-    } 
-    console.log('form error please write your pasword andemail');
-    */
    //after click sign up need hiden
  Showhide() {
       let x = document.getElementById("myDiv");

@@ -68,7 +68,6 @@ EditDialogComponent,
     FlexLayoutModule ,
    ReactiveFormsModule,
    MaterialModule,
-
     AppRoutingModule,
    
   ],

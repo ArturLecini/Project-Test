@@ -8,7 +8,13 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let token = window.localStorage.getItem('token');
-    if (token) {
+   if (request.headers.has('Content-Type')) {
+      request = request.clone({
+        setHeaders: {
+          'content-type': 'application/json'
+        }
+      });
+    } if (token) {
       request = request.clone({
         setHeaders: {
           'Authorization': token
@@ -16,13 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
       });
     }
   
-    if (!request.headers.has('Content-Type')) {
-      request = request.clone({
-        setHeaders: {
-          'content-type': 'application/json'
-        }
-      });
-    }
+    
   
     request = request.clone({
       headers: request.headers.set('Accept', 'application/json')

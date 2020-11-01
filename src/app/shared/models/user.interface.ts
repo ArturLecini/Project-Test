@@ -18,9 +18,10 @@ export interface UserResponse{
  
     messages: string;
     token :any;
+    text : string;
     status: number;
     result: any;
-    responseType: 'JSON';
+    responseType: any;
     ID :  number;
    ROLE : ROLES;
     

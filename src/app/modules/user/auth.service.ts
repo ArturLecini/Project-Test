@@ -25,6 +25,10 @@ export class AuthService {
     return this.http.post<UserResponse>('http://localhost:3000/login',loginPayload);
   }
 
+  signup(signupPayload) : Observable<UserResponse> {
+    return this.http.post<UserResponse>('http://localhost:3000/users/add/',signupPayload);
+  }
+
   getAll() : Observable<UserResponse> {
     return this.http.get<UserResponse>(this.baseUrl +'/users');
   }
@@ -42,6 +46,9 @@ export class AuthService {
     return this.http.delete<UserResponse>(this.baseUrl+'/users' + ID);
   }
  
+
+
+  
   }
 
 
