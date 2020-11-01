@@ -1,5 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
-import {FormControl ,FormBuilder,Validators} from '@angular/forms';
+import {FormControl,FormGroup ,FormBuilder,Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import { SharedService } from '@shared/shared.service';
 import { Subscription } from 'rxjs';
@@ -18,31 +18,29 @@ export class LoginComponent implements OnInit {
 name: string;
 hide = true;
 
-   email = new FormControl('', [Validators.required, Validators.email]);
-    password = new FormControl('', [ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
+  EMAIL = new FormControl('', [Validators.required, Validators.email]);
+    PASSWORD= new FormControl('', [ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
    
 
    errorpasw(){
    return 'enter identic pasword';
  }
     getErrorMessage() {
-      if (this.email.hasError('required') ){
+      if (this.EMAIL.hasError('required') ){
         return 'You must enter youremail';
-      } else if (this.email.hasError('email')) {
+      } else if (this.EMAIL.hasError('email')) {
         return  'Not a valid email'  ;
       }}
       getpErrorMessage() {
-       if (this.password.hasError('required')) {
+       if (this.PASSWORD.hasError('required')) {
             return  'Please must enter your password ';
-      }else if (this.password.hasError('minlength')) {
+      }else if (this.PASSWORD.hasError('minlength')) {
         return  'Please continu more your password is min 8 characters '  ;
       }
       return  'Max length is 12 characters'  ;
         
     } 
     incorrect(){
-
-
       return "  hide pasword "}
 
     constructor(private router: Router,private sharedService:SharedService, 
@@ -51,23 +49,35 @@ hide = true;
       this.name= "value";
        this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
         this.Showhide() })
-    }
-LoginForm =this.fb.group({
-EMAIL: ['' ,],
- PASSWORD: [''],
-  
-});
+    }invalidLogin: boolean = false;
+    LoginForm: FormGroup;
     ngOnInit(): void{ 
+      window.localStorage.removeItem('token');
+      this.LoginForm = this.fb.group({
+       'EMAIL':this.EMAIL ,
+       'PASSWORD': this.PASSWORD,
+      });
+
+
     }  onlogin(): void {
-      
-      const formValue = this.LoginForm.value;
-      this.subscription.add(
-        this.authService.login(formValue).subscribe((res) => {
-         
-            this.router.navigateByUrl('/layout');
-         
-        })
-      );
+      if (this.LoginForm.invalid) {
+        return;
+      }
+      const loginPayload = {
+        EMAIL: this.LoginForm.controls.EMAIL.value,
+        PASSWORD: this.LoginForm.controls.PASSWORD.value
+      }
+      this.authService.login(loginPayload).subscribe((data) => {
+        debugger;
+        if(data.status === 200) {
+         this.router.navigateByUrl('/layout');
+          window.localStorage.setItem('token', data.result.token);
+          
+        }else { 
+          this.invalidLogin = true;
+          alert(data.messages);
+        }
+      });
     }
    
  
