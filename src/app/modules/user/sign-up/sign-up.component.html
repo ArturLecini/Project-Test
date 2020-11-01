@@ -56,14 +56,13 @@
  </mat-form-field>
         </div>
 
-   <div class='pssword'>
+   <div class='cpssword'>
           <mat-form-field appearance="standard" [style.width.px]=268>
         <mat-label>Confirm your password</mat-label>
         <input [formControl]="SignupForm.controls.cpassword" class="same" matInput  placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" required>
         <mat-error *ngIf="cpassword.invalid">{{getcErrorMessage()}}</mat-error>
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-  
         </button>
       </mat-form-field>
              </div>

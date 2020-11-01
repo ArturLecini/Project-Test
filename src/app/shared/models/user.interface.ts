@@ -15,14 +15,15 @@ ROLE:boolean;
 
 }
 export interface UserResponse{
- 
-    messages: string;
+   ID :  number; 
+   message: string;
+    idToken: string
     token :any;
     text : string;
     status: number;
     result: any;
     responseType: any;
-    ID :  number;
+    
    ROLE : ROLES;
     
   }

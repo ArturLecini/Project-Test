@@ -63,7 +63,7 @@ export class ListUserComponent  {
     }*/
     this.authService.getAll()
       .subscribe( data => {
-        this.users= data.result;
+        
       });
   }
   }
