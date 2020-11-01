@@ -34,16 +34,31 @@ margin-bottom: 15px;
 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
 
 }  
-  .name{
-    position: absolute;
-    padding-left: 139px;
+  .firstname{
+    position: static;
+    
+   padding-left: 0px;
+   display: inline;
   }
-  .username{
-    margin-top: 5px;
-    margin-bottom: 5px;
+  .lastname{
+    display: inline;
+    padding-left: 10px;
+    display: inline;
+    position: static;
     }
     .phone{
-      width: 265;
+      text-align: right;
+      padding-left: 10px;
+      display: inline;
+      position: static;
+    }
+
+    .adress{  
+      position: static;
+       text-align: left;
+      padding-left: 0px;
+      display: inline;
+      
     }
     .password{
       margin-top: 5px;

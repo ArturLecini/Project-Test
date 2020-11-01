@@ -11,35 +11,41 @@ import { AuthService } from '../auth.service';
 export class SignUpComponent implements OnInit {
   hide = true;
   EMAIL = new FormControl('', [Validators.required, Validators.email]);
-  PASSWORD = new FormControl('', [Validators.required,Validators.minLength(6)],);
- // confirm = new FormControl('', [Validators.required,Validators.minLength(6)]);
+  PASSWORD = new FormControl('', [Validators.required,Validators.minLength(8)],);
+  cpassword = new FormControl('', [Validators.required,Validators.minLength(8)]);
  
   getErrorMessage() {
-    if (this.EMAIL.hasError('required') ){
-      return 'Please You need a email';
-    } else if (this.EMAIL.hasError('email')) {
-      return  'Please need a valid email'  ;
-    }
-  }
+        if (this.EMAIL.hasError('required') ){
+                return 'Please You need a email';
+          } else if (this.EMAIL.hasError('email')) {
+                    return  'Please need a valid email'  ;
+                 }
+                    }
+
     getpErrorMessage() {
-        if (this.PASSWORD.hasError('required')) {
-          return  'Please must enter your password ';
-    } 
-      return  'Please continue more  than "6" characters'  ;
-  }
- /* getcErrorMessage() {
-    if (this.confirm.hasError('required')) {
-  return  'Please confirm password'  ;
-}
-  else {
-    return  'Please set correct password'  ;
-  }
-}
-*/
+             if (this.PASSWORD.hasError('required')) {
+                      return  'Please must enter your password ';
+                    }  return  'Please continue more  than "8" characters'  ;
+                      }
+
+  getcErrorMessage() {
+             if (this.cpassword.hasError('required')) {
+                 return  'Please confirm password'  ;
+                          } else if (this.SignupForm.controls.PASSWORD.value !== this.SignupForm.controls.cpassword.value) {
+                  return  'Please set correct password'  ;
+                    }
+                }
+
   constructor(private router: Router, private authService : AuthService, private fb : FormBuilder) { }
+ 
+ 
   invalidLogin: boolean = false;
   SignupForm: FormGroup;
   ngOnInit(): void{ 
+
+
+
+   
     window.localStorage.removeItem('token');
     this.SignupForm = this.fb.group({
       FIRSTNAME : [''],
