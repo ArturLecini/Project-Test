@@ -15,22 +15,26 @@
    <div id="password" class='pssword'>
    <mat-form-field appearance="standard" [style.width.px]=265>
  <mat-label>Enter your PASSWORD</mat-label>
- <input  type="password" [value]="name"class="same" matInput  placeholder="PASSWORD!1." [type]="hide ? 'PASSWORD' : 'text' "[formControl]="LoginForm.controls.PASSWORD"  required>
+ <input [formControl]="LoginForm.controls.PASSWORD"  type="password" [value]="name"class="same" matInput  placeholder="PASSWORD!1." [type]="hide ? 'password' : 'text'"   required>
  <mat-error *ngIf="PASSWORD.invalid">{{getpErrorMessage()}}</mat-error>
  <mat-error *ngIf="!hide">{{incorrect()}}</mat-error>
- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide PASSWORD'" [attr.aria-pressed]="hide">
- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
- 
+ <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  
  </button>
 </mat-form-field>
       </div>
 
-<div class='btn'>
+<div class='btnlogin'>
  <button type="submit" class="btn-style" mat-raised-button color="primary">Login</button>
   </div>
+  <div class="change" >
+    Forgot your password? 
+       <a id ="myDiv"routerLink='/changepassw'mat-button color='accent' class='btnchange'> Click here</a>
+   </div>
   <div class="notmember" id="myDiv" >
    Don't have an account ?
-      <a id ="myDiv"routerLink='/sign-up'mat-button color='accent' class='btn'  > Sign up</a>
+      <a id ="myDiv"routerLink='/sign-up'mat-button color='accent' class='btnsignup'  > Sign up</a>
   </div>
  </form>
    </div> 

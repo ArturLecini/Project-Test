@@ -38,6 +38,7 @@ import { DeleteDialogComponent } from './modules/admin/list-user/delete-dialog/d
 import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-dialog.component';
 import { AuthService } from './modules/user/auth.service';
 import { TokenInterceptor} from './core/interceptor';
+import { ChangePasswComponent } from './modules/user/change-passw/change-passw.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { TokenInterceptor} from './core/interceptor';
       MinitoolbarComponent,
     DeleteDialogComponent,
 EditDialogComponent,
+ChangePasswComponent,
  
 
   ],

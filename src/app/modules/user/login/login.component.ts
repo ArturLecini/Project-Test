@@ -20,8 +20,7 @@ export class LoginComponent implements OnInit {
 
 //message if email or password is valid
   EMAIL = new FormControl('', [Validators.required, Validators.email]);
-    PASSWORD= new FormControl('', [ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
-  
+    PASSWORD= new FormControl('',[ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
 errorpasw(){
           return 'enter identic pasword';
         }
@@ -74,28 +73,26 @@ constructor(private router: Router,
 onlogin(): void 
 {
         if (this.LoginForm.invalid) {
-        return ;
-        
+        return ; 
       }
       const loginPayload = {
           EMAIL: this.LoginForm.controls.EMAIL.value,
-             PASSWORD: this.LoginForm.controls.PASSWORD.value
+             PASSWORD: this.LoginForm.controls.PASSWORD.value,
+            
         }
            this.authService.login(loginPayload).subscribe((data) => {
-            this.checklogin();
-                  
+            this.checklogin();     
           });
 }
   checklogin(){  if (this.EMAIL.valid&&this.PASSWORD.valid) {
-                      if(this.hide){  
-                       return  this.router.navigateByUrl('/layout')
+                      if(this.hide ){  
+            return  this.router.navigateByUrl('/layout')
 
-                              } return this.incorrect()
-                             }
-                                 else { 
-                                    return this.invalidLogin = true;
-                                       
-                            }
+                              }   else    
+                                 return this.incorrect()  
+       }
+              return this.invalidLogin = true;         
+                           
 
   } 
  

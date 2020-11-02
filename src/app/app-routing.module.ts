@@ -15,12 +15,14 @@ import { AccountComponent } from './modules/user/account/account.component';
 import { ServiceComponent } from './shared/service/service.component';
 import { MainHomeComponent } from './modules/home/main-home/main-home.component';
 import { HomeComponent } from './modules/home/home.component';
+import { ChangePasswComponent } from './modules/user/change-passw/change-passw.component';
 
 const routes: Routes = [
   
    { path: '', redirectTo: '/login', pathMatch: 'full' },
    {path :'login', component : LoginComponent,canActivate:[AuthGuard],data:['ADMIN'] },
    {path : 'sign-up', component: SignUpComponent},
+   {path : 'changepassw', component: ChangePasswComponent},
    {path : 'layout', component: LayoutComponent ,canActivate:[AuthGuard], data:['ADMIN']},
  
   { path: 'add-user', component: AddUserComponent },

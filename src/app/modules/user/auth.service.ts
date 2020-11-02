@@ -26,17 +26,16 @@ export class AuthService {
 
   login(loginPayload) :Observable<UserResponse| void>{
     return this.http.post<UserResponse>('http://localhost:3000/login',loginPayload)
-   
-  catchError((err)=> this.handlerError(err));
+    catchError((err)=> this.handlerError(err));
   
   }
   signup(signupPayload): Observable<UserResponse| void>{
     return this.http.post<UserResponse>('http://localhost:3000/users/add/',signupPayload)
-   
-  
-  
   }
   
+  changepssw(changeP): Observable<UserResponse| void>{
+    return this.http.patch<UserResponse>(`http://localhost:3000/change-password/ ${changeP.ID}` ,changeP)
+  }
   getAll() : Observable<UserResponse> {
     return this.http.get<UserResponse>(this.baseUrl +'/users');
   }
@@ -83,17 +82,6 @@ export class AuthService {
   }
 }
 
-export class LocalStorageService {
+
  
-  set(key: string, value: string) {
-      localStorage.setItem(key, value);
-  }
-
-  get(key: string) {
-      return localStorage.getItem(key);
-  }
-
-  remove(key: string) {
-      localStorage.removeItem(key);
-  }
-}
+  

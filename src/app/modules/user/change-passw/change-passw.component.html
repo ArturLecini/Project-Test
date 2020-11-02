@@ -1,0 +1,57 @@
+
+<div class='login-div'>
+    <div class='logo'> <img alt="Image " class ="logo" src="assets/img/login.png" ></div>
+       <div class='title'>Change Password</div>
+  <div class='form'>
+  <form [formGroup]="ChangeForm" (ngSubmit)="onlogin()" novalidate >
+         
+    <div class="username">
+     <mat-form-field appearance="standard" [style.width.px]=170>
+       <mat-label>Enter your EMAIL</mat-label>
+       <input  [formControl]="ChangeForm.controls.EMAIL"  type="email" autofocus  ="name" class="same" matInput placeholder="name@example.com" required>
+       <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
+     </mat-form-field>
+     <div class="id">
+     <mat-form-field appearance="standard" [style.width.px]=85>
+        <mat-label>Enter ID</mat-label>
+        <input class="id" [formControl]="ChangeForm.controls.ID"  type="number" id="id" class="same" matInput placeholder="####" required>
+        <mat-error *ngIf="ID.invalid">{{getIDErrorMessage()}}</mat-error>
+      </mat-form-field>
+     </div></div>
+     
+    
+     <div id="password" class='pssword'>
+     <mat-form-field appearance="standard" [style.width.px]=265>
+   <mat-label>Enter new PASSWORD</mat-label>
+   <input  type="password" [value]="name"class="same" matInput  placeholder="PASSWORD!1." [type]="hide ? 'password' : 'text'" [formControl]="ChangeForm.controls.PASSWORD"  required>
+   <mat-error *ngIf="PASSWORD.invalid">{{getpErrorMessage()}}</mat-error>
+   <mat-error *ngIf="!hide">{{incorrect()}}</mat-error>
+   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide PASSWORD'" [attr.aria-pressed]="hide">
+   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+   
+   </button>
+  </mat-form-field>
+        </div>
+  
+        <div class='cpssword'>
+            <mat-form-field appearance="standard" [style.width.px]=268>
+          <mat-label>Confirm your password</mat-label>
+          <input [formControl]="ChangeForm.controls.cpassword" class="same" matInput  placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" required>
+          <mat-error *ngIf="cpassword.invalid">{{getcErrorMessage()}}</mat-error>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+               </div>
+  <div class='btnlogin'>
+   <button type="submit" class="btn-style" mat-raised-button color="primary">Change</button>
+    </div>
+    <div class="notmember" id="myDiv" >
+        Log in to your account !
+           <a id ="myDiv"routerLink='/login'mat-button color='accent' class='btnsignup'  > Login </a>
+       </div>
+   </form>
+     </div> 
+  
+  
+  </div>
