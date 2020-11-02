@@ -39,6 +39,7 @@ import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-
 import { AuthService } from './modules/user/auth.service';
 import { TokenInterceptor} from './core/interceptor';
 import { ChangePasswComponent } from './modules/user/change-passw/change-passw.component';
+import { DataService } from './modules/admin/data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +74,7 @@ ChangePasswComponent,
     AppRoutingModule,
    
   ],
-  providers: [AuthGuard,AuthService , {provide: HTTP_INTERCEPTORS,
+  providers: [AuthGuard,AuthService ,DataService, {provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi : true}],
   bootstrap: [AppComponent]

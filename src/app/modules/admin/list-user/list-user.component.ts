@@ -61,10 +61,7 @@ export class ListUserComponent  {
       this.router.navigate(['login']);
       return;
     }*/
-    this.authService.getAll()
-      .subscribe( data => {
-        
-      });
+   
   }
   }
 

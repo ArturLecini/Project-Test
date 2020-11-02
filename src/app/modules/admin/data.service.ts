@@ -1,16 +1,25 @@
+
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {BehaviorSubject} from 'rxjs';
-import { USER} from '@models/*';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Observable,BehaviorSubject } from 'rxjs';
+import { UserResponse, USER,LOGIN, ROLES } from '../../shared/models/user.interface';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+const helper = new JwtHelperService();
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-  private readonly API_URL = "http://localhost:3000";
-  dataChange: BehaviorSubject<USER[]> = new BehaviorSubject<USER[]>([]);
-  dialogData: any;
-  constructor(private httpClient: HttpClient) { }
-  get data(): USER[] {
-    return this.dataChange.value;
+  
+  constructor(private http: HttpClient) { }
+  baseUrl: string = 'http://localhost:3000';
+
+  
+  AddUser(adduser): Observable<UserResponse| void>{
+    return this.http.post<UserResponse>('http://localhost:3000/users/add',adduser)
   }
+  
+
 }

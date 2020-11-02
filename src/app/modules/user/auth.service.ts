@@ -36,28 +36,14 @@ export class AuthService {
   
   }
   signup(signupPayload): Observable<UserResponse| void>{
-    return this.http.post<UserResponse>('http://localhost:3000/users/add',signupPayload)
+    return this.http.post<UserResponse>('http://localhost:3000/users/add/',signupPayload)
   }
+  
   
   changepssw(changeP): Observable<UserResponse| void>{
     return this.http.patch<UserResponse>(`http://localhost:3000/change-password/ ${changeP.ID}` ,changeP)
   }
-  getAll() : Observable<UserResponse> {
-    return this.http.get<UserResponse>(this.baseUrl +'/users');
-  }
-
-  getById(ID: number): Observable<UserResponse> {
-    return this.http.get<UserResponse>(this.baseUrl+'/users' + ID);
-  }
-
-  newUser(user: USER): Observable<UserResponse> {
-    return this.http.post<UserResponse>(this.baseUrl, user);
-  }
-
-  deleteUser(ID: number): Observable<UserResponse> {
-    return this.http.delete<UserResponse>(this.baseUrl+'/users' + ID);
-  }
- 
+  
   
   private checkToken(): void {
     const user = JSON.parse(localStorage.getItem('token')) || null;
