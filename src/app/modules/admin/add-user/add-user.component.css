@@ -7,13 +7,6 @@
    border-style: outset;
   border-bottom-left-radius: 5px;
   border-radius: 5px;
-  }.logo{
-    margin-top: 0%;
-    width: 270px;
-    height: 260px;
-    position: top;
-    margin-left: 165px;
-    margin-bottom: 10px;
   }
   
   .title{
@@ -59,18 +52,8 @@
       margin-left: 160;
       margin-bottom: 5px;
     }
-  .btn-style{
-      background-color: green;
-        background-repeat: no-repeat;
-        border: none;
-        cursor:pointer;
-        overflow: hidden;
-        outline:none;
-        font-size: 0.9em;
-        padding: 0px;
-        width: 120px;
-       margin-left: 160;
-  }
+  
+ 
   .mat-stepper-horizontal {
     margin-top: 8px;
   }
@@ -88,4 +71,22 @@ margin: 10px;
   .adress{
     padding: 5px;
     margin: 10px;
-  }
+  }.logo{
+    margin-top: 0%;
+    width: 180px;
+    height: 160px;
+    position: top;
+  display: inline;
+  }.btn-add{
+      background-color: green;
+        background-repeat: no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+        font-size: 0.9em;
+        padding: 0px;
+        width: 180px;
+        text-align: center;
+        color: rgb(234, 241, 241);
+        }

@@ -86,7 +86,7 @@
           </mat-form-field>
 
 
-             <mat-form-field appearance="standard" [style.width.px]=240>
+             <mat-form-field appearance="standard" [style.width.px]=250>
             <mat-label>Enter your Adress</mat-label>
              <input [formControl]="AddForm.controls.ADRESS" matInput  placeholder="Adress"   >
             </mat-form-field> 
@@ -125,7 +125,7 @@
           </mat-form-field>
          
         
-           <mat-form-field appearance="standard" [style.width.px]=268>
+           <mat-form-field appearance="standard" [style.width.px]=250>
           <mat-label>Confirm your password</mat-label>
           <input [formControl]="AddFormR.controls.cpassword" class="same" matInput  placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" required>
           <mat-error *ngIf="cpassword.invalid">{{getcErrorMessage()}}</mat-error>
@@ -146,8 +146,9 @@
         <ng-template matStepLabel>Done</ng-template>
       
         <p></p>
-        <div> <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div><div class='btn'>
-          <button type="submit" class="btn-style"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add</button>
+        <div>
+          <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div><div class='btn'>
+          <button type="submit" class="btn-add"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add New User</button>
            </div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Reset</button>
