@@ -69,9 +69,9 @@ AddForm: FormGroup;
         LASTNAME : [''],
         PHONE : [''],
         ADRESS: [''],
-      'ROLE': this.ROLE,
+    
       }); this.AddFormR = this.fb.group({
-       
+         'ROLE': this.ROLE,
         'cpassword': this.cpassword,
        'EMAIL': this.EMAIL ,
        'PASSWORD': this.PASSWORD
@@ -84,7 +84,7 @@ AddForm: FormGroup;
         return;
       }
       const  adduser = {
-        ROLE : this.AddForm.controls.ROLE.value,
+        ROLE : this.AddFormR.controls.ROLE.value,
         FIRSTNAME: this.AddForm.controls.FIRSTNAME.value,
         LASTNAME: this.AddForm.controls.LASTNAME.value,
         ADRESS: this.AddForm.controls.ADRESS.value,
@@ -94,7 +94,7 @@ AddForm: FormGroup;
         cpassword: this.AddFormR.controls.cpassword.value
       }
       this.dataService.AddUser(adduser).subscribe((data) => {
-         this.router.navigateByUrl('/list-user')
+         this.router.navigateByUrl('/account')
       
         
       });

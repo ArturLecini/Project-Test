@@ -24,21 +24,25 @@
   font-family: monospace;
   }  
   .name{
-    margin: 10px;
+    margin-left: 10px;
   }
   .lastname{
     margin: 10px;
+  }  .email{
+    width: 335px;
+    margin: 10px;
   }
     .password{
+
       margin: 10px;
       margin-top: 5px;
       margin-bottom: 5px;
       width: 335px;
     }
-  .email{
-    width: 335px;
-    margin: 10px;
-  }
+    .cpassword{
+      display: inline;
+    }
+
   .notmember{
     margin-top: 5px;
   
@@ -80,4 +84,8 @@ margin: 10px;
   }
   button{
     text-align: right;
+  }
+  .adress{
+    padding: 5px;
+    margin: 10px;
   }

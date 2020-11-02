@@ -51,67 +51,70 @@
    <button class="btn-style"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add</button>
     </div>
    
-     </div>
-    </div > -->
+     </div> 
 
-    <mat-horizontal-stepper [linear]="isLinear" #stepper  >
-      <mat-step [stepControl]="AddForm" errorMessage="User role is required."label="Fill out your user role">
+    </div > -->  
+    
+ <form [formGroup]="AddFormR"(ngSubmit)="onAdd()"  novalidate> 
+   <form [formGroup]="AddForm" (ngSubmit)="onAdd()" novalidate>
+   
+        <mat-horizontal-stepper [linear]="isLinear" #stepper  >
+           <mat-step [stepControl]="AddForm">
+           
+            <div class='first'>
+               <ng-template matStepLabel>Fill out your name lastname and phone</ng-template>
 
-        <form [formGroup]="AddForm" (ngSubmit)="onAdd()" novalidate>
-
-          <div class='first'>
-          <ng-template matStepLabel>Fill out your name lastname and phone</ng-template>
-
-          
-          <mat-form-field class="Role"appearance="standard" [style.width.px]=150>
-            <mat-label>Enter ROLE</mat-label>
-         
-            <input  #input maxlength="5" [formControl]="AddForm.controls.ROLE"  class="same" matInput placeholder="user|admin " required >
-               <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint><mat-error *ngIf="ROLE.invalid">{{getRErrorMessage()}}</mat-error>
-          </mat-form-field>
+             
         
-          <mat-form-field class="name"appearance="standard" [style.width.px]=250>
-            <mat-label>Enter first name</mat-label>
-            <input [formControl]="AddForm.controls.FIRSTNAME"  class="same" matInput placeholder="name"  >
-          </mat-form-field>
+             <mat-form-field class="name"appearance="standard" [style.width.px]=250>
+              <mat-label>Enter first name</mat-label>
+              <input [formControl]="AddForm.controls.FIRSTNAME"  class="same" matInput placeholder="name"  >
+              </mat-form-field>
         
-          <mat-form-field class="lastname"appearance="standard" [style.width.px]=250>
-            <mat-label>Enter last name</mat-label>
-            <input [formControl]="AddForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname"  >
-          </mat-form-field>
-            </div><div class='adress'>
+             <mat-form-field class="lastname"appearance="standard" [style.width.px]=250>
+              <mat-label>Enter last name</mat-label>
+              <input [formControl]="AddForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname"  >
+             </mat-form-field>
+          </div>
+
+        <div class='adress'>
           <mat-form-field class="phone">
             <mat-label>Telephone</mat-label>
             <span matPrefix>+355 &nbsp;</span>
-            <input [formControl]="AddForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654"[style.width.px]=250>
-            <mat-icon matSuffix>mode_edit</mat-icon>
+            <input [formControl]="AddForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654"[style.width.px]=240>
+           
           </mat-form-field>
 
 
-             <mat-form-field appearance="standard" [style.width.px]=250>
+             <mat-form-field appearance="standard" [style.width.px]=240>
             <mat-label>Enter your Adress</mat-label>
-<input [formControl]="AddForm.controls.ADRESS" matInput  placeholder="Adress"   >
-</mat-form-field>
-</div>
+             <input [formControl]="AddForm.controls.ADRESS" matInput  placeholder="Adress"   >
+            </mat-form-field> 
+         </div>
 
 
-        </form>
            <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
           </div>
+        
       </mat-step>
-     
+    
       <mat-step [stepControl]="AddFormR" errorMessage="Email & Password is required."label="Fill out your password & email address">
        
-        <form [formGroup]="AddFormR"(ngSubmit)="onAdd()"  novalidate> 
-
           <mat-form-field class="email"appearance="standard" >
             <mat-label>Enter your email</mat-label>
             <input [formControl]="AddFormR.controls.EMAIL"  class="same" matInput placeholder="name@example.com"  required>
             <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
           </mat-form-field>
-        
+          
+          <mat-form-field class="Role"appearance="standard" [style.width.px]=250>
+               <mat-label>Enter ROLE</mat-label>
+               <input  #input maxlength="5" [formControl]="AddFormR.controls.ROLE"  class="same" matInput placeholder="user|admin " required >
+               <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint><mat-error *ngIf="ROLE.invalid">{{getRErrorMessage()}}</mat-error>
+              </mat-form-field>
+
+        <div class='cpssword'>
           <mat-form-field appearance="standard"class='password' >
             <mat-label>Enter your password</mat-label>
             <input [formControl]="AddFormR.controls.PASSWORD"  matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'"  required>
@@ -121,8 +124,8 @@
             </button>
           </mat-form-field>
          
-          <div class='cpssword'>
-            <mat-form-field appearance="standard" [style.width.px]=268>
+        
+           <mat-form-field appearance="standard" [style.width.px]=268>
           <mat-label>Confirm your password</mat-label>
           <input [formControl]="AddFormR.controls.cpassword" class="same" matInput  placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" required>
           <mat-error *ngIf="cpassword.invalid">{{getcErrorMessage()}}</mat-error>
@@ -130,13 +133,13 @@
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
-               </div>
-        </form> <div>
+       </div>
+       
+        <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
           </div>
-      </mat-step>
-
+      </mat-step> 
       
      
       <mat-step>
@@ -152,4 +155,4 @@
          
       </mat-step>
     </mat-horizontal-stepper>
-     
+    </form> </form>
