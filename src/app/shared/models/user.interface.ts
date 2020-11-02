@@ -1,7 +1,10 @@
 
 
 export type ROLES = "admin"| "user";
-
+export interface LOGIN{
+   EMAIL: string;
+   PASSWORD: string;
+   }
 export interface USER{
 
 ID: number;

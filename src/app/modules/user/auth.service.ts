@@ -2,14 +2,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { catchError, map} from 'rxjs/operators'
+import { catchError, map, tap} from 'rxjs/operators'
 
 import * as moment from "moment";
 import { throwError } from 'rxjs/internal/observable/throwError';
 import { environment } from '../../../environments/environment';
 import { Observable,BehaviorSubject } from 'rxjs';
 
-import { UserResponse, USER, ROLES } from '../../shared/models/user.interface';
+import { UserResponse, USER,LOGIN, ROLES } from '../../shared/models/user.interface';
 
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -23,14 +23,20 @@ export class AuthService {
   
   constructor(private http: HttpClient) { }
   baseUrl: string = 'http://localhost:3000';
-
-  login(loginPayload) :Observable<UserResponse| void>{
+  handlerError(error): Observable<never> {
+    let errorMessage = 'An errror occured retrienving data';
+    if (error) {
+      errorMessage = `Error: code ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
+  login(loginPayload: LOGIN) :Observable<UserResponse| void>{
     return this.http.post<UserResponse>('http://localhost:3000/login',loginPayload)
-    catchError((err)=> this.handlerError(err));
   
   }
   signup(signupPayload): Observable<UserResponse| void>{
-    return this.http.post<UserResponse>('http://localhost:3000/users/add/',signupPayload)
+    return this.http.post<UserResponse>('http://localhost:3000/users/add',signupPayload)
   }
   
   changepssw(changeP): Observable<UserResponse| void>{
@@ -72,14 +78,7 @@ export class AuthService {
     localStorage.setItem('text', JSON.stringify(rest));
   }
 
-  private handlerError(err): Observable<never> {
-    let errorMessage = 'An errror occured retrienving data';
-    if (err) {
-      errorMessage = `Error: code ${err.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
-  }
+ 
 }
 
 

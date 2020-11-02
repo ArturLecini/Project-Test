@@ -89,7 +89,7 @@ if (this.ChangeForm.invalid) {
 return ; 
 }
 const changeP = {
- 
+  EMAIL: this.ChangeForm.controls.EMAIL.value,
      PASSWORD: this.ChangeForm.controls.PASSWORD.value,
      ID: this.ChangeForm.controls.ID.value
     

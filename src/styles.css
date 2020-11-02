@@ -2,10 +2,10 @@
 
 
 html, body { 
-    background-image:url(src/assets/img/bg8.png);
-    /*background:#64c3db;
+   /* background-image:url(src/assets/img/bg8.png);
+    */background:#64c3db;
 	background: linear-gradient(to bottom, #f8f5f5, #3daa5e) ;
-  */
+  
     background-size: cover;
 
 width: 100%;
@@ -22,5 +22,9 @@ body { margin: 0; font-family: Helvetica Neue, "", sans-serif;
 a {
     cursor: pointer;
 }
-
-  
+input{
+    cursor: text;
+}
+ button{
+    cursor: pointer;
+ } 
