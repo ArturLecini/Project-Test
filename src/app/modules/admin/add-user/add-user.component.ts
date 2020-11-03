@@ -64,6 +64,16 @@ AddForm: FormGroup;
     
   
     ngOnInit() {
+     if(!window.localStorage.getItem('token')) {
+        this.router.navigate(['login']);
+        return;}
+      
+    
+    
+    
+
+
+
       this.AddForm = this.fb.group({
         FIRSTNAME : [''],
         LASTNAME : [''],

@@ -1,9 +1,9 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { catchError, map, tap} from 'rxjs/operators'
 
+import { catchError, map, tap} from 'rxjs/operators'
+import {  Router, Routes } from '@angular/router';
 import * as moment from "moment";
 import { throwError } from 'rxjs/internal/observable/throwError';
 import { environment } from '../../../environments/environment';
@@ -20,21 +20,29 @@ const helper = new JwtHelperService();
   providedIn: 'root',
 })
 export class AuthService {
+
+  private user = new BehaviorSubject<UserResponse>(null);
+       get user$(): Observable<UserResponse> {
+           return this.user.asObservable();
+                                           }
+       get userValue(): UserResponse {
+             return this.user.getValue();
+                                        }
   
-  constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://localhost:3000';
-  handlerError(error): Observable<never> {
-    let errorMessage = 'An errror occured retrienving data';
-    if (error) {
-      errorMessage = `Error: code ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
-  }
+  constructor(private http: HttpClient,private router : Router) {   this.checkToken();}
+
+
   login(loginPayload: LOGIN) :Observable<UserResponse| void>{
     return this.http.post<UserResponse>('http://localhost:3000/login',loginPayload)
-  
-  }
+    .pipe(
+      map((user: UserResponse) => {
+        this.saveLocalStorage(user);
+        this.user.next(user);
+        return user;
+      }),
+      catchError((err) => this.handlerError(err))
+    );
+}
   signup(signupPayload): Observable<UserResponse| void>{
     return this.http.post<UserResponse>('http://localhost:3000/users/add/',signupPayload)
   }
@@ -44,7 +52,12 @@ export class AuthService {
     return this.http.patch<UserResponse>(`http://localhost:3000/change-password/ ${changeP.ID}` ,changeP)
   }
   
-  
+  logout(): void {
+    localStorage.removeItem('token');
+   this.router.navigate(['/login']);
+  }
+
+
   private checkToken(): void {
     const user = JSON.parse(localStorage.getItem('token')) || null;
 
@@ -52,18 +65,27 @@ export class AuthService {
       const isExpired = helper.isTokenExpired(user.token);
 
       if (isExpired) {
-        
+        this.logout();
       } else {
-       
+        this.user.next(user);
       }
     }
   }
+    
 
   private saveLocalStorage(user: UserResponse): void {
-    const { ID, message, ...rest } = user;
-    localStorage.setItem('text', JSON.stringify(rest));
+    const { token, ID, message, ...rest } = user;
+    localStorage.setItem('token', JSON.stringify(rest));
   }
 
+  handlerError(error): Observable<never> {
+    let errorMessage = 'An errror occured retrienving data';
+    if (error) {
+      errorMessage = `Error: code ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
  
 }
 

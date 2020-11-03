@@ -1,1 +1,2 @@
-<p>dddddddddddddddddddddddddddddddd</p>
+<h1 *ngIf="(authService.user$ | async) as user">
+    Welcome, {{ user.EMAIL}} {{user.ROLE}}

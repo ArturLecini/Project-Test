@@ -1,6 +1,7 @@
 import { Component, OnInit ,Inject} from '@angular/core';
 
 import {ThemePalette} from '@angular/material/core';
+import { Router } from '@angular/router';
 
 import { SharedService } from '@shared/shared.service';
 
@@ -20,11 +21,13 @@ export class AccountComponent implements OnInit {
   
   
 
-  constructor(private sharedService:SharedService ,) {}
+  constructor(private sharedService:SharedService ,private router: Router ) {}
   
   
 
-  ngOnInit(): void {  
+  ngOnInit(): void {  if(!window.localStorage.getItem('token')) {
+    this.router.navigate(['login']);
+    return;}
   }
   Showhide(){
     this.sharedService.sendClickEvent();

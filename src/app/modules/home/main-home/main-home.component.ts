@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../user/auth.service';
 
 @Component({
   selector: 'app-main-home',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router, public authService: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {if(!window.localStorage.getItem('token')) {
+    this.router.navigate(['login']);
+    return;}
   }
 
 }
+

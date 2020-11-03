@@ -19,7 +19,7 @@
         </div> 
          <a routerLink='/account' mat-button>
              <mat-icon>account_box</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp; <p style="display: inline" fxHide.lt-md="true">My Account</p></a>
-            <a mat-button class="logout-btn" routerLink='/login' > <mat-icon>logout</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;<p style="display: inline" fxHide.lt-md="true">Log Out</p></a>
+            <a mat-button class="logout-btn" (click)="logout" > <mat-icon>logout</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;<p style="display: inline" fxHide.lt-md="true">Log Out</p></a>
       </mat-toolbar-row>
         
     </mat-toolbar>

@@ -57,10 +57,10 @@ export class ListUserComponent  {
 
 
   ngOnInit() {
-    /*if(!window.localStorage.getItem('token')) {
+    if(!window.localStorage.getItem('token')) {
       this.router.navigate(['login']);
       return;
-    }*/
+    }
    
   }
   }

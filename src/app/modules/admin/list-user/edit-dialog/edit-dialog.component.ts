@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup,Validators} from '@angular/forms';
 import {MatDialog, } from '@angular/material/dialog'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -21,7 +22,7 @@ export class EditDialogComponent implements OnInit {
   }
   
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private router : Router) {}
   openEDialog(): void {
     const dialogRef = this.dialog.open(EditDialogComponent);{
       width: '550px'}
@@ -30,7 +31,12 @@ export class EditDialogComponent implements OnInit {
         console.log('The dialog was closed');
     });
   }
-  ngOnInit(): void {
+
+
+  ngOnInit(): void {if(!window.localStorage.getItem('token')) {
+    this.router.navigate(['login']);
+    return;}
   }
 
 }
+
