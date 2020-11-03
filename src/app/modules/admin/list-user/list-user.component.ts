@@ -41,41 +41,38 @@ users: USERD[];
     });
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DeleteDialogComponent);{
+  openDialog(ID: number): void {
+    let dialogRef = this.dialog.open(DeleteDialogComponent);{
       width: '250px'}
 
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
-    });
+   this.onDelete(ID) });
   }
 
-
-
-
-
-
-  openEDialog(): void {
-    const dialogRef = this.dialog.open(EditDialogComponent);{
+  openEDialog(user = {}): void {
+    console.log('user->',user);
+    let dialogRef = this.dialog.open(EditDialogComponent);{
       width: '550px'}
 
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
+        
     });
   }
   onDelete(ID: number): void {
-    if (window.confirm('Do you really want remove this user')) {
+   
       this.dataService
         .delete(ID)
         .pipe(takeUntil(this.destroy$))
         .subscribe((res) => {
-          window.alert(res);
+         
           // Update result after deleting the user.
           this.dataService.getAll().subscribe((users) => {
             this.dataSource.data = users;
           });
         });
-    }
+    
   }
 
 

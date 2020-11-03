@@ -20,17 +20,19 @@ export class DataService {
   
   AddUser(adduser): Observable<UserResponse| void>{
     return this.http.post<UserResponse>('http://localhost:3000/users/add',adduser)
-  }
+      }
+
   getAll(): Observable<USERD[]> {
     return this.http
       .get<USERD[]>('http://localhost:3000/users')
       .pipe(catchError(this.handlerError));
-  }
+       }
+
   delete(ID: number): Observable<{}> {
     return this.http
-      .delete<USERD>(`http://localhost:3000/users${ID}`)
-      .pipe(catchError(this.handlerError));
-  }
+      .delete<USERD>(`http://localhost:3000/users/delete/${ID}`)
+     
+        }
 
 
 
