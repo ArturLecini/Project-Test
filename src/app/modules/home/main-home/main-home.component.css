@@ -27,10 +27,12 @@
   
   .hero-btns {
     margin-top: 39px;
+    color: rgb(25, 39, 39);
   }
   
   .hero-btns .btn {
     margin: 9px;
+    color: darkcyan;
   }
   
  /*for mobile*/
@@ -57,6 +59,7 @@
     }
   
     .btn {
+      
       width: 100%;
     }
   }

@@ -1,12 +1,13 @@
 .mat-toolbar.mat-primary {
-    background: #1d2b3a;
+   background: #1d2b3a;
+   
     color: rgb(229, 238, 240);
  max-width: width auto;
 
 } .mat-sidenav-container{
-   
-    background:#ffffff;
-	background: linear-gradient(to bottom, #a7d3f0, #fffdfd) ;
+
+    background:#f7f4f4;
+	background: linear-gradient(to bottom, #0776c0, #fdfdfd) ;
 background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
