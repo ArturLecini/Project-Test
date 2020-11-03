@@ -3,6 +3,7 @@ import {FormControl, FormGroup,Validators,FormBuilder} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {Router} from '@angular/router';
 import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -58,21 +59,17 @@ export class AddUserComponent implements OnInit {
   incorrect(){
     return"  hide pasword "}
 
-    constructor(private fb: FormBuilder,private router: Router ,private dataService : DataService) { }
+ constructor(private fb: FormBuilder,public router: Router ,private dataService : DataService) { }
 AddForm: FormGroup;
   AddFormR: FormGroup;
     
   
-    ngOnInit() {
+    ngOnInit() : void{
      if(!window.localStorage.getItem('token')) {
         this.router.navigate(['login']);
-        return;}
-      
-    
-    
-    
-
-
+        return;
+     
+      }
 
       this.AddForm = this.fb.group({
         FIRSTNAME : [''],
@@ -80,7 +77,9 @@ AddForm: FormGroup;
         PHONE : [''],
         ADRESS: [''],
     
-      }); this.AddFormR = this.fb.group({
+      }); 
+     
+      this.AddFormR = this.fb.group({
          'ROLE': this.ROLE,
         'cpassword': this.cpassword,
        'EMAIL': this.EMAIL ,
@@ -91,7 +90,7 @@ AddForm: FormGroup;
   
     onAdd(): void {
       if (this.AddForm.invalid && this.AddFormR.invalid) {
-        return;
+        return ;
       }
       const  adduser = {
         ROLE : this.AddFormR.controls.ROLE.value,
@@ -104,9 +103,10 @@ AddForm: FormGroup;
         cpassword: this.AddFormR.controls.cpassword.value
       }
       this.dataService.AddUser(adduser).subscribe((data) => {
-         this.router.navigateByUrl('/account')
-      
-        
+       return this.router.navigateByUrl('/layout');
       });
-   }}
+   }
+ 
+ 
+  }
    

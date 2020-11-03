@@ -51,7 +51,6 @@ export class SignUpComponent implements OnInit {
   SignupForm: FormGroup;
   ngOnInit(): void{ 
 
-    window.localStorage.removeItem('token');
     this.SignupForm = this.fb.group({
       FIRSTNAME : [''],
       LASTNAME : [''],

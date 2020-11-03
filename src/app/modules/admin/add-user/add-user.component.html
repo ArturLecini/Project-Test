@@ -60,7 +60,8 @@
    
         <mat-horizontal-stepper [linear]="isLinear" #stepper  >
            <mat-step [stepControl]="AddForm">
-           
+            
+  
             <div class='first'>
                <ng-template matStepLabel>Fill out your name lastname and phone</ng-template>
 
@@ -107,12 +108,18 @@
             <input [formControl]="AddFormR.controls.EMAIL"  class="same" matInput placeholder="name@example.com"  required>
             <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
           </mat-form-field>
-          
-          <mat-form-field class="Role"appearance="standard" [style.width.px]=250>
-               <mat-label>Enter ROLE</mat-label>
-               <input  #input maxlength="5" [formControl]="AddFormR.controls.ROLE"  class="same" matInput placeholder="user|admin " required >
-               <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint><mat-error *ngIf="ROLE.invalid">{{getRErrorMessage()}}</mat-error>
+         
+
+
+              <mat-form-field class="Role"appearance="standard" [style.width.px]=250 >
+                <mat-label>Select ROLE</mat-label>
+                <mat-select [formControl]="AddFormR.controls.ROLE" required >
+                  <mat-option value="user">user</mat-option>
+                  <mat-option value="admin">admin</mat-option>
+                </mat-select>
+                <mat-error *ngIf="ROLE.invalid">{{getRErrorMessage()}}</mat-error>
               </mat-form-field>
+
 
         <div class='cpssword'>
           <mat-form-field appearance="standard"class='password' >
@@ -135,25 +142,25 @@
         </mat-form-field>
        </div>
        
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-      </mat-step> 
-      
+       <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+  </mat-step> 
+  
+ 
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+  
+    <p></p>
+    <div>
+      <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div><div class='btn'>
+      <button type="submit" class="btn-add"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add New User</button>
+       </div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
      
-      <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-      
-        <p></p>
-        <div>
-          <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div><div class='btn'>
-          <button type="submit" class="btn-add"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add New User</button>
-           </div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-         
-      </mat-step>
-    </mat-horizontal-stepper>
-    </form> </form>
+  </mat-step>
+</mat-horizontal-stepper>
+</form> </form>

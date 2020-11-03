@@ -6,10 +6,14 @@ import { USER, USERD } from '@models/*';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { AuthService } from '../../user/auth.service';
+import {AfterViewInit,  ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
 
-import { DeleteDialogComponent} from '../list-user/delete-dialog/delete-dialog.component';
+
 import { EditDialogComponent } from '../list-user/edit-dialog/edit-dialog.component';
 import { DataService } from '../data.service';
+import { MatSort } from '@angular/material/sort';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 
 
@@ -19,21 +23,31 @@ import { DataService } from '../data.service';
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.css']
 })
-export class ListUserComponent implements OnInit { 
+export class ListUserComponent implements OnInit ,AfterViewInit{ 
   private destroy$ = new Subject<any>();
-
-  displayedColumns: string[] = ['ID', 'FIRSTNAME', 'LASTNAME','PHONE', 'EMAIL' ,'actions'];
+  
+displayedColumns: string[] = ['ID','CREATED', 'FIRSTNAME', 'LASTNAME','PHONE', 'EMAIL' ,'ADRESS','ROLE','actions'];
   dataSource = new MatTableDataSource();
-users: USERD[];
+     users: USERD[];
 
+
+  @ViewChild(MatSort) sort: MatSort;
+  ngSortAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+  }
+     @ViewChild(MatPaginator) paginator: MatPaginator;
+       ngAfterViewInit() {
+        this.dataSource.paginator = this.paginator;
+           }
+
+  
   constructor(private router : Router,public dialog: MatDialog ,private dataService : DataService) {}
   
   ngOnInit() {
-
     if(!window.localStorage.getItem('token')) {
       this.router.navigate(['login']);
       return;
-    }
+       }
     
     //GET DATAAA
     this.dataService.getAll().subscribe((users) => {
@@ -44,27 +58,21 @@ users: USERD[];
   openDialog(ID: number): void {
     let dialogRef = this.dialog.open(DeleteDialogComponent);{
       width: '250px'}
-
       dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-   this.onDelete(ID) });
-  }
+      });
+    }
 
-  openEDialog(user = {}): void {
-    console.log('user->',user);
+  openEDialog(USER = {}): void {
+    console.log('user->',USER);
     let dialogRef = this.dialog.open(EditDialogComponent);{
       width: '550px'}
-
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
-        
-    });
-  }
+       });
+     }
+
   onDelete(ID: number): void {
-   
-      this.dataService
-        .delete(ID)
-        .pipe(takeUntil(this.destroy$))
+      this.dataService.delete(ID).pipe(takeUntil(this.destroy$))
         .subscribe((res) => {
          
           // Update result after deleting the user.
@@ -74,8 +82,12 @@ users: USERD[];
         });
     
   }
-
-
+ ngOnDestroy(): void {
+    this.destroy$.next({});
+    this.destroy$.complete();
   }
 
+
+
   
+  }

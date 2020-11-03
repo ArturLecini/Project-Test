@@ -22,7 +22,6 @@ export interface USERD{
    ID : number;
    FIRSTNAME: string;
    LASTNAME: string;
-   
    PHONE: string;
 EMAIL: string;
    

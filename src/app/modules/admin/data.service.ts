@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable,BehaviorSubject } from 'rxjs';
-import { UserResponse, LOGIN, ROLES, USERD } from '../../shared/models/user.interface';
+import { UserResponse, LOGIN, ROLES, USERD, USER } from '../../shared/models/user.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { throwError } from 'rxjs/internal/observable/throwError';
 import { catchError, map, tap} from 'rxjs/operators'
@@ -31,8 +31,24 @@ export class DataService {
   delete(ID: number): Observable<{}> {
     return this.http
       .delete<USERD>(`http://localhost:3000/users/delete/${ID}`)
-     
+      .pipe(catchError(this.handlerError));
         }
+
+      edit(editUser): Observable<UserResponse| void>{
+          return this.http.patch<UserResponse>(`http://localhost:3000/users/edit/ ${editUser.ID}` ,editUser)
+          .pipe(catchError(this.handlerError)); }
+      
+
+
+
+
+
+
+
+
+
+
+
 
 
 

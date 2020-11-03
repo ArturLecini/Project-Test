@@ -4,38 +4,44 @@
   <div class='title'>Edit User<mat-icon>edit</mat-icon></div>
 
 <div class='form'>
+  <form [formGroup]="EditForm" (ngSubmit)="onEdit()" novalidate >
 
-
-<div class="hidden">
-  <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
-</div>
 <div class="name">
 
       <mat-form-field appearance="standard" [style.width.px]=220>
         <mat-label>Enter first name</mat-label>
-        <input  class="same" matInput placeholder="name"  >
+        <input [formControl]="EditForm.controls.FIRSTNAME"  class="same" matInput placeholder="name"  >
       </mat-form-field>
   </div>
       <div class="lastname">
       
           <mat-form-field appearance="standard" [style.width.px]=220>
             <mat-label>Enter last name</mat-label>
-            <input autofocus class="same" matInput placeholder="lastname"  >
+            <input [formControl]="EditForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname"  >
           </mat-form-field>
           
       </div>
+      
   <div class="username">
 
    <mat-form-field appearance="standard" [style.width.px]=445>
      <mat-label>Enter your email</mat-label>
-     <input  class="same" matInput placeholder="name@example.com" [formControl]="email" >
-     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+     <input  class="same" matInput placeholder="name@example.com"  >
+     <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
    </mat-form-field>
    </div>
+
+   <div class='adress'>
+    <mat-form-field appearance="standard" [style.width.px]=130>
+  <mat-label>Enter your Adress</mat-label>
+  <input [formControl]="EditForm.controls.ADRESS" matInput  placeholder="Adress"   >
+</mat-form-field>
+</div>
+
    <mat-form-field class="phone">
     <mat-label>Telephone</mat-label>
     <span matPrefix>+355 &nbsp;</span>
-    <input type="tel" matInput placeholder="68-555-5654">
+    <input [formControl]="EditForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654">
     <mat-icon matSuffix>mode_edit</mat-icon>
   </mat-form-field>
       
@@ -44,7 +50,7 @@
       <mat-icon>cancel</mat-icon>&nbsp; cancel</button>
  <button  class="btn-edit" mat-raised-button color="accent"><mat-icon>edit</mat-icon>Edit</button>
   </div>
- 
+ </form>
  
    </div>
 <div > 
