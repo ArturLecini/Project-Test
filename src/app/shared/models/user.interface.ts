@@ -14,7 +14,7 @@ EMAIL: string;
 PASSWORD: string;
 ADRESS: string
 PHONE: string;
-ROLE:boolean;
+ROLE:any;
 
 }
 export interface UserResponse{
@@ -26,6 +26,6 @@ export interface UserResponse{
     status: number;
     result: any;
     responseType: any;
-   ROLE : ROLES;
+   ROLE : any;
     
   }

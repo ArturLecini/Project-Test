@@ -11,10 +11,6 @@ import { Observable,BehaviorSubject } from 'rxjs';
 
 import { UserResponse, USER,LOGIN, ROLES } from '../../shared/models/user.interface';
 
-import { JwtHelperService } from '@auth0/angular-jwt';
-
-const helper = new JwtHelperService();
-
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +25,11 @@ export class AuthService {
              return this.user.getValue();
                                         }
   
-  constructor(private http: HttpClient,private router : Router) {   this.checkToken();}
+  constructor(private http: HttpClient,private router : Router) {  
+    
+   
+  
+  }
 
 
   login(loginPayload: LOGIN) :Observable<UserResponse| void>{
@@ -61,33 +61,25 @@ export class AuthService {
   private checkToken(): void {
     const user = JSON.parse(localStorage.getItem('token')) || null;
 
-    if (user) {
-      const isExpired = helper.isTokenExpired(user.token);
-
-      if (isExpired) {
-        this.logout();
-      } else {
-        this.user.next(user);
-      }
-    }
   }
-    
 
   private saveLocalStorage(user: UserResponse): void {
     const { token, ID, message, ...rest } = user;
     localStorage.setItem('token', JSON.stringify(rest));
   }
 
-  handlerError(error): Observable<never> {
-    let errorMessage = 'An errror occured retrienving data';
-    if (error) {
-      errorMessage = `Error: code ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
+  
+//display error 
+handlerError(err): Observable<never> {
+  let errorMessage = 'An errror occured retrienving data';
+  if (err) {
+    errorMessage = `Error: code ${err.message}`;
   }
- 
+  window.alert(errorMessage);
+  return throwError(errorMessage);
 }
+}
+
 
 
  

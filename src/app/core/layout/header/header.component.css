@@ -5,9 +5,8 @@
 
 } .mat-sidenav-container{
    
-    background:#fffcfa;
-	background: linear-gradient(to bottom, #e6f5ee, #f0d3d3) ;
-  
+    background:#ffffff;
+	background: linear-gradient(to bottom, #a7d3f0, #fffdfd) ;
 background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -33,3 +32,4 @@ min-width: 315px;
       transform-origin: left;
       transition-duration: 25ms;
     }
+    

@@ -9,7 +9,9 @@ export class LayoutComponent implements OnInit {
 
   constructor(private router : Router) { }
 
-  ngOnInit(): void {if(!window.localStorage.getItem('token')) {
+  ngOnInit(): void {
+    
+    if(!window.localStorage.getItem('token')) {
     this.router.navigate(['login']);
     return;
   }
