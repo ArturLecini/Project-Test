@@ -4,17 +4,14 @@
        
        
     <div class='hero-container'>
-      
+      <h1 *ngIf="(authService.user$ | async) as user">Welcome </h1>
        <h2 *ngIf="(authService.user$ | async) as user">
-    Welcome  {{user.EMAIL}}</h2>
+     {{user.EMAIL}}  you are  {{user.ROLE}} </h2>
         <p>What are you waiting for?</p>
         <div class='hero-btns'>
           <a mat-button color='primary'
-            class='btns'
-           
-          >
-            GET STARTED
-          </a>
+            class='btns' >
+            GET STARTED</a>
           <a
             class='btns'
             mat-button color='primary'

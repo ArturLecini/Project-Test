@@ -49,7 +49,7 @@ export class AuthService {
   
   
   changepssw(changeP): Observable<UserResponse| void>{
-    return this.http.patch<UserResponse>(`http://localhost:3000/change-password/ ${changeP.ID}` ,changeP)
+    return this.http.patch<UserResponse>(`http://localhost:3000/change-password/${changeP.ID}` ,changeP)
   }
   
   logout(): void {

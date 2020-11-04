@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
 })
 
 export class LoginComponent implements OnInit {
-        private subscription: Subscription = new Subscription();
+        public subscription: Subscription = new Subscription();
           clickEventsubscription:Subscription;
              name: string;
                 hide = true;
@@ -45,7 +45,7 @@ errorpasw(){
       return "  hide pasword "}
 
 constructor(private router: Router,
-            private sharedService:SharedService, 
+            public sharedService:SharedService, 
             private authService: AuthService ,
             private fb : FormBuilder ) 
 { 

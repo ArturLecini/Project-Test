@@ -1,80 +1,81 @@
-edit-div{
-    margin:50px auto;
-    width: 450px;
-    background-color: rgb(234, 241, 241);
-    padding: 100px;
-   height: 450px;
-   border-style: outset;
-
-   border-radius: 5px;
-  }
-.logo{
+.edit-div{
   margin-top: 0%;
-  width: 170px;
-  height: 150px;
-  position: top;
-  margin-left: 65px;
-  margin-bottom: 10px;
+  text-align: top;
+  margin:10px auto;
+  width: auto;
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+ height: auto;
+
+ border-radius: 5px;
+}
+.logo{
+margin-top: 0%;
+width: 0px;
+height: 0px;
+position: top;
+margin-left: 65px;
+margin-bottom: 10px;
 }
 
-  .title{
-  text-align: center;
-  text-shadow: teal;
-  font-size:xx-large;
-  margin-bottom: 20px;
-  font-family: monospace;
-  }  
-  .name{
-    position: absolute;
-    padding-left: 225px;
+.title{
+text-align: center;
+text-shadow: teal;
+font-size:xx-large;
+margin-bottom: 20px;
+font-family: monospace;
+}  
+.name{
+  position: absolute;
+  padding-left: 225px;
+}
+.username{
+  margin-top: 5px;
+  margin-bottom: 5px;
   }
-  .username{
+  .password{
     margin-top: 5px;
     margin-bottom: 5px;
-    }
-    .password{
-      margin-top: 5px;
-      margin-bottom: 5px;
-      
-    }
-  .same{
-   width:200px ;
-   flex-direction: row;
+    
   }
-  .notmember{
+.same{
+ width:200px ;
+ flex-direction: row;
+}
+.notmember{
+  margin-top: 5px;
+
+  margin-bottom: 5px;
+  }
+  .btn{
     margin-top: 5px;
-  
+
     margin-bottom: 5px;
-    }
-    .btn{
-      margin-top: 5px;
-  
-      margin-bottom: 5px;
-    }
-    .btn-edit{
-        background-color: rgb(230, 9, 9);
-          background-repeat: no-repeat;
-          border: none;
-          cursor:pointer;
-          overflow: hidden;
-          outline:none;
-          font-size: 0.9em;
-          padding: 0px;
-          width: 100px;
-    }
-    .btn-close{
-        background-color: rgb(238, 214, 214);
-          background-repeat: no-repeat;
-          border: none;
-          cursor:pointer;
-          overflow: hidden;
-          outline:none;
-          font-size: 0.9em;
-          padding: 0px;
-          width: 100px;
-          margin-left: 100px;
-          margin-right: 40px;
-    }
-    .phone{
-      width: 450px;
-    }
+  }
+  .btn-edit{
+      background-color: rgb(230, 9, 9);
+        background-repeat: no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+        font-size: 0.9em;
+        padding: 0px;
+        width: 100px;
+  }
+  .btn-close{
+      background-color: rgb(238, 214, 214);
+        background-repeat: no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+        font-size: 0.9em;
+        padding: 0px;
+        width: 100px;
+        margin-left: 100px;
+        margin-right: 40px;
+  }
+  .phone{
+    width: 450px;
+  }

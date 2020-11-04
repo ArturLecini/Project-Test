@@ -38,18 +38,22 @@
 
 
 
-  <mat-tab-group dynamicHeight>
-    <mat-tab label="All Users ">
+  <mat-tab-group >
+    <mat-tab class = "btn-add"label="All Users " id="all">
       <div class="example-small-box mat-elevation-z4">
         <app-list-user></app-list-user>
       </div>
     </mat-tab>
-    <mat-tab class = "btn-add"label="Add new user">
+    <mat-tab class = "btn-add"label="Add new user" id="add">
       <div class="example-large-box mat-elevation-z4">
        <app-add-user></app-add-user>
       </div>
     </mat-tab>
-  
+    <mat-tab class = "btn-add"label="Edit user" id="edit">
+      <div class="example-large-box mat-elevation-z4">
+       <app-edit-dialog></app-edit-dialog>
+      </div>
+   </mat-tab>
   </mat-tab-group>
 
 </mat-drawer-container>

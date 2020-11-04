@@ -40,6 +40,9 @@ import { AuthService } from './modules/user/auth.service';
 import { TokenInterceptor} from './core/interceptor';
 import { ChangePasswComponent } from './modules/user/change-passw/change-passw.component';
 import { DataService } from './modules/admin/data.service';
+import { DmatSpinnerOverlayComponent } from './shared/dmat-spinner-overlay/dmat-spinner-overlay.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +63,7 @@ import { DataService } from './modules/admin/data.service';
     DeleteDialogComponent,
 EditDialogComponent,
 ChangePasswComponent,
+DmatSpinnerOverlayComponent
  
 
   ],

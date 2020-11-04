@@ -17,7 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -66,7 +66,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
-    
+  MatProgressSpinnerModule
        
        
     ],
@@ -103,7 +103,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatToolbarModule,
         MatTooltipModule,
      
-      
+        MatProgressSpinnerModule
        
     ],
 

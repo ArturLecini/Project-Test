@@ -21,7 +21,7 @@ export class AccountComponent implements OnInit {
   
   
 
-  constructor(private sharedService:SharedService ,private router: Router ) {}
+  constructor(public sharedService:SharedService ,private router: Router ) {}
   
   
 

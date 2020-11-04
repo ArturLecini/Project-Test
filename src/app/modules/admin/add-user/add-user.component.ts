@@ -103,7 +103,8 @@ AddForm: FormGroup;
         cpassword: this.AddFormR.controls.cpassword.value
       }
       this.dataService.AddUser(adduser).subscribe((data) => {
-       return this.router.navigateByUrl('/layout');
+       return this.router.navigateByUrl('/account');
+      
       });
    }
  

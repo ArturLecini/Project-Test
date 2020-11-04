@@ -22,20 +22,28 @@ export class DataService {
     return this.http.post<UserResponse>('http://localhost:3000/users/add',adduser)
       }
 
-  getAll(): Observable<USERD[]> {
+ getAll(): Observable<USERD[]> {
     return this.http
       .get<USERD[]>('http://localhost:3000/users')
       .pipe(catchError(this.handlerError));
        }
 
-  delete(ID: number): Observable<{}> {
+ getById(ID: number): Observable<USER> {
+        return this.http
+          .get<any>(`http://localhost:3000/users/${ID}`)
+          .pipe(catchError(this.handlerError));
+      }
+
+
+ delete(ID: number): Observable<{}> {
     return this.http
       .delete<USERD>(`http://localhost:3000/users/delete/${ID}`)
       .pipe(catchError(this.handlerError));
         }
 
-      edit(editUser): Observable<UserResponse| void>{
-          return this.http.patch<UserResponse>(`http://localhost:3000/users/edit/ ${editUser.ID}` ,editUser)
+
+ edit(editUser): Observable<UserResponse| void>{
+          return this.http.patch<UserResponse>(`http://localhost:3000/users/edit/${editUser.ID}` ,editUser)
           .pipe(catchError(this.handlerError)); }
       
 

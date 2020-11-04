@@ -3,9 +3,11 @@ import {FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
 import {MatDialog, } from '@angular/material/dialog'
 import { Router } from '@angular/router';
 import { DataService } from '../../data.service';
-
+import { USER, USERD } from '@models/*';
 import { Component, Inject, OnInit } from '@angular/core';
-
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { element } from 'protractor';
+import { ListUserComponent } from '../list-user.component';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -14,22 +16,35 @@ import { Component, Inject, OnInit } from '@angular/core';
 })
 export class EditDialogComponent implements OnInit {
 
- 
-  EMAIL = new FormControl('', [Validators.required, Validators.email]);
-  
+EMAIL = new FormControl('', [Validators.required, Validators.email]);
+ID = new FormControl('', [ Validators.required,Validators.minLength(1),Validators.maxLength(10)]);
 
+getIDErrorMessage() {
+  if (this.ID.hasError('required')) {
+      return  'Please must enter your ID ';
+        }else if (this.ID.hasError('minlength')) {
+     return  'Please continu more 1 '  ;
+    }
+      return  'Max length is 10 characters'  ;
+      } 
 getErrorMessage() {
     if (this.EMAIL.hasError('required') ){
       return 'You must enter youremail';
          } else if (this.EMAIL.hasError('email')) {
       return  'Not a valid email'  ;
          }}
+ user: any;
 
-  constructor(public dialog: MatDialog,private router : Router , private fb : FormBuilder, public dataService : DataService) {}
+  constructor( public dialog: MatDialog,private router : Router , private fb : FormBuilder, public dataService : DataService) {}
+ 
   openEDialog(ID): void {
     console.log('user->',);
     let dialogRef = this.dialog.open(EditDialogComponent);{
-      width: '550px'}
+      this.dataService.getById(ID).subscribe((data) => {
+        this.user = data;
+      });
+      width: '550px'
+      ;}
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
        });
@@ -47,16 +62,19 @@ EditForm : FormGroup;
       LASTNAME : [''],
       PHONE : [''],
       ADRESS: [''],
-     
+      'ID': this.ID,
      'EMAIL':this.EMAIL ,
     });
 
   } 
+
+  //edit
   onEdit(): void {
     if (this.EditForm.invalid) {
       return;
     }
     const editUser = {
+      ID: this.EditForm.controls.ID.value,
       FIRSTNAME: this.EditForm.controls.FIRSTNAME.value,
       LASTNAME: this.EditForm.controls.LASTNAME.value,
       ADRESS: this.EditForm.controls.ADRESS.value,
@@ -65,13 +83,10 @@ EditForm : FormGroup;
     
     }
     this.dataService.edit(editUser).subscribe((data) => {
-       this.router.navigateByUrl('/layout')
-       
+       this.router.navigateByUrl('/account')
       });
     
  }
-
-
 }
  
 

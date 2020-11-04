@@ -14,6 +14,8 @@ import { EditDialogComponent } from '../list-user/edit-dialog/edit-dialog.compon
 import { DataService } from '../data.service';
 import { MatSort } from '@angular/material/sort';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { runInThisContext } from 'vm';
+import { AccountComponent } from '../../user/account/account.component';
 
 
 
@@ -30,20 +32,19 @@ displayedColumns: string[] = ['ID','CREATED', 'FIRSTNAME', 'LASTNAME','PHONE', '
   dataSource = new MatTableDataSource();
      users: USERD[];
 
-
-  @ViewChild(MatSort) sort: MatSort;
+@ViewChild(MatSort) sort: MatSort;
   ngSortAfterViewInit(): void {
     this.dataSource.sort = this.sort;
-  }
-     @ViewChild(MatPaginator) paginator: MatPaginator;
-       ngAfterViewInit() {
+     }
+@ViewChild(MatPaginator) paginator: MatPaginator;
+    ngAfterViewInit() {
         this.dataSource.paginator = this.paginator;
            }
 
   
-  constructor(private router : Router,public dialog: MatDialog ,private dataService : DataService) {}
+ constructor(private router : Router,public dialog: MatDialog ,private dataService : DataService) {}
   
-  ngOnInit() {
+ ngOnInit() {
     if(!window.localStorage.getItem('token')) {
       this.router.navigate(['login']);
       return;
@@ -57,16 +58,25 @@ displayedColumns: string[] = ['ID','CREATED', 'FIRSTNAME', 'LASTNAME','PHONE', '
 
   openDialog(ID: number): void {
     let dialogRef = this.dialog.open(DeleteDialogComponent);{
-      width: '250px'}
+      
+      width: '250px'
+ }
       dialogRef.afterClosed().subscribe(result => {
+        this.onDelete(ID);
       });
     }
 
-  openEDialog(USER = {}): void {
-    console.log('user->',USER);
+  openEDialog(ID: number): void {
+  
     let dialogRef = this.dialog.open(EditDialogComponent);{
+      this.dataService.getById(ID).subscribe((data) => {
+        
+      });
       width: '550px'}
-      dialogRef.afterClosed().subscribe(result => {
+      dialogRef.afterClosed().subscribe(result => { 
+        this.dataService.getAll().subscribe((users) => {
+        this.dataSource.data = users;
+      });
         console.log('The dialog was closed');
        });
      }
@@ -87,7 +97,9 @@ displayedColumns: string[] = ['ID','CREATED', 'FIRSTNAME', 'LASTNAME','PHONE', '
     this.destroy$.complete();
   }
 
+edit(){
 
+}
 
   
   }
