@@ -44,14 +44,17 @@ export class EditDialogComponent implements OnInit {
     }
     return 'set correct user | admin';
   }
+
   constructor(
+
     private router: Router,
     private fb: FormBuilder,
     public dataService: DataService,
-
+   
   ) { }
   //  @Inject(MAT_DIALOG_DATA) data 
   EditForm: FormGroup;
+
 
   options: any;
   ngOnInit(): void {
@@ -71,9 +74,9 @@ export class EditDialogComponent implements OnInit {
     });
 
   }
-
+ 
   //edit
-  onEdit(): void {
+  stopEdit(): void {
     if (this.EditForm.invalid) {
       return;
     }

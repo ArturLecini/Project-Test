@@ -4,6 +4,7 @@ import {ThemePalette} from '@angular/material/core';
 import { Router } from '@angular/router';
 
 import { SharedService } from '@shared/shared.service';
+import { ListUserComponent } from '../../admin/list-user/list-user.component';
 
 @Component({
   selector: 'app-account',
@@ -17,13 +18,13 @@ export class AccountComponent implements OnInit {
   color: ThemePalette = 'warn';
   checked = true;
 
-  
+   
   
   
 
   constructor(public sharedService:SharedService ,private router: Router ) {}
   
-  
+ 
 
   ngOnInit(): void {  if(!window.localStorage.getItem('token')) {
     this.router.navigate(['login']);
@@ -31,6 +32,6 @@ export class AccountComponent implements OnInit {
   }
   Showhide(){
     this.sharedService.sendClickEvent();
-    }
+   }
 
 }
