@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { USERD } from '@models/*';
+import { USER } from '@models/*';
 import { DataService } from 'src/app/modules/admin/data.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class ServiceComponent implements OnInit {
  
   displayedColumns: string[] = ['ID','CREATED', 'FIRSTNAME', 'LASTNAME','PHONE', 'EMAIL' ,'ADRESS','ROLE'];
   dataSource = new MatTableDataSource();
-     users: USERD[];
+     users: USER[];
 
   constructor(public dataService : DataService) { }
 

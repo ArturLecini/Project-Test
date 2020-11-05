@@ -1,3 +1,8 @@
+
+
+
+
+
 table {
     width: 1000px;
 margin-top: 0px;
@@ -10,6 +15,17 @@ background-position: center;
 min-width: 20%;
 margin-bottom: 0%;
 display: inline-table;
+  } .mat-input-underline {
+    background-color: white;
+}
+  mat-form-field{
+    padding-top: 5px;
+    padding-left: 35px;
+    padding-right: 35px;
+   background-color: white;
+    color: rgb(229, 238, 240);
+  }.search{
+    color: white;
   }
   th{
     background: #1d2b3a;

@@ -1,59 +1,4 @@
-<!--
 
-<div class='add-div'>
-    <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div>
-    <div class='title'>Add User&nbsp;<mat-icon>add</mat-icon></div>
-  
-    <div class='form'>
-
-      <div >
-  
-        <mat-form-field class="name"appearance="standard" [style.width.px]=220>
-          <mat-label>Enter first name</mat-label>
-          <input  class="same" matInput placeholder="name"  >
-        </mat-form-field>
-    </div>
-        <div class="lastname">
-        
-            <mat-form-field appearance="standard" [style.width.px]=220>
-              <mat-label>Enter last name</mat-label>
-              <input autofocus class="same" matInput placeholder="lastname"  >
-            </mat-form-field>
-            
-        </div>
-
-    <div >
-     <mat-form-field class="email"appearance="standard" >
-       <mat-label>Enter your email</mat-label>
-       <input  class="same" matInput placeholder="name@example.com" [formControl]="email" required>
-       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-     </mat-form-field>
-     </div>
-
-     <div >
-     <mat-form-field appearance="standard"class='password' >
-   <mat-label>Enter your password</mat-label>
-   <input matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" [formControl]="password"  required>
-   <mat-error *ngIf="password.invalid">{{getpErrorMessage()}}</mat-error>
-   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-   </button>
- </mat-form-field>
-        </div>
-      
-          <mat-form-field class="phone">
-            <mat-label>Telephone</mat-label>
-            <span matPrefix>+355 &nbsp;</span>
-            <input type="tel" matInput placeholder="68-555-5654">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-          </mat-form-field>
-   <div class='btn'>
-   <button class="btn-style"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add</button>
-    </div>
-   
-     </div> 
-
-    </div > -->  
     <div class="mat-elevation-z8">
  <form [formGroup]="AddFormR"(ngSubmit)="onAdd()"  novalidate> 
    <form [formGroup]="AddForm" (ngSubmit)="onAdd()" novalidate>
@@ -62,32 +7,32 @@
            <mat-step [stepControl]="AddForm">
             
   
-            <div class='first'>
+            
                <ng-template matStepLabel>Fill name lastname adress and phone</ng-template>
 
              
         
-             <mat-form-field class="name"appearance="standard" [style.width.px]=250>
+             <mat-form-field class="name"appearance="standard" [style.width.px]=290>
               <mat-label>Enter first name</mat-label>
               <input [formControl]="AddForm.controls.FIRSTNAME"  class="same" matInput placeholder="name"  >
               </mat-form-field>
         
-             <mat-form-field class="lastname"appearance="standard" [style.width.px]=250>
+             <mat-form-field class="lastname"appearance="standard" [style.width.px]=290>
               <mat-label>Enter last name</mat-label>
               <input [formControl]="AddForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname"  >
              </mat-form-field>
-          </div>
+          
 
         <div class='adress'>
           <mat-form-field class="phone">
             <mat-label>Telephone</mat-label>
             <span matPrefix>+355 &nbsp;</span>
-            <input [formControl]="AddForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654"[style.width.px]=240>
+            <input [formControl]="AddForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654"[style.width.px]=290>
            
           </mat-form-field>
 
 
-             <mat-form-field appearance="standard" [style.width.px]=250>
+             <mat-form-field appearance="standard" [style.width.px]=294>
             <mat-label>Enter your Adress</mat-label>
              <input [formControl]="AddForm.controls.ADRESS" matInput  placeholder="Adress"   >
             </mat-form-field> 
@@ -149,7 +94,7 @@
   </mat-step> 
   
  
-  <mat-step>
+  <mat-step >
     <ng-template matStepLabel>Done</ng-template>
   
     <p></p>

@@ -30,6 +30,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -47,10 +48,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
      
         MatDialogModule,
         MatExpansionModule,
-        MatFormFieldModule,
+       
       
         MatIconModule,
-        MatInputModule,
+       
         MatListModule,
         MatMenuModule,
         MatPaginatorModule,
@@ -70,7 +71,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatTooltipModule,
   MatProgressSpinnerModule,
        
-       MatAutocompleteModule
+       MatAutocompleteModule,
+       MatSortModule,
+       MatFormFieldModule,
+       MatInputModule,
     ],
 
     exports: [
@@ -83,10 +87,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
    
         MatDialogModule,
         MatExpansionModule,
-        MatFormFieldModule,
+        
      
         MatIconModule,
-        MatInputModule,
+      
         MatListModule,
         MatMenuModule,
         MatPaginatorModule,
@@ -104,9 +108,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
-     
+        MatSortModule,
         MatProgressSpinnerModule,
-       MatAutocompleteModule
+       MatAutocompleteModule,
+       MatFormFieldModule,
+       MatInputModule,
     ],
 
     providers: [ ]

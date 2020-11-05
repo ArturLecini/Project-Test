@@ -12,8 +12,9 @@ import {
 export class DeleteDialogComponent  {
 
   
-  constructor(@Inject(MAT_DIALOG_DATA) public data: string,
+  constructor(
   private dialogRef: MatDialogRef<DeleteDialogComponent>) {}
+ 
   cancel() {
     // send data to parent component
     this.dialogRef.close({ data: 'you cancelled' })

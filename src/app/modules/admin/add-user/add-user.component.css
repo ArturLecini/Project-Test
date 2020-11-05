@@ -42,10 +42,13 @@
     margin-bottom: 5px;
 
     }
- 
+ .adress{
+    padding: 0px;
+    margin: 0px;}
     .phone{
-      margin: 10px;
-      width: 265px;
+      margin-left: 10px;
+      margin: 7px;
+      width: 290px;
     }
     .btn{
       margin-top: 5px;
@@ -68,10 +71,8 @@ margin: 10px;
   button{
     text-align: right;
   }
-  .adress{
-    padding: 5px;
-    margin: 10px;
-  }.logo{
+  
+  .logo{
     margin-top: 0%;
     width: 220px;
     height: 245px;

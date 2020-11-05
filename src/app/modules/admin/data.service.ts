@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, BehaviorSubject } from 'rxjs';
-import { UserResponse, LOGIN, ROLES, USERD, USER } from '../../shared/models/user.interface';
+import { UserResponse, LOGIN, ROLES,  USER } from '../../shared/models/user.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { throwError } from 'rxjs/internal/observable/throwError';
 import { catchError, map, tap } from 'rxjs/operators'
@@ -23,22 +23,22 @@ export class DataService {
     
   }
 
-  getAll(): Observable<USERD[]> {
+  getAll(): Observable<USER[]> {
     return this.http
-      .get<USERD[]>('http://localhost:3000/users')
+      .get<USER[]>('http://localhost:3000/users')
       .pipe(catchError(this.handlerError));
   }
 
   getById(ID: number): Observable<USER> {
     return this.http
-      .get<any>(`http://localhost:3000/users/${ID}`)
+      .get<USER>(`http://localhost:3000/users/${ID}`)
       .pipe(catchError(this.handlerError));
   }
 
 
   delete(ID: number): Observable<{}> {
     return this.http
-      .delete<USERD>(`http://localhost:3000/users/delete/${ID}`)
+      .delete<USER>(`http://localhost:3000/users/delete/${ID}`)
       .pipe(catchError(this.handlerError));
   }
 

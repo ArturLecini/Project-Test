@@ -15,17 +15,10 @@ PASSWORD: string;
 ADRESS: string
 PHONE: string;
 ROLE:any;
-
+CREATED:Date;
+UPDATET_AT: Date;
 }
-export interface USERD{
 
-   ID : number;
-   FIRSTNAME: string;
-   LASTNAME: string;
-   PHONE: string;
-EMAIL: string;
-   
-   }
 export interface UserResponse{
    ID :  number; 
    message: string;
