@@ -7,8 +7,6 @@ import { AuthService } from 'src/app/modules/user/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
-
   constructor(private authService : AuthService) { }
 logout(){
   this.authService.logout();

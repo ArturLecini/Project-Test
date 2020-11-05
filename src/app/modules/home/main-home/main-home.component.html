@@ -1,21 +1,12 @@
-
-
-   
-       
-       
-    <div class='hero-container'>
-      <h1 *ngIf="(authService.user$ | async) as user">Welcome </h1>
-       <h2 *ngIf="(authService.user$ | async) as user">
-     {{user.EMAIL}}  you are  {{user.ROLE}} </h2>
-        <p>What are you waiting for?</p>
-        <div class='hero-btns'>
-          <a mat-button color='primary'
-            class='btns' >
-            GET STARTED</a>
-          <a
-            class='btns'
-            mat-button color='primary'
-          >
-            WATCH PROFILE
-          </a>  </div>
-        </div> 
+<div class='hero-container'>
+  <h1 *ngIf="(authService.user$ | async) as user">Welcome </h1>
+  <h2 *ngIf="(authService.user$ | async) as user">
+    {{user.EMAIL}} you are {{user.ROLE}} </h2>
+  <p>What are you waiting for?</p>
+  <div class='hero-btns'>
+    <a mat-button color='primary' class='btns'>
+      GET STARTED</a>
+    <a class='btns' mat-button color='primary'>
+      WATCH PROFILE
+    </a> </div>
+</div>

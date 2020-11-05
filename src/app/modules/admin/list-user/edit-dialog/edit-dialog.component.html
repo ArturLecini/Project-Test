@@ -2,19 +2,17 @@
 
 <div class='edit-div'>
   <div class='logo'> </div>
-  <div class='title'>Edit User<mat-icon>edit</mat-icon>
+  <div class='title'>Edit User
   </div>
 
   <div class='form'>
     <form [formGroup]="EditForm" (ngSubmit)="stopEdit()" novalidate>
-
-     
-
       <div class="username">
 
         <mat-form-field appearance="standard" [style.width.px]=445>
           <mat-label>Enter your email</mat-label>
-          <input [(ngModel)]="Data.EMAIL"  [formControl]="EditForm.controls.EMAIL" class="same" matInput placeholder="name@example.com">
+          <input [(ngModel)]="Data.EMAIL" [formControl]="EditForm.controls.EMAIL" class="same" matInput
+            placeholder="name@example.com">
           <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
       </div>
@@ -22,14 +20,16 @@
 
         <mat-form-field appearance="standard" [style.width.px]=220>
           <mat-label>Enter first name</mat-label>
-          <input [(ngModel)]="Data.FIRSTNAME"  [formControl]="EditForm.controls.FIRSTNAME" class="same" matInput placeholder="name">
+          <input [(ngModel)]="Data.FIRSTNAME" [formControl]="EditForm.controls.FIRSTNAME" class="same" matInput
+            placeholder="name">
         </mat-form-field>
       </div>
       <div class="lastname">
 
         <mat-form-field appearance="standard" [style.width.px]=220>
           <mat-label>Enter last name</mat-label>
-          <input [(ngModel)]="Data.LASTNAME" [formControl]="EditForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname">
+          <input [(ngModel)]="Data.LASTNAME" [formControl]="EditForm.controls.LASTNAME" autofocus class="same" matInput
+            placeholder="lastname">
         </mat-form-field>
 
       </div>
@@ -41,10 +41,10 @@
         </mat-form-field>
         <mat-form-field class="Role" appearance="standard" [style.width.px]=220>
           <mat-label>Select ROLE</mat-label>
-          <mat-select [(ngModel)]="Data.ROLE"  [formControl]="EditForm.controls.ROLE" required>
+          <mat-select [(ngModel)]="Data.ROLE" [formControl]="EditForm.controls.ROLE" required>
             <mat-option value="user">user</mat-option>
             <mat-option value="admin">admin</mat-option>
-          
+
           </mat-select>
           <mat-error *ngIf="ROLE.invalid">{{getRErrorMessage()}}</mat-error>
         </mat-form-field>
@@ -53,12 +53,13 @@
       <mat-form-field class="phone">
         <mat-label>Telephone</mat-label>
         <span matPrefix>+355 &nbsp;</span>
-        <input [(ngModel)]="Data.PHONE" [formControl]="EditForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654">
-        <mat-icon matSuffix>mode_edit</mat-icon>
+        <input [(ngModel)]="Data.PHONE" [formControl]="EditForm.controls.PHONE" type="tel" matInput
+          placeholder="68-555-5654">
+        
       </mat-form-field>
- <mat-form-field appearance="standard" [style.width.px]=0>
-        <input [hidden]="true"  [(ngModel)]="Data.ID" class="id" [formControl]="EditForm.controls.ID" type="number" id="id" class="same" matInput
-          placeholder="####" required>
+      <mat-form-field appearance="standard" [style.width.px]=0>
+        <input [hidden]="true" [(ngModel)]="Data.ID" class="id" [formControl]="EditForm.controls.ID" type="number"
+          id="id" class="same" matInput placeholder="####" required>
         <mat-error *ngIf="ID.invalid">{{getIDErrorMessage()}}</mat-error>
       </mat-form-field>
 
@@ -66,7 +67,7 @@
         <button class="btn-close" mat-button mat-dialog-close>
           <mat-icon>cancel</mat-icon>&nbsp; cancel
         </button>
-        <button   cdkFocusInitial type="submit" class="btn-edit" mat-raised-button color="accent">
+        <button mat-dialog-close cdkFocusInitial type="submit" class="btn-edit" mat-raised-button color="accent">
           <mat-icon>edit</mat-icon>Edit
         </button>
       </div>

@@ -18,12 +18,18 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit, AfterViewInit {
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private dataService: DataService) { }
+
   private destroy$ = new Subject<any>();
+  dialogConfig = new MatDialogConfig();
 
   displayedColumns: string[] = ['ID', 'ROLE', 'CREATED', 'UPDATED_AT', 'EMAIL', 'FIRSTNAME', 'LASTNAME', 'ADRESS', 'PHONE', 'actions'];
   dataSource = new MatTableDataSource();
   users: USER[];
-  ID : number;
+  ID: number;
 
   //sord and paginator
   @ViewChild(MatSort) sort: MatSort;
@@ -32,16 +38,11 @@ export class ListUserComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
+
   //data filter
   public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
-
-  dialogConfig = new MatDialogConfig();
-  constructor(
-    private router: Router,
-    public dialog: MatDialog,
-    private dataService: DataService) { }
 
   ngOnInit() {
     if (!window.localStorage.getItem('token')) {
@@ -62,6 +63,7 @@ export class ListUserComponent implements OnInit, AfterViewInit {
       if (result && result.deleteButtonPressed) { this.onDelete(ID); }
     });
   }
+
   onDelete(ID: number): void {
     this.dataService.delete(ID).pipe(takeUntil(this.destroy$))
       .subscribe((res) => {
@@ -76,12 +78,13 @@ export class ListUserComponent implements OnInit, AfterViewInit {
     this.destroy$.next({});
     this.destroy$.complete();
   }
-//initial data in form edit after open 
-  openEditDialog( ID: number,ROLE: string,EMAIL : string ,FIRSTNAME:string,LASTNAME: string ,PHONE:number,ADRESS:string) {
+
+  //initial data in form edit after open 
+  openEditDialog(ID: number, ROLE: string, EMAIL: string, FIRSTNAME: string, LASTNAME: string, PHONE: number, ADRESS: string) {
     this.ID = ID;
     console.log(this.ID);
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      data: {ID: ID,ROLE:ROLE,EMAIL : EMAIL,FIRSTNAME:FIRSTNAME,LASTNAME: LASTNAME ,PHONE:PHONE,ADRESS:ADRESS}
+      data: { ID: ID, ROLE: ROLE, EMAIL: EMAIL, FIRSTNAME: FIRSTNAME, LASTNAME: LASTNAME, PHONE: PHONE, ADRESS: ADRESS }
     });
     dialogRef.afterClosed().subscribe(data => {
       this.dataService.getAll().subscribe((users) => {
@@ -89,6 +92,4 @@ export class ListUserComponent implements OnInit, AfterViewInit {
       });
     });
   }
-
-
 }

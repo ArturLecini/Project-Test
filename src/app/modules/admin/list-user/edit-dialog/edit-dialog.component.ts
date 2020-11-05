@@ -16,10 +16,15 @@ import { userInfo } from 'os';
   styleUrls: ['./edit-dialog.component.css']
 })
 export class EditDialogComponent implements OnInit {
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    public dataService: DataService,
+    @Inject(MAT_DIALOG_DATA) public data: any,) { }
 
   EMAIL = new FormControl('', [Validators.required, Validators.email]);
   ID = new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(10)]);
-  ROLE = new FormControl('', [ , Validators.required, Validators.minLength(4), Validators.maxLength(5)]);
+  ROLE = new FormControl('', [, Validators.required, Validators.minLength(4), Validators.maxLength(5)]);
   getIDErrorMessage() {
     if (this.ID.hasError('required')) {
       return 'Please must enter your ID ';
@@ -28,6 +33,7 @@ export class EditDialogComponent implements OnInit {
     }
     return 'Max length is 10 characters';
   }
+
   getErrorMessage() {
     if (this.EMAIL.hasError('required')) {
       return 'You must enter youremail';
@@ -44,17 +50,9 @@ export class EditDialogComponent implements OnInit {
     }
     return 'set correct user | admin';
   }
-
-  constructor(
-    
-    private router: Router,
-    private fb: FormBuilder,
-    public dataService: DataService,
-   @Inject(MAT_DIALOG_DATA) public data: any,
-  ) { }
   //  
   EditForm: FormGroup;
-Data = this.data;
+  Data = this.data;
 
   options: any;
   ngOnInit(): void {
@@ -68,13 +66,13 @@ Data = this.data;
       LASTNAME: [''],
       PHONE: [''],
       ADRESS: [''],
-     'ID': this.ID,
+      'ID': this.ID,
       'EMAIL': this.EMAIL,
       'ROLE': this.ROLE,
     });
 
   }
- 
+
   //edit
   stopEdit(): void {
     if (this.EditForm.invalid) {
