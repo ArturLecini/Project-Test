@@ -11,9 +11,7 @@ import { AuthService } from '../../user/auth.service';
 export class MainHomeComponent implements OnInit {
 
   constructor(private router : Router, public authService: AuthService) { }
-admin(){
-  
-}
+
   ngOnInit(): void {if(!window.localStorage.getItem('token')) {
     this.router.navigate(['login']);
     return;}

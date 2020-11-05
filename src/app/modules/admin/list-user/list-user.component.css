@@ -9,7 +9,7 @@ height: 150%;
 background-position: center;
 min-width: 20%;
 margin-bottom: 0%;
-
+display: inline-table;
   }
   th{
     background: #1d2b3a;

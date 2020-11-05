@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormControl, FormGroup,ValidationErrors,Validators} from '@angular/forms';
 import {  Router, Routes } from '@angular/router';
 import { AuthService } from '../auth.service';
 @Component({
@@ -12,9 +12,9 @@ export class SignUpComponent implements OnInit {
   hide = true;
   EMAIL = new FormControl('', [Validators.required, Validators.email]);
   PASSWORD= new FormControl('', [ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
-  cpassword = new FormControl('', [Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
+  cpassword = new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
  
-  
+
   getErrorMessage() {
             if (this.EMAIL.hasError('required') ){
             return 'You must enter youremail';
@@ -32,47 +32,48 @@ export class SignUpComponent implements OnInit {
              return  'Max length is 12 characters'  ;
                 } 
 
-  getcErrorMessage() { let pass = this.SignupForm.controls.PASSWORD.value;
-              let confirmPass = this.SignupForm.controls.cpassword.value;
+  getcErrorMessage() { 
              if (this.cpassword.hasError('required')) {
-                 return  'Please confirm password'  ;
+                 return  'Please confirm you password'  ;
              }  else if (this.cpassword.hasError('minlength')) {
            return  'Please set correct password  '  ;
-                          }else if (pass !== confirmPass ) {
-                 return  ' correct 8-12 caracters' ;  
+                          }else  {
+                 return  ' confirm the password  is not the same' ;  
                 }
             }
 
 
-
+            errorpasw(){
+              return 'enter identic pasword';
+            }
+    
   constructor(private router: Router, private authService : AuthService, private fb : FormBuilder) { }
- 
+
+
   invalidLogin: boolean = false;
   SignupForm: FormGroup;
   ngOnInit(): void{ 
-
+  
     this.SignupForm = this.fb.group({
       FIRSTNAME : [''],
       LASTNAME : [''],
       PHONE : [''],
       ADRESS: [''],
+     
       'cpassword': this.cpassword,
      'EMAIL':this.EMAIL ,
      'PASSWORD': this.PASSWORD,
-    });
+    }, {
+      validator: MustMatch('PASSWORD', 'cpassword')
+  });
 
   } 
-   /* 
-    return this.router.navigateByUrl('/layout');
-    } 
-  } 
-  console.log('form error please write your pasword andemail');
-  */ 
+  
  onSignup(): void {
-    if (this.SignupForm.invalid) {
+     if (this.SignupForm.invalid) {
       return;
-    }
-    const signupPayload = {
+      }
+      const signupPayload = {
       FIRSTNAME: this.SignupForm.controls.FIRSTNAME.value,
       LASTNAME: this.SignupForm.controls.LASTNAME.value,
       ADRESS: this.SignupForm.controls.ADRESS.value,
@@ -81,17 +82,34 @@ export class SignUpComponent implements OnInit {
       PASSWORD: this.SignupForm.controls.PASSWORD.value,
       cpassword: this.SignupForm.controls.cpassword.value
     }
-    this.authService.signup(signupPayload).subscribe((data) => {
-       this.router.navigateByUrl('/layout')
-        if (this.EMAIL.valid&&this.PASSWORD.valid) {
-           if(this.hide){
-        
-          }
+         this.authService.signup(signupPayload).subscribe((data) => 
+         {  
+           this.checkSignup();
+          });
+          
+    
+ }
+ checkSignup(){ 
+  if (this.EMAIL.valid&&this.cpassword.valid) {   
+        return  this.router.navigateByUrl('/layout')
+                           }   else                               
+          this.authService.handlerError                           
+} 
+}
+ //confirm password 
+ function MustMatch(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+
+      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+          return;
       }
-      else { 
-        this.invalidLogin = true;
-       
+      // set error on matchingControl if validation fails
+      if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ mustMatch: true });
+      } else {
+          matchingControl.setErrors(null);
       }
-    });
- }}
- 
+  }
+}

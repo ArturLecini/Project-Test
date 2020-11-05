@@ -2,9 +2,9 @@
 <div ><img id='hideMe' alt="Image " class ="logo" src="assets/img/delete1.png" >
 <div>
  
-    <button  mat-button mat-dialog-close cdkFocusInitial >
+    <button (click)="cancel()" mat-button mat-dialog-close cdkFocusInitial >
         <mat-icon>cancel</mat-icon>&nbsp; cancel</button>
-        <button  mat-button >
+        <button (click)="onDeleteClick()" mat-button >
             <mat-icon>delete</mat-icon>&nbsp; delete</button>
 </div>
 

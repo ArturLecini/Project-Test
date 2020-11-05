@@ -63,7 +63,7 @@
             
   
             <div class='first'>
-               <ng-template matStepLabel>Fill out your name lastname and phone</ng-template>
+               <ng-template matStepLabel>Fill name lastname adress and phone</ng-template>
 
              
         
@@ -101,7 +101,7 @@
         
       </mat-step>
     
-      <mat-step [stepControl]="AddFormR" errorMessage="Email & Password is required."label="Fill out your password & email address">
+      <mat-step [stepControl]="AddFormR" errorMessage="Email & Password is required."label="Fill password email & role">
        
           <mat-form-field class="email"appearance="standard" >
             <mat-label>Enter your email</mat-label>
@@ -144,7 +144,7 @@
        
        <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>ADD</button>
+        <button mat-button matStepperNext>ADD<mat-icon>add</mat-icon></button>
       </div>
   </mat-step> 
   
@@ -155,13 +155,14 @@
     <p></p>
     <div>
       <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div><div class='btn'>
-      <button type="submit" class="btn-add"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add New User</button>
+    
        </div>
       <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="stepper.reset()">Add  new user <mat-icon>add</mat-icon></button>
     </div>
      
   </mat-step>
 </mat-horizontal-stepper>
 </form> </form>
 </div>
+<!--   <button type="submit" class="btn-add"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add New User</button>  -->

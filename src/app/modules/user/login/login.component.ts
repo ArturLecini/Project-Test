@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
              name: string;
                 hide = true;
 
+
+              
 //message if email or password is valid
   EMAIL = new FormControl('', [Validators.required, Validators.email]);
     PASSWORD= new FormControl('',[ Validators.required,Validators.minLength(8),Validators.maxLength(12)]);
@@ -64,6 +66,8 @@ constructor(private router: Router,
          });
 
  } 
+
+
      /* 
       return this.router.navigateByUrl('/layout');
       } 
@@ -81,10 +85,12 @@ onlogin(): void
             
         }
            this.authService.login(loginPayload).subscribe((data) => {
+         
             this.checklogin();     
           });
 }
-  checklogin(){  if (this.EMAIL.valid&&this.PASSWORD.valid) {
+  checklogin(){ 
+     if (this.EMAIL.valid&&this.PASSWORD.valid) {
                       if(this.hide ){  
             return  this.router.navigateByUrl('/layout')
 

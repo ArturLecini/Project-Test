@@ -45,9 +45,12 @@ export class AuthService {
 }
   signup(signupPayload): Observable<UserResponse| void>{
     return this.http.post<UserResponse>('http://localhost:3000/users/add/',signupPayload)
-  }
-  
-  
+    .pipe(
+      map((user: UserResponse) => {
+      }),
+      catchError((err) => this.handlerError(err))
+    );
+}
   changepssw(changeP): Observable<UserResponse| void>{
     return this.http.patch<UserResponse>(`http://localhost:3000/change-password/${changeP.ID}` ,changeP)
   }

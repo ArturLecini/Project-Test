@@ -38,13 +38,15 @@ export class AddUserComponent implements OnInit {
              return  'Max length is 12 characters'  ;
                 } 
 
-  getcErrorMessage() { 
-             if (this.cpassword.hasError('required')) {
-                 return  'Please confirm password'  ;
-             }  else if (this.cpassword.hasError('minlength')) {
-           return  'Please set correct password  '  ;
-                          }
-            }
+                getcErrorMessage() { 
+                 if (this.cpassword.hasError('required')) {
+                     return  'Please confirm you password'  ;
+                 }  else if (this.cpassword.hasError('minlength')) {
+               return  'Please set correct password  '  ;
+                              }else  {
+                     return  ' confirm the password  is not the same' ;  
+                    }
+                }
 
             getRErrorMessage() {
               if (this.ROLE.hasError('required')) {
@@ -84,8 +86,9 @@ AddForm: FormGroup;
         'cpassword': this.cpassword,
        'EMAIL': this.EMAIL ,
        'PASSWORD': this.PASSWORD
-      });
-  
+      }, {
+        validator: MustMatch('PASSWORD', 'cpassword')
+    });
     }
   
     onAdd(): void {
@@ -110,4 +113,20 @@ AddForm: FormGroup;
  
  
   }
-   
+    //confirm password 
+ function MustMatch(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+
+      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+          return;
+      }
+      // set error on matchingControl if validation fails
+      if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ mustMatch: true });
+      } else {
+          matchingControl.setErrors(null);
+      }
+  }
+}

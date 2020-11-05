@@ -18,7 +18,7 @@ export class EditDialogComponent implements OnInit {
 
 EMAIL = new FormControl('', [Validators.required, Validators.email]);
 ID = new FormControl('', [ Validators.required,Validators.minLength(1),Validators.maxLength(10)]);
-
+ROLE= new FormControl('', [, Validators.required,Validators.minLength(4),Validators.maxLength(5)]);
 getIDErrorMessage() {
   if (this.ID.hasError('required')) {
       return  'Please must enter your ID ';
@@ -34,16 +34,23 @@ getErrorMessage() {
       return  'Not a valid email'  ;
          }}
  user: any;
-
+ getRErrorMessage() {
+  if (this.ROLE.hasError('required')) {
+  return  'Please must enter user role ';
+}else if (this.ROLE.hasError('minlength')) {
+return  'Please set only user or admin  '  ;
+ }
+return  'set correct user | admin'  ;
+   } 
   constructor( public dialog: MatDialog,private router : Router , private fb : FormBuilder, public dataService : DataService) {}
- 
+
   openEDialog(ID): void {
     console.log('user->',);
     let dialogRef = this.dialog.open(EditDialogComponent);{
       this.dataService.getById(ID).subscribe((data) => {
-        this.user = data;
+        this.options = data;
       });
-      width: '550px'
+      width: '350px';
       ;}
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
@@ -52,6 +59,7 @@ getErrorMessage() {
 
 EditForm : FormGroup;
 
+  options: any ;
   ngOnInit(): void {
     if(!window.localStorage.getItem('token')) {
     this.router.navigate(['login']);
@@ -64,6 +72,7 @@ EditForm : FormGroup;
       ADRESS: [''],
       'ID': this.ID,
      'EMAIL':this.EMAIL ,
+     'ROLE': this.ROLE,
     });
 
   } 
@@ -80,7 +89,7 @@ EditForm : FormGroup;
       ADRESS: this.EditForm.controls.ADRESS.value,
       PHONE : this.EditForm.controls.PHONE.value,
       EMAIL: this.EditForm.controls.EMAIL.value,
-    
+      ROLE : this.EditForm.controls.ROLE.value,
     }
     this.dataService.edit(editUser).subscribe((data) => {
        this.router.navigateByUrl('/account')
