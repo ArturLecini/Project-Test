@@ -41,6 +41,7 @@ import { TokenInterceptor} from './core/interceptor';
 import { ChangePasswComponent } from './modules/user/change-passw/change-passw.component';
 import { DataService } from './modules/admin/data.service';
 import { DmatSpinnerOverlayComponent } from './shared/dmat-spinner-overlay/dmat-spinner-overlay.component';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -80,7 +81,9 @@ DmatSpinnerOverlayComponent
   ],
   providers: [AuthGuard,AuthService ,DataService, {provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
-    multi : true}],
+    multi : true},
+    {provide : MAT_DIALOG_DATA, useValue:{}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -63,7 +63,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Actions</th>
       <td mat-cell *matCellDef="let element">
         <div class="table-button-row">
-          <a (click)="openEditDialog(element.ID,element.EMAIL)" class="btnedit" mat-button color="primary">
+          <a (click)="openEditDialog(element.ID,element.ROLE,element.EMAIL,element.FIRSTNAME,element.LASTNAME,element.PHONE,element.ADRESS)" class="btnedit" mat-button color="primary">
             <mat-icon>edit</mat-icon>
           </a>
 

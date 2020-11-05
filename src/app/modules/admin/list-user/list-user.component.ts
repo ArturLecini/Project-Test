@@ -52,8 +52,6 @@ export class ListUserComponent implements OnInit, AfterViewInit {
     this.dataService.getAll().subscribe((users) => {
       this.dataSource.data = users;
     });
-
-
   }
 
   openDeleteDialog(ID: number): void {
@@ -73,52 +71,24 @@ export class ListUserComponent implements OnInit, AfterViewInit {
         });
       });
   }
-//  data: {ID: number,EMAIL : string ,FIRSTNAME:string,LASTNAME: string ,ROLE: string,ADRESS:string,PHONE:number}
-  openEditDialog(ID: number): void {
-  
-    this.ID= ID;
-    let dialogRef = this.dialog.open(EditDialogComponent); {
-     
-    }
-    dialogRef.afterOpened().subscribe(user => {
-      
-      user = this.onEdit(ID, user);
-    });
-  }
-
-  onEdit(ID: number, user) {
-    this.dataService.getById(ID).subscribe((user) => {
-      console.log(user.ID, user.EMAIL, user.FIRSTNAME)
-    });
-
-
-
-  }
 
   ngOnDestroy(): void {
     this.destroy$.next({});
     this.destroy$.complete();
   }
-/*
-  startEdit(ID: number,EMAIL : string ,FIRSTNAME:string,LASTNAME: string ,ROLE: string,ADRESS:string,PHONE:number) {
+//initial data in form edit after open 
+  openEditDialog( ID: number,ROLE: string,EMAIL : string ,FIRSTNAME:string,LASTNAME: string ,PHONE:number,ADRESS:string) {
     this.ID = ID;
     console.log(this.ID);
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      data: {ID: ID,EMAIL : EMAIL,FIRSTNAME:FIRSTNAME,LASTNAME: LASTNAME ,ROLE:ROLE,ADRESS:ADRESS,PHONE:PHONE}
+      data: {ID: ID,ROLE:ROLE,EMAIL : EMAIL,FIRSTNAME:FIRSTNAME,LASTNAME: LASTNAME ,PHONE:PHONE,ADRESS:ADRESS}
     });
-    dialogRef.afterOpened().subscribe(data => {
-      data = this.onEdit(ID, data);
+    dialogRef.afterClosed().subscribe(data => {
+      this.dataService.getAll().subscribe((users) => {
+        this.dataSource.data = users;
+      });
     });
   }
-*//*
-startEdit(ID: number) {
-  this.ID = ID;
-  console.log(this.ID);
-  const dialogRef = this.dialog.open(EditDialogComponent, {
-    data: {ID: ID}
-  });
-  dialogRef.afterOpened().subscribe(data => {
-    data = this.onEdit(ID, data);
-  });
-}*/
+
+
 }
