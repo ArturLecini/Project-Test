@@ -26,7 +26,7 @@ export class ListUserComponent implements OnInit, AfterViewInit {
   private destroy$ = new Subject<any>();
   dialogConfig = new MatDialogConfig();
 
-  displayedColumns: string[] = ['ID', 'ROLE', 'CREATED', 'UPDATED_AT', 'EMAIL', 'FIRSTNAME', 'LASTNAME', 'ADRESS', 'PHONE', 'actions'];
+  displayedColumns: string[] = ['ID', 'ROLE', 'CREATED', 'UPDATED_AT', 'EMAIL', 'FIRSTNAME', 'LASTNAME', 'ADRESS', 'PHONE', 'Edit','Delete'];
   dataSource = new MatTableDataSource();
   users: USER[];
   ID: number;

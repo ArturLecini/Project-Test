@@ -8,7 +8,7 @@ import * as moment from "moment";
 
 import { environment } from '../../../environments/environment';
 import { Observable,BehaviorSubject,of } from 'rxjs';
-
+import decode from 'jwt-decode';
 import { UserResponse, USER,LOGIN, ROLES } from '../../shared/models/user.interface';
 
 
@@ -24,7 +24,6 @@ export class AuthService {
     return this.roleAs;
   }
 
-  
   private user = new BehaviorSubject<UserResponse>(null);
        get user$(): Observable<UserResponse> {
            return this.user.asObservable();
@@ -33,13 +32,11 @@ export class AuthService {
              return this.user.getValue();
                                         }
   
- 
-
-
   login(loginPayload: LOGIN) :Observable<UserResponse| void>{
     return this.http.post<UserResponse>('http://localhost:3000/login',loginPayload)
     .pipe(
       map((user: UserResponse) => {
+        this.saveLocalStorage(user);
         this.saveLocalStorage(user);
         this.user.next(user);
         return user;
@@ -61,6 +58,7 @@ export class AuthService {
   
   logout(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('ROLE');
    this.router.navigate(['/login']);
   }
 

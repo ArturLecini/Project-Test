@@ -43,6 +43,7 @@ import { DataService } from './modules/admin/data.service';
 import { DmatSpinnerOverlayComponent } from './shared/dmat-spinner-overlay/dmat-spinner-overlay.component';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MyAccountComponent } from './shared/my-account/my-account.component';
+import { SettingsComponent } from './shared/settings/settings.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { MyAccountComponent } from './shared/my-account/my-account.component';
     EditDialogComponent,
     ChangePasswComponent,
     DmatSpinnerOverlayComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    SettingsComponent
 
 
   ],

@@ -16,6 +16,7 @@ import { ServiceComponent } from './shared/service/service.component';
 import { MainHomeComponent } from './modules/home/main-home/main-home.component';
 import { HomeComponent } from './modules/home/home.component';
 import { ChangePasswComponent } from './modules/user/change-passw/change-passw.component';
+import { SettingsComponent } from './shared/settings/settings.component';
 
 const routes: Routes = [
   
@@ -33,7 +34,7 @@ const routes: Routes = [
   {path: 'home', component : HomeComponent },
  
   {path : 'about-us', component: AboutComponent},
- 
+  {path : 'settings', component:SettingsComponent,},
   {path : 'services', component:ServiceComponent,}
 ];
 

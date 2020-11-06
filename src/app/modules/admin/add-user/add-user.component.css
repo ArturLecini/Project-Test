@@ -1,93 +1,114 @@
-.add-div{
-    margin:50px auto;
+@media(max-width: 600px) {
+    add-div {
+        flex-direction: column;
+        align-items: start;
+    }
+    input {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+add-div {
+    margin: 50px auto;
     width: 450px;
     background-color: rgb(234, 241, 241);
     padding: 70px;
-   height: 550px;
-   border-style: outset;
-  border-bottom-left-radius: 5px;
-  border-radius: 5px;
-  }
-  
-  .title{
-  text-align: center;
-  text-shadow: teal;
-  font-size:xx-large;
-  margin-bottom: 20px;
-  font-family: monospace;
-  }  
-  .name{
+    height: 550px;
+    border-style: outset;
+    border-bottom-left-radius: 5px;
+    border-radius: 5px;
+}
+
+.title {
+    text-align: center;
+    text-shadow: teal;
+    font-size: xx-large;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.name {
     margin-left: 10px;
-  }
-  .lastname{
+}
+
+.lastname {
     margin: 10px;
-  }  .email{
+}
+
+.email {
     width: 335px;
     margin: 10px;
-  }
-    .password{
+}
 
-      margin: 10px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      width: 335px;
-    }
-    .cpassword{
-      display: inline;
-    }
-
-  .notmember{
+.password {
+    margin: 10px;
     margin-top: 5px;
-  
     margin-bottom: 5px;
+    width: 335px;
+}
 
-    }
- .adress{
+.cpassword {
+    display: inline;
+}
+
+.notmember {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.adress {
     padding: 0px;
-    margin: 0px;}
-    .phone{
-      margin-left: 10px;
-      margin: 7px;
-      width: 290px;
-    }
-    .btn{
-      margin-top: 5px;
-      margin-left: 160;
-      margin-bottom: 5px;
-    }
-  
- 
-  .mat-stepper-horizontal {
+    margin: 0px;
+}
+
+.phone {
+    margin-left: 10px;
+    margin: 7px;
+    width: 290px;
+}
+
+.btn {
+    margin-top: 5px;
+    margin-left: 160;
+    margin-bottom: 5px;
+}
+
+.mat-stepper-horizontal {
     margin-top: 8px;
-  }
-  
-  .mat-form-field {
+}
+
+.mat-form-field {
     margin-top: 16px;
-  }
-  input { 
-padding: 10px;
-margin: 10px;
-  }
-  button{
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
     text-align: right;
-  }
-  
-  .logo{
+}
+
+.logo {
     margin-top: 0%;
     width: 220px;
     height: 245px;
     position: top;
-  display: inline;
-  }.btn-add{
-      background-color: green;
-        background-repeat: no-repeat;
-        border: none;
-        cursor:pointer;
-        overflow: hidden;
-        outline:none;
-        font-size: 0.9em;
-        padding: 0px;
-        width: 180px;
-        text-align: center;
-        color: rgb(234, 241, 241);
-        }
+    display: inline;
+}
+
+.btn-add {
+    background-color: green;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 0.9em;
+    padding: 0px;
+    width: 180px;
+    text-align: center;
+    color: rgb(234, 241, 241);
+}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { userInfo } from 'os';
+import { SettingsComponent } from 'src/app/shared/settings/settings.component';
 import { AuthService } from '../../user/auth.service';
 
 @Component({
@@ -10,7 +12,10 @@ import { AuthService } from '../../user/auth.service';
 })
 export class MainHomeComponent implements OnInit {
 
-  constructor(private router : Router, public authService: AuthService) { }
+  constructor(
+   
+    private router : Router, 
+    public authService: AuthService) { }
 
   ngOnInit(): void {if(!window.localStorage.getItem('token')) {
     this.router.navigate(['login']);
@@ -18,4 +23,5 @@ export class MainHomeComponent implements OnInit {
   }
 
 }
+
 
