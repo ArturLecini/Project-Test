@@ -1,36 +1,42 @@
 .mat-toolbar.mat-primary {
-   background: #1d2b3a;
-   
+    background: #1d2b3a;
     color: rgb(229, 238, 240);
- max-width: width auto;
+    max-width: width auto;
+}
 
-} .mat-sidenav-container{
-
-    background:#f7f4f4;
-	background: linear-gradient(to bottom, #0776c0, #fdfdfd) ;
-background-size: cover;
+.mat-sidenav-container {
+    background: #f7f4f400;
+    background: linear-gradient(to bottom, #0776c0, #ffffff);
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center ;
-}
-.toolbar{
-    flex-direction: column;
-min-width: 315px;
+    background-position: center;
 }
 
-.spacer{
+.toolbar {
+    flex-direction: column;
+    min-width: 315px;
+}
+
+.spacer {
     flex: 1 1 auto;
 }
+
 .btn {
     display: table-cell;
-    width: 490section }
-   
-    .mat-icon {
-        margin-top: 5px;
-        transform: scale(1.5);
-        margin-left: 10px;
-        margin-left: 5px;
-      transform-origin: left;
-      transition-duration: 25ms;
-    }
-    
+    width: 490section
+}
+
+.mat-icon {
+    margin-top: 5px;
+    transform: scale(1.5);
+    margin-left: 10px;
+    margin-left: 5px;
+    transform-origin: left;
+    transition-duration: 25ms;
+}
+
+.logo {
+    width: 50px;
+    height: 65px;
+}
