@@ -42,6 +42,7 @@ import { ChangePasswComponent } from './modules/user/change-passw/change-passw.c
 import { DataService } from './modules/admin/data.service';
 import { DmatSpinnerOverlayComponent } from './shared/dmat-spinner-overlay/dmat-spinner-overlay.component';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MyAccountComponent } from './shared/my-account/my-account.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
     DeleteDialogComponent,
     EditDialogComponent,
     ChangePasswComponent,
-    DmatSpinnerOverlayComponent
+    DmatSpinnerOverlayComponent,
+    MyAccountComponent
 
 
   ],

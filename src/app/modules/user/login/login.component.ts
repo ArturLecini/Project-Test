@@ -51,6 +51,7 @@ constructor(private router: Router,
             private authService: AuthService ,
             private fb : FormBuilder ) 
 { 
+  this.getRole() 
       this.name= "value";
        this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
         this.Showhide() })
@@ -74,6 +75,7 @@ constructor(private router: Router,
     } 
     console.log('form error please write your pasword andemail');
     */ 
+   
 onlogin(): void 
 {
         if (this.LoginForm.invalid) {
@@ -85,7 +87,7 @@ onlogin(): void
             
         }
            this.authService.login(loginPayload).subscribe((data) => {
-         
+           this.getroles();
             this.checklogin();     
           });
 }
@@ -111,6 +113,16 @@ onlogin(): void
         x.style.display = "none";
       }
     }
+    getroles(){
+      const ROLE = this.authService.userValue.ROLE
+      console.log(ROLE) ;
+      localStorage.setItem('ROLE', ROLE)
+     
+    } getRole() {
+        let roleAs = localStorage.getItem('ROLE');
+        console.log(roleAs) ;
+        return roleAs;
+      }
   }
   
  

@@ -23,17 +23,17 @@ const routes: Routes = [
    {path :'login', component : LoginComponent,canActivate:[AuthGuard],data:['ADMIN'] },
    {path : 'sign-up', component: SignUpComponent},
    {path : 'changepassw', component: ChangePasswComponent},
-   {path : 'layout', component: LayoutComponent ,canActivate:[AuthGuard], data:['ADMIN']},
- 
-  { path: 'add-user', component: AddUserComponent },
-  { path: 'list-user', component: ListUserComponent },
- 
+
+   {path : 'layout', component: LayoutComponent },
+  { path: 'add-user', component: AddUserComponent,canActivate: [AuthGuard], data: {role: 'admin'} },
+  { path: 'list-user', component: ListUserComponent,canActivate: [AuthGuard], data: {role: 'admin'} },
+  {path : 'account', component: AccountComponent,canActivate: [AuthGuard], data: {role: 'admin'}},
 
   {path: 'home-root', component : MainHomeComponent },
   {path: 'home', component : HomeComponent },
  
   {path : 'about-us', component: AboutComponent},
-  {path : 'account', component: AccountComponent},
+ 
   {path : 'services', component:ServiceComponent,}
 ];
 

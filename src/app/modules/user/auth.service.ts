@@ -7,7 +7,7 @@ import {  Router, Routes } from '@angular/router';
 import * as moment from "moment";
 
 import { environment } from '../../../environments/environment';
-import { Observable,BehaviorSubject } from 'rxjs';
+import { Observable,BehaviorSubject,of } from 'rxjs';
 
 import { UserResponse, USER,LOGIN, ROLES } from '../../shared/models/user.interface';
 
@@ -15,8 +15,16 @@ import { UserResponse, USER,LOGIN, ROLES } from '../../shared/models/user.interf
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthService { 
+  constructor(private http: HttpClient,private router : Router) {}
+  //for activate admin mode
+  roleAs: string;
+  getRole() {
+    this.roleAs = localStorage.getItem('ROLE');
+    return this.roleAs;
+  }
 
+  
   private user = new BehaviorSubject<UserResponse>(null);
        get user$(): Observable<UserResponse> {
            return this.user.asObservable();
@@ -25,11 +33,7 @@ export class AuthService {
              return this.user.getValue();
                                         }
   
-  constructor(private http: HttpClient,private router : Router) {  
-    
-   
-  
-  }
+ 
 
 
   login(loginPayload: LOGIN) :Observable<UserResponse| void>{
@@ -71,7 +75,7 @@ export class AuthService {
     localStorage.setItem('token', JSON.stringify(rest));
   }
 
-  
+ 
 //display error 
 handlerError(err): Observable<never> {
   let errorMessage = 'An errror occured retrienving data';
