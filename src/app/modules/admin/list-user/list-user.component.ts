@@ -52,6 +52,7 @@ export class ListUserComponent implements OnInit, AfterViewInit {
     }
     //GET DATAAA
     this.dataService.getAll().subscribe((users) => {
+      
       this.dataSource.data = users;
     });
   }

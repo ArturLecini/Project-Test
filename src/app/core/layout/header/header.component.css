@@ -37,6 +37,11 @@
 }
 
 .logo {
-    width: 50px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
+}
+
+.flex {
+    font-size: 15px;
+    font-weight: bold;
 }
