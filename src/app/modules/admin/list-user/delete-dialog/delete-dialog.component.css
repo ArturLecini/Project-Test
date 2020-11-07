@@ -1,13 +1,40 @@
-
-.logo{
+.logo {
     margin-top: 0%;
-    width: 200px; 
+    width: 200px;
     height: 160px;
     position: top;
     margin-left: 16px;
     margin-bottom: 15px;
-    
-  }
-  
-  
-  
+}
+
+.delete {
+    margin-left: 5px;
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 0px;
+    width: 100px;
+    text-align: center;
+    color: rgb(248, 7, 7);
+}
+
+.cancel {
+    margin-left: 5px;
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 0px;
+    width: 100px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}

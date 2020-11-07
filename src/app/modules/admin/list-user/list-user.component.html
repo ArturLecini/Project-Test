@@ -1,6 +1,10 @@
 <div id="myDiv" class="mat-elevation-z8">
 
     <div fxLayout fxLayoutAlign="center center">
+        <div class='btn-add'>
+            <a (click)="openAdduser()" class='btn-add' mat-button color="accent">
+                <mat-icon>add</mat-icon>Add New User</a>
+        </div>
         <mat-form-field fxFlex="100%">
             <input class="search" matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Search">
         </mat-form-field>
@@ -8,10 +12,11 @@
     <mat-table [dataSource]="dataSource" matSort>
 
 
-        <!-- id Column <div class='btn'><a  class="btn-style"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add</a>
-     </div> -->
+        <!-- id Column -->
+
         <ng-container matColumnDef="ID">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+                ID </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.ID}} </mat-cell>
 
         </ng-container>

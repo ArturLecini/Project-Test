@@ -1,58 +1,53 @@
-
-
-
-
 <mat-drawer-container class="bg-container" autosize hasBackdrop="false">
-  <mat-drawer mode="push" #drawer class="bg-sidenav" mode="side">
-    <p>
-      <mat-slide-toggle  [color]="color"
-      [checked]="checked"  class="activesignup" (click)="Showhide()"> Active Sign Up!</mat-slide-toggle>
-    </p>
+    <mat-drawer mode="push" #drawer class="bg-sidenav" mode="side">
+        <p>
+            <mat-slide-toggle [color]="color" [checked]="checked" class="activesignup" (click)="Showhide()"> Active Sign Up!</mat-slide-toggle>
+        </p>
 
-    <p class="info" *ngIf="showFiller">You are the Admin
-       and you have access to make the users register themselves or not, 
-       be careful if you deactivate the button the users will not be able to register
-    </p>
-    <button  (click)="showFiller = !showFiller" mat-raised-button>
+        <p class="info" *ngIf="showFiller">You are the Admin and you have access to make the users register themselves or not, be careful if you deactivate the button the users will not be able to register
+        </p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
       Click and Read me!
     </button>
-  
-  </mat-drawer>
-   <div class="bg-sidenav-content">
-    <div class="toolbar">
-      <mat-toolbar  color="primary" class='mat-elevation-z5'>
-          <mat-toolbar-row>  
-            <button class="btnmenu"type="button" mat-button (click)="drawer.toggle()">
+
+    </mat-drawer>
+    <div class="bg-sidenav-content">
+        <div class="toolbar">
+            <mat-toolbar color="primary" class='mat-elevation-z5'>
+                <mat-toolbar-row>
+                    <button class="btnmenu" type="button" mat-button (click)="drawer.toggle()">
                   <mat-icon>menu</mat-icon>
              </button>
-            <div class="spacer" ></div>
-            <span class="example-spacer"></span>
-            <a class="btn"routerLink='/home' mat-button ><mat-icon>home</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
+                    <div class="spacer"></div>
+                    <span class="example-spacer"></span>
+                    <a class="btn" routerLink='/home' mat-button>
+                        <mat-icon>home</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
 
-                <a mat-button class="btn" routerLink='/layout' > <mat-icon>close</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Exit</a>
-      
-          </mat-toolbar-row>
-        </mat-toolbar>
-      </div>
-        
-  </div>
+                    <a mat-button class="btn" routerLink='/layout'>
+                        <mat-icon>close</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;Exit</a>
+
+                </mat-toolbar-row>
+            </mat-toolbar>
+        </div>
+
+    </div>
 
 
 
-  <mat-tab-group dynamicHeight>
-    <mat-tab class = "btn-add"label="All Users " id="all">
-      <div class="example-small-box mat-elevation-z4">
-        <app-list-user></app-list-user>
-      </div>
-    </mat-tab>
-    <mat-tab class = "btn-add"label="Add new user" id="add">
+    <mat-tab-group dynamicHeight>
+        <mat-tab class="btn-add" label="All Users " id="all">
+            <div class="example-small-box mat-elevation-z4">
+                <app-list-user></app-list-user>
+            </div>
+        </mat-tab>
+        <!-- <mat-tab class = "btn-add"label="Add new user" id="add">
       <div class="example-large-box mat-elevation-z4">
        <app-add-user></app-add-user>
       </div>
-    </mat-tab>
-   
-  </mat-tab-group>
+    </mat-tab>-->
+
+    </mat-tab-group>
 
 </mat-drawer-container>
 
- <app-footer></app-footer>
+<app-footer></app-footer>

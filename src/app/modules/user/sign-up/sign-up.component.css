@@ -1,95 +1,99 @@
-
-.signup-div{
-  margin-top: auto;
-  margin:50px auto;
-  width: 270px;
-  background-color:azure;
-  padding: 77px;
- height: 600px;
- min-height: 450px;
- 
- border-style: outset;
- border-color:white;
- border-bottom: rgb(103, 187, 187);
- border-radius: 5px;
- position: center;
- border-top-style: solid;
- border-top-width: 5px;
- border-top-color:rgb(231, 12, 41) ;
-}
-.logo{
-  margin-top: 0%;
-  width: 200px;
-  height: 160px;
-  position: top;
-  margin-left: 16px;
-  margin-bottom: 15px;
+.signup-div {
+    margin-top: auto;
+    margin: 50px auto;
+    width: 270px;
+    background-color: azure;
+    padding: 77px;
+    height: 600px;
+    min-height: 450px;
+    border-style: outset;
+    border-color: white;
+    border-bottom: rgb(103, 187, 187);
+    border-radius: 5px;
+    position: center;
+    border-top-style: solid;
+    border-top-width: 5px;
+    border-top-color: rgb(231, 12, 41);
 }
 
-.title{
-  color: rgb(216, 15, 15);
-  text-align: center;
-text-shadow: teal;
-font-size:xx-large;
-margin-bottom: 15px;
-font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+.logo {
+    margin-top: 0%;
+    width: 200px;
+    height: 160px;
+    position: top;
+    margin-left: 16px;
+    margin-bottom: 15px;
+}
 
-}  
-  .firstname{
+.title {
+    color: rgb(216, 15, 15);
+    text-align: center;
+    text-shadow: teal;
+    font-size: xx-large;
+    margin-bottom: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.firstname {
     position: static;
-    
-   padding-left: 0px;
-   display: inline;
-  }
-  .lastname{
+    padding-left: 0px;
+    display: inline;
+}
+
+.lastname {
     display: inline;
     padding-left: 10px;
     display: inline;
     position: static;
-    }
-    .phone{
-      text-align: right;
-      padding-left: 10px;
-      display: inline;
-      position: static;
-    }
+}
 
-    .adress{  
-      position: static;
-       text-align: left;
-      padding-left: 0px;
-      display: inline;
-      
-    }
-    .password{
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-  .same{
-   width:200px ;
-   flex-direction: row;
-  }
+.phone {
+    text-align: right;
+    padding-left: 10px;
+    display: inline;
+    position: static;
+}
 
-    .btn{
-      margin-top: 10px;
-  text-align: center;
-      margin-bottom: 5px;
-     color: green;
-    }
-    .btn-style{ 
-      background-color :rgb(202, 18, 18);
-      background-repeat: no-repeat;
-      border: none;
-      cursor:pointer;
-      overflow: hidden;
-      outline:none;
-      font-size: 0.9em;
-      padding: 0px;
-      width: 100px;
-      margin-bottom: 2px;
-      color: rgb(253, 247, 247);
-      
-    }.notmember{
-      margin-top: 5px;
+.adress {
+    position: static;
+    text-align: left;
+    padding-left: 0px;
+    display: inline;
+}
+
+.password {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.same {
+    width: 200px;
+    flex-direction: row;
+}
+
+.btn {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: green;
+}
+
+.btn-style {
+    background-color: rgb(202, 18, 18);
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 0.9em;
+    padding: 0px;
+    width: 100px;
+    margin-bottom: 2px;
+    color: rgb(253, 247, 247);
+}
+
+.notmember {
+    margin-top: 5px;
     color: #000;
-      margin-bottom: 5px;}
+    margin-bottom: 5px;
+}

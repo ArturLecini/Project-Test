@@ -17,13 +17,13 @@ import { UserResponse, USER,LOGIN, ROLES } from '../../shared/models/user.interf
 })
 export class AuthService { 
   constructor(private http: HttpClient,private router : Router) {}
-  //for activate admin mode
+  //for activate admin mode with guards
   roleAs: string;
   getRole() {
     this.roleAs = localStorage.getItem('ROLE');
     return this.roleAs;
   }
-
+//get user data after login 
   private user = new BehaviorSubject<UserResponse>(null);
        get user$(): Observable<UserResponse> {
            return this.user.asObservable();
@@ -54,8 +54,13 @@ export class AuthService {
 }
   changepssw(changeP): Observable<UserResponse| void>{
     return this.http.patch<UserResponse>(`http://localhost:3000/change-password/${changeP.ID}` ,changeP)
-  }
-  
+    .pipe(
+      map((user: UserResponse) => {
+      }),
+      catchError((err) => this.handlerError(err))
+    ); }
+
+  //remove token after logout
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('ROLE');
@@ -67,7 +72,7 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem('token')) || null;
 
   }
-
+//save token
   private saveLocalStorage(user: UserResponse): void {
     const { token, ID, message, ...rest } = user;
     localStorage.setItem('token', JSON.stringify(rest));

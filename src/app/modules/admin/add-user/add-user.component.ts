@@ -69,7 +69,12 @@ export class AddUserComponent implements OnInit {
     return "  hide pasword "
   }
 
-
+  reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+    });
+}
   AddForm: FormGroup;
   AddFormR: FormGroup;
 

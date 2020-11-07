@@ -1,80 +1,80 @@
-
 <div class='signup-div'>
-    <div class='logo'><img alt="Image " class ="logo" src="assets/img/login.png" > </div>
-       <div class='title'>Sign Up</div>
-<div class='form'>
-  <form [formGroup]="SignupForm" (ngSubmit)="onSignup()" novalidate >
+    <div class='logo'><img alt="Image " class="logo" src="assets/img/login.png"> </div>
+    <div class='title'>Sign Up</div>
+    <div class='form'>
+        <form [formGroup]="SignupForm" (ngSubmit)="onSignup()" novalidate>
 
-<div class="firstname">
-        <mat-form-field appearance="standard" [style.width.px]=130>
-          <mat-label>Enter first name</mat-label>
-          <input [formControl]="SignupForm.controls.FIRSTNAME" matInput placeholder="firstname"  >
-        </mat-form-field>
-    </div>
+            <div class="firstname">
+                <mat-form-field appearance="standard" [style.width.px]=130>
+                    <mat-label>Enter first name</mat-label>
+                    <input [formControl]="SignupForm.controls.FIRSTNAME" matInput placeholder="firstname">
+                </mat-form-field>
+            </div>
 
-        <div class="lastname">
-            <mat-form-field appearance="standard" [style.width.px]=130>
-              <mat-label>Enter last name</mat-label>
-              <input [formControl]="SignupForm.controls.LASTNAME" autofocus matInput placeholder="lastname"  >
-            </mat-form-field>
-        </div>
+            <div class="lastname">
+                <mat-form-field appearance="standard" [style.width.px]=130>
+                    <mat-label>Enter last name</mat-label>
+                    <input [formControl]="SignupForm.controls.LASTNAME" autofocus matInput placeholder="lastname">
+                </mat-form-field>
+            </div>
 
-<div class='adress'>
-            <mat-form-field appearance="standard" [style.width.px]=130>
-          <mat-label>Enter your Adress</mat-label>
-          <input [formControl]="SignupForm.controls.ADRESS" matInput  placeholder="Adress"   >
-        </mat-form-field>
-      </div>
+            <div class='adress'>
+                <mat-form-field appearance="standard" [style.width.px]=130>
+                    <mat-label>Enter your City</mat-label>
+                    <input [formControl]="SignupForm.controls.ADRESS" matInput placeholder="Adress">
+                </mat-form-field>
+            </div>
 
-  <div class='phone'>
-    <mat-form-field class="standard" [style.width.px]=130>
-                <mat-label>Telephone</mat-label>
-                <span matPrefix>+355 &nbsp;</span>
-                <input [formControl]="SignupForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654">
-               
-              </mat-form-field>
-           </div>
+            <div class='phone'>
+                <mat-form-field class="standard" [style.width.px]=130>
+                    <mat-label>Telephone</mat-label>
+                    <span matPrefix>+355 &nbsp;</span>
+                    <input [formControl]="SignupForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654">
+
+                </mat-form-field>
+            </div>
 
 
-    <div class="email">
-     <mat-form-field appearance="standard" [style.width.px]=268>
-       <mat-label>Enter your email</mat-label>
-       <input [formControl]="SignupForm.controls.EMAIL" class="same" matInput placeholder="name@example.com"  required>
-       <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
-     </mat-form-field>
-     </div> 
+            <div class="email">
+                <mat-form-field appearance="standard" [style.width.px]=268>
+                    <mat-label>Enter your email</mat-label>
+                    <input [formControl]="SignupForm.controls.EMAIL" class="same" matInput placeholder="name@example.com" required>
+                    <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
 
-     <div class='pssword'>
-     <mat-form-field appearance="standard"[style.width.px]=268>
-   <mat-label>Enter your password</mat-label>
-   <input [formControl]="SignupForm.controls.PASSWORD" class="same" matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'"  required>
-   <mat-error *ngIf="PASSWORD.invalid">{{getpErrorMessage()}}</mat-error>
-   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <div class='pssword'>
+                <mat-form-field appearance="standard" [style.width.px]=268>
+                    <mat-label>Enter your password</mat-label>
+                    <input [formControl]="SignupForm.controls.PASSWORD" class="same" matInput placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" required>
+                    <mat-error *ngIf="PASSWORD.invalid">{{getpErrorMessage()}}</mat-error>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
    
    </button>
- </mat-form-field>
-        </div>
+                </mat-form-field>
+            </div>
 
-   <div class='cpssword'>
-          <mat-form-field appearance="standard" [style.width.px]=268>
-        <mat-label>Confirm your password</mat-label>
-        <input [formControl]="SignupForm.controls.cpassword" class="same" matInput  placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" required>
-        <mat-error *ngIf="cpassword.invalid">{{getcErrorMessage()}}</mat-error>
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <div class='cpssword'>
+                <mat-form-field appearance="standard" [style.width.px]=268>
+                    <mat-label>Confirm your password</mat-label>
+                    <input [formControl]="SignupForm.controls.cpassword" class="same" matInput placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" required>
+                    <mat-error *ngIf="cpassword.invalid">{{getcErrorMessage()}}</mat-error>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-      </mat-form-field>
-             </div>
-             
-           <div class='btn'>     
- 
-   <button type="submit" class="btn-style"mat-raised-button color="accent">Register</button> <div class="notmember">
-         Have an account? 
-        <a routerLink='/login' mat-button color='primary' class='btn'  >Login</a>
+                </mat-form-field>
+            </div>
+
+            <div class='btn'>
+
+                <button type="submit" class="btn-style" mat-raised-button color="accent">Register</button>
+                <div class="notmember">
+                    Have an account?
+                    <a routerLink='/login' mat-button color='primary' class='btn'>Login</a>
+                </div>
+            </div>
+        </form>
+
     </div>
-    </div>
-   </form>
-   
-     </div>
-<div > 
+    <div>

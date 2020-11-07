@@ -11,6 +11,7 @@ import { EditDialogComponent } from '../list-user/edit-dialog/edit-dialog.compon
 import { DataService } from '../data.service';
 import { MatSort } from '@angular/material/sort';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { AddUserComponent } from '../add-user/add-user.component';
 
 @Component({
   selector: 'app-list-user',
@@ -26,7 +27,7 @@ export class ListUserComponent implements OnInit, AfterViewInit {
   private destroy$ = new Subject<any>();
   dialogConfig = new MatDialogConfig();
 
-  displayedColumns: string[] = ['ID', 'ROLE', 'CREATED', 'UPDATED_AT', 'EMAIL', 'FIRSTNAME', 'LASTNAME', 'ADRESS', 'PHONE', 'Edit','Delete'];
+  displayedColumns: string[] = ['ID', 'ROLE', 'CREATED', 'UPDATED_AT', 'EMAIL', 'FIRSTNAME', 'LASTNAME', 'ADRESS', 'PHONE', 'Edit', 'Delete'];
   dataSource = new MatTableDataSource();
   users: USER[];
   ID: number;
@@ -54,13 +55,25 @@ export class ListUserComponent implements OnInit, AfterViewInit {
       this.dataSource.data = users;
     });
   }
-
+openAdduser(){
+  let dialogRef = this.dialog.open(AddUserComponent); {
+    dialogRef.afterClosed().subscribe(data => {
+      this.dataService.getAll().subscribe((users) => {
+        this.dataSource.data = users;
+      });
+    });
+  }
+}
   openDeleteDialog(ID: number): void {
     let dialogRef = this.dialog.open(DeleteDialogComponent); {
       width: '250px'
     }
     dialogRef.afterClosed().subscribe(result => {
       if (result && result.deleteButtonPressed) { this.onDelete(ID); }
+    }); dialogRef.afterClosed().subscribe(data => {
+      this.dataService.getAll().subscribe((users) => {
+        this.dataSource.data = users;
+      });
     });
   }
 

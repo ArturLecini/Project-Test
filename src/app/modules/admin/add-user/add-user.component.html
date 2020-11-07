@@ -1,115 +1,117 @@
+<div>
+    <!--class="mat-elevation-z8"-->
+    <form [formGroup]="AddFormR" (ngSubmit)="onAdd()" novalidate>
+        <form [formGroup]="AddForm" (ngSubmit)="onAdd()" novalidate>
 
-    <div class="mat-elevation-z8">
- <form [formGroup]="AddFormR"(ngSubmit)="onAdd()"  novalidate> 
-   <form [formGroup]="AddForm" (ngSubmit)="onAdd()" novalidate>
-   
-        <mat-horizontal-stepper [linear]="isLinear" #stepper  >
-           <mat-step [stepControl]="AddForm">
-            
-  
-            
-               <ng-template matStepLabel>Fill name lastname adress and phone</ng-template>
-
-             
-        
-             <mat-form-field class="name"appearance="standard" [style.width.px]=290>
-              <mat-label>Enter first name</mat-label>
-              <input [formControl]="AddForm.controls.FIRSTNAME"  class="same" matInput placeholder="name"  >
-              </mat-form-field>
-        
-             <mat-form-field class="lastname"appearance="standard" [style.width.px]=290>
-              <mat-label>Enter last name</mat-label>
-              <input [formControl]="AddForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname"  >
-             </mat-form-field>
-          
-
-        <div class='adress'>
-          <mat-form-field class="phone">
-            <mat-label>Telephone</mat-label>
-            <span matPrefix>+355 &nbsp;</span>
-            <input [formControl]="AddForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654"[style.width.px]=290>
-           
-          </mat-form-field>
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                <mat-step [stepControl]="AddForm">
 
 
-             <mat-form-field appearance="standard" [style.width.px]=294>
-            <mat-label>Enter your Adress</mat-label>
-             <input [formControl]="AddForm.controls.ADRESS" matInput  placeholder="Adress"   >
-            </mat-form-field> 
-         </div>
+
+                    <ng-template matStepLabel>Fill name lastname adress and phone</ng-template>
 
 
-           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        
-      </mat-step>
-    
-      <mat-step [stepControl]="AddFormR" errorMessage="Email & Password is required."label="Fill password email & role">
-       
-          <mat-form-field class="email"appearance="standard" >
-            <mat-label>Enter your email</mat-label>
-            <input [formControl]="AddFormR.controls.EMAIL"  class="same" matInput placeholder="name@example.com"  required>
-            <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
-         
+
+                    <mat-form-field class="name" appearance="standard" [style.width.px]=290>
+                        <mat-label>Enter first name</mat-label>
+                        <input [formControl]="AddForm.controls.FIRSTNAME" class="same" matInput placeholder="name">
+                    </mat-form-field>
+
+                    <mat-form-field class="lastname" appearance="standard" [style.width.px]=290>
+                        <mat-label>Enter last name</mat-label>
+                        <input [formControl]="AddForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname">
+                    </mat-form-field>
 
 
-              <mat-form-field class="Role"appearance="standard" [style.width.px]=250 >
-                <mat-label>Select ROLE</mat-label>
-                <mat-select [formControl]="AddFormR.controls.ROLE" required >
-                  <mat-option value="user">user</mat-option>
-                  <mat-option value="admin">admin</mat-option>
-                </mat-select>
-                <mat-error *ngIf="ROLE.invalid">{{getRErrorMessage()}}</mat-error>
-              </mat-form-field>
+                    <div class='adress'>
+                        <mat-form-field class="phone">
+                            <mat-label>Telephone</mat-label>
+                            <span matPrefix>+355 &nbsp;</span>
+                            <input [formControl]="AddForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654" [style.width.px]=290>
+
+                        </mat-form-field>
 
 
-        <div class='cpssword'>
-          <mat-form-field appearance="standard"class='password' >
-            <mat-label>Enter your password</mat-label>
-            <input [formControl]="AddFormR.controls.PASSWORD"  matInput  placeholder="#Password12!?." [type]="hide ? 'password' : 'text'"  required>
-            <mat-error *ngIf="PASSWORD.invalid">{{getpErrorMessage()}}</mat-error>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-         
-        
-           <mat-form-field appearance="standard" [style.width.px]=250>
-          <mat-label>Confirm your password</mat-label>
-          <input [formControl]="AddFormR.controls.cpassword" class="same" matInput  placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" required>
-          <mat-error *ngIf="cpassword.invalid">{{getcErrorMessage()}}</mat-error>
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field>
-       </div>
-       
-       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>ADD<mat-icon>add</mat-icon></button>
-      </div>
-  </mat-step> 
-  
- 
-  <mat-step >
-    <ng-template matStepLabel>Done</ng-template>
-  
-    <p></p>
-    <div>
-      <div class='logo'><img alt="Image " class ="logo" src="assets/img/add2.png" > </div><div class='btn'>
-    
-       </div>
-      <button mat-button matStepperPrevious>Back</button>
-      
-      <button mat-button (click)="stepper.reset()">Add  new user <mat-icon>add</mat-icon></button>
-    
-    </div>
-     
-  </mat-step>
-</mat-horizontal-stepper>
-</form> </form>
+                        <mat-form-field appearance="standard" [style.width.px]=294>
+                            <mat-label>Enter City</mat-label>
+                            <input [formControl]="AddForm.controls.ADRESS" matInput placeholder="Adress">
+                        </mat-form-field>
+                    </div>
+
+                    <!--(click)="reloadCurrentRoute()" -->
+                    <div>
+                        <button mat-dialog-close class="close" mat-button>Close</button>
+                        <button class="btn-add" mat-button matStepperNext>Next</button>
+                    </div>
+
+                </mat-step>
+
+                <mat-step [stepControl]="AddFormR" errorMessage="Email & Password is required." label="Fill password email & role">
+
+                    <mat-form-field class="email" appearance="standard">
+                        <mat-label>Enter email</mat-label>
+                        <input [formControl]="AddFormR.controls.EMAIL" class="same" matInput placeholder="name@example.com" required>
+                        <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+
+
+
+                    <mat-form-field class="Role" appearance="standard" [style.width.px]=250>
+                        <mat-label>Select ROLE</mat-label>
+                        <mat-select [formControl]="AddFormR.controls.ROLE" required>
+                            <mat-option value="user">user</mat-option>
+                            <mat-option value="admin">admin</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="ROLE.invalid">{{getRErrorMessage()}}</mat-error>
+                    </mat-form-field>
+
+
+                    <div class='cpssword'>
+                        <mat-form-field appearance="standard" class='password'>
+                            <mat-label>Enter password</mat-label>
+                            <input [formControl]="AddFormR.controls.PASSWORD" matInput placeholder="#Password12!?." [type]="hide ? 'password' : 'text'" required>
+                            <mat-error *ngIf="PASSWORD.invalid">{{getpErrorMessage()}}</mat-error>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+                        </mat-form-field>
+
+
+                        <mat-form-field appearance="standard" [style.width.px]=250>
+                            <mat-label>Confirm password</mat-label>
+                            <input [formControl]="AddFormR.controls.cpassword" class="same" matInput placeholder="CorrectPassword" [type]="hide ? 'password' : 'text'" required>
+                            <mat-error *ngIf="cpassword.invalid">{{getcErrorMessage()}}</mat-error>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <button class="back" mat-button matStepperPrevious>Back</button>
+                        <button class="btn-add" mat-button matStepperNext>ADD<mat-icon>add</mat-icon></button>
+                    </div>
+                </mat-step>
+
+
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+
+                    <p></p>
+                    <div>
+                        <div class='logo'><img alt="Image " class="logo" src="assets/img/add2.png"> </div>
+                        <div class='btn'>
+
+                        </div>
+                        <button class="back" mat-button matStepperPrevious>Back</button>
+
+                        <button class="btn-add" mat-button (click)="stepper.reset()">Add new user <mat-icon>add</mat-icon></button>
+                        <button mat-dialog-close class="close" mat-button>Close</button>
+                    </div>
+
+                </mat-step>
+            </mat-horizontal-stepper>
+        </form>
+    </form>
 </div>
 <!--   <button type="submit" class="btn-add"mat-raised-button color="accent"><mat-icon>add</mat-icon>Add New User</button>  -->

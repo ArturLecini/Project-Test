@@ -93,14 +93,33 @@ button {
 
 .logo {
     margin-top: 0%;
-    width: 220px;
+    width: 270px;
     height: 245px;
     position: top;
     display: inline;
 }
 
 .btn-add {
-    background-color: green;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 0px;
+    width: 140px;
+    text-align: center;
+    color: green;
+}
+
+.close {
+    font-weight: bold;
+    margin-right: 5px;
+    background-color: whitesmoke;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
@@ -108,7 +127,22 @@ button {
     outline: none;
     font-size: 0.9em;
     padding: 0px;
-    width: 180px;
+    width: 60px;
     text-align: center;
-    color: rgb(234, 241, 241);
+    color: rgb(255, 0, 0);
+}
+
+.back {
+    font-weight: bold;
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 0.9em;
+    padding: 0px;
+    width: 60px;
+    text-align: center;
+    color: rgb(35, 44, 44);
 }

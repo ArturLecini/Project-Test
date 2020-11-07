@@ -1,4 +1,15 @@
-@media(max-width: 680px) {}
+@media(max-width: 680px) {
+    .edit-div {
+        margin-top: 0%;
+        text-align: top;
+        margin: 10px auto;
+        width: 400px;
+        background-color: rgb(255, 255, 255);
+        padding: 50px;
+        height: auto;
+        border-radius: 5px;
+    }
+}
 
 .edit-div {
     margin-top: 0%;
@@ -7,7 +18,7 @@
     width: auto;
     background-color: rgb(255, 255, 255);
     padding: 50px;
-    height: auto;
+    height: 350px;
     border-radius: 5px;
 }
 
@@ -26,6 +37,8 @@
     font-size: xx-large;
     margin-bottom: 20px;
     font-family: monospace;
+    color: red;
+    font-weight: bold;
 }
 
 .name {
@@ -59,29 +72,26 @@
 }
 
 .btn-edit {
-    background-color: rgb(230, 9, 9);
-    background-repeat: no-repeat;
-    border: none;
+    background-color: whitesmoke;
+    color: rgb(255, 0, 0);
     cursor: pointer;
-    overflow: hidden;
-    outline: none;
     font-size: 0.9em;
     padding: 0px;
     width: 100px;
+    font-weight: bold;
 }
 
 .btn-close {
-    background-color: rgb(238, 214, 214);
-    background-repeat: no-repeat;
+    background-color: whitesmoke;
+    color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
-    overflow: hidden;
-    outline: none;
     font-size: 0.9em;
     padding: 0px;
     width: 100px;
     margin-left: 100px;
     margin-right: 40px;
+    font-weight: bold;
 }
 
 .phone {
