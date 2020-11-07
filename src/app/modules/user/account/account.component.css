@@ -132,7 +132,6 @@
         background-attachment: fixed;
         background-position: right bottom;
         background-color: whitesmoke;
-        display: inline;
     }
     .bg-sidenav-content {
         height: auto;

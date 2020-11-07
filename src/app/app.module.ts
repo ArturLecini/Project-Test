@@ -46,6 +46,7 @@ import { MyAccountComponent } from './shared/my-account/my-account.component';
 import { SettingsComponent } from './shared/settings/settings.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,7 @@ import { SettingsComponent } from './shared/settings/settings.component';
     DmatSpinnerOverlayComponent,
     MyAccountComponent,
     SettingsComponent
-
+    
 
   ],
   imports: [
@@ -81,7 +82,7 @@ import { SettingsComponent } from './shared/settings/settings.component';
     ReactiveFormsModule,
     MaterialModule,
     AppRoutingModule,
-
+  
   ],
   providers: [AuthGuard, AuthService, DataService, {
     provide: HTTP_INTERCEPTORS,
