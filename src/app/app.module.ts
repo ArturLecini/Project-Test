@@ -24,7 +24,7 @@ import { SignUpComponent } from './modules/user/sign-up/sign-up.component';
 import { ListUserComponent } from './modules/admin/list-user/list-user.component';
 
 import { HomeComponent } from './modules/home/home.component';
-import { AccountComponent, } from './modules/user/account/account.component';
+import { AccountComponent, } from './modules/admin/account/account.component';
 import { MainHomeComponent } from './modules/home/main-home/main-home.component';
 import { MinitoolbarComponent } from './core/layout/minitoolbar/minitoolbar.component';
 

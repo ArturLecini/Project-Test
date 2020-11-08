@@ -4,7 +4,7 @@ import {ThemePalette} from '@angular/material/core';
 import { Router } from '@angular/router';
 
 import { SharedService } from '@shared/shared.service';
-import { ListUserComponent } from '../../admin/list-user/list-user.component';
+import { ListUserComponent } from '../list-user/list-user.component';
 
 @Component({
   selector: 'app-account',

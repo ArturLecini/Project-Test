@@ -3,8 +3,8 @@ html,
 body {
     /* background-image:url(src/assets/img/bg8.png);
     */
-    background: #1f697c;
-    background: linear-gradient(to bottom, #f1e8e8, hsl(135, 51%, 18%));
+    background: #1c525f;
+    background: linear-gradient(to bottom, #e9dddd, hsl(90, 82%, 11%));
     background-size: cover;
     width: 100%;
     margin: auto;

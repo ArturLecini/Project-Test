@@ -10,7 +10,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { AboutComponent } from './shared/about/about.component';
 
 import { LayoutComponent } from './core/layout/layout.component';
-import { AccountComponent } from './modules/user/account/account.component';
+import { AccountComponent } from './modules/admin/account/account.component';
 
 import { ServiceComponent } from './shared/service/service.component';
 import { MainHomeComponent } from './modules/home/main-home/main-home.component';
@@ -20,23 +20,23 @@ import { SettingsComponent } from './shared/settings/settings.component';
 import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-dialog.component';
 
 const routes: Routes = [
-  
-   { path: '', redirectTo: '/login', pathMatch: 'full' },
-   {path :'login', component : LoginComponent,canActivate:[AuthGuard],data:['ADMIN'] },
-   {path : 'sign-up', component: SignUpComponent},
-   {path : 'changepassw', component: ChangePasswComponent},
 
-   {path : 'layout', component: LayoutComponent },
-  { path: 'add-user', component: AddUserComponent,canActivate: [AuthGuard], data: {role: 'admin'} },
-  { path: 'list-user', component: ListUserComponent,canActivate: [AuthGuard], data: {role: 'admin'} },
-  {path : 'account', component: AccountComponent,canActivate: [AuthGuard], data: {role: 'admin'}},
-  { path: 'edit-user', component: EditDialogComponent,canActivate: [AuthGuard], data: {role: 'admin'} },
-  {path: 'home-root', component : MainHomeComponent },
-  {path: 'home', component : HomeComponent },
- 
-  {path : 'about-us', component: AboutComponent},
-  {path : 'settings', component:SettingsComponent,},
-  {path : 'services', component:ServiceComponent,}
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard], data: ['ADMIN'] },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'changepassw', component: ChangePasswComponent },
+
+  { path: 'layout', component: LayoutComponent },
+  { path: 'add-user', component: AddUserComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
+  { path: 'list-user', component: ListUserComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
+  { path: 'account', component: AccountComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
+  { path: 'edit-user', component: EditDialogComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
+  { path: 'home-root', component: MainHomeComponent },
+  { path: 'home', component: HomeComponent },
+
+  { path: 'about-us', component: AboutComponent },
+  { path: 'settings', component: SettingsComponent, },
+  { path: 'services', component: ServiceComponent, }
 ];
 
 @NgModule({

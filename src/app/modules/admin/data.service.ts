@@ -9,21 +9,33 @@ import { throwError } from 'rxjs/internal/observable/throwError';
 import { catchError, map, tap } from 'rxjs/operators'
 const helper = new JwtHelperService();
 
+
+
+
+
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
 
   constructor(private http: HttpClient) { }
+
+  private token=localStorage.getItem('token');
   
+  
+
+  private httpOptions = {
+    headers: new HttpHeaders({'token':this.token ,'Content-Type':'application/json'})
+  
+    
+  };
   AddUser(adduser): Observable<UserResponse | void> {
     return this.http.post<UserResponse>('http://localhost:3000/users/add', adduser)
-
+  
   }
-
   getAll(): Observable<USER[]> {
     return this.http
-      .get<USER[]>('http://localhost:3000/users')
+      .get<USER[]>('http://localhost:3000/users',this.httpOptions )
       .pipe(catchError(this.handlerError));
   }
 
