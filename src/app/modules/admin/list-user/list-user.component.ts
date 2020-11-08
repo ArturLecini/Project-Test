@@ -95,6 +95,8 @@ openAdduser(){
 
   //initial data in form edit after open 
   openEditDialog(ID: number, ROLE: string, EMAIL: string, FIRSTNAME: string, LASTNAME: string, PHONE: number, ADRESS: string) {
+    width: 'max-content';
+    
     this.ID = ID;
     console.log(this.ID);
     const dialogRef = this.dialog.open(EditDialogComponent, {

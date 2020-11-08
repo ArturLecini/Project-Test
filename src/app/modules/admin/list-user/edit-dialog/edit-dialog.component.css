@@ -1,21 +1,8 @@
-@media(max-width: 680px) {
-    .edit-div {
-        margin-top: 0%;
-        text-align: top;
-        margin: 10px auto;
-        width: 400px;
-        background-color: rgb(255, 255, 255);
-        padding: 50px;
-        height: auto;
-        border-radius: 5px;
-    }
-}
-
 .edit-div {
     margin-top: 0%;
     text-align: top;
     margin: 10px auto;
-    width: auto;
+    width: max-content;
     background-color: rgb(255, 255, 255);
     padding: 50px;
     height: 350px;

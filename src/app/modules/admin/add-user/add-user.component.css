@@ -6,6 +6,7 @@
     input {
         flex-direction: column;
         align-items: start;
+        width: max-content;
     }
 }
 
@@ -109,11 +110,11 @@ button {
     overflow: hidden;
     outline: none;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 0.99em;
     padding: 0px;
-    width: 140px;
+    width: 125px;
     text-align: center;
-    color: green;
+    color: rgb(0, 167, 0);
 }
 
 .close {

@@ -19,7 +19,7 @@
 
                     <mat-form-field class="lastname" appearance="standard" [style.width.px]=290>
                         <mat-label>Enter last name</mat-label>
-                        <input [formControl]="AddForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname">
+                        <input [formControl]="AddForm.controls.LASTNAME" autofocus="name" class="same" matInput placeholder="lastname">
                     </mat-form-field>
 
 
@@ -40,7 +40,7 @@
 
                     <!--(click)="reloadCurrentRoute()" -->
                     <div>
-                        <button mat-dialog-close class="close" mat-button>Close</button>
+                        <button cdkFocusInitial mat-dialog-close class="close" mat-button>Close</button>
                         <button class="btn-add" mat-button matStepperNext>Next</button>
                     </div>
 

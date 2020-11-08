@@ -5,6 +5,15 @@
     min-width: 400px;
 }
 
+.search {
+    width: 1050px;
+    background-color: whitesmoke;
+}
+
+mat-paginator {
+    width: 1050px;
+}
+
 .mat-table {
     width: 1050px;
     margin-top: 0px;
@@ -25,7 +34,14 @@
     display: none;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 550px) {
+    mat-paginator {
+        width: auto;
+    }
+    .search {
+        width: auto;
+        background-color: whitesmoke;
+    }
     .example-container {
         display: flex;
         flex-direction: column;
@@ -40,11 +56,13 @@
         height: 600px;
     }
     .mobile-label {
+        background-color: whitesmoke;
         width: 100%;
         display: list-item;
         font-weight: bold;
     }
     .mat-header-row {
+        background-color: whitesmoke;
         display: none;
     }
     .mat-row {

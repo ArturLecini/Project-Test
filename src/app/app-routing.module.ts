@@ -17,6 +17,7 @@ import { MainHomeComponent } from './modules/home/main-home/main-home.component'
 import { HomeComponent } from './modules/home/home.component';
 import { ChangePasswComponent } from './modules/user/change-passw/change-passw.component';
 import { SettingsComponent } from './shared/settings/settings.component';
+import { EditDialogComponent } from './modules/admin/list-user/edit-dialog/edit-dialog.component';
 
 const routes: Routes = [
   
@@ -29,7 +30,7 @@ const routes: Routes = [
   { path: 'add-user', component: AddUserComponent,canActivate: [AuthGuard], data: {role: 'admin'} },
   { path: 'list-user', component: ListUserComponent,canActivate: [AuthGuard], data: {role: 'admin'} },
   {path : 'account', component: AccountComponent,canActivate: [AuthGuard], data: {role: 'admin'}},
-
+  { path: 'edit-user', component: EditDialogComponent,canActivate: [AuthGuard], data: {role: 'admin'} },
   {path: 'home-root', component : MainHomeComponent },
   {path: 'home', component : HomeComponent },
  

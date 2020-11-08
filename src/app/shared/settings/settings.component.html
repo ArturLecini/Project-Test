@@ -1,74 +1,63 @@
-
 <div class='edit-div'>
     <div class='logo'> </div>
     <div class='title'>Edit User
     </div>
-  
+
     <div class='form'>
-      <form [formGroup]="EditForm" (ngSubmit)="stopEdit()" novalidate>
-          <mat-form-field appearance="standard" [style.width.px]=70>
-          <input  class="id" [formControl]="EditForm.controls.ID" type="number"
-            id="id" class="same" matInput placeholder="####" required>
-          <mat-error *ngIf="ID.invalid">{{getIDErrorMessage()}}</mat-error>
-        </mat-form-field> <div class="username">
-  
-          <mat-form-field appearance="standard" [style.width.px]=445>
-            <mat-label>Enter your email</mat-label>
-            <input  [formControl]="EditForm.controls.EMAIL" class="same" matInput
-              placeholder="name@example.com">
-            <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
-        </div>
-        <div class="name">
-  
-          <mat-form-field appearance="standard" [style.width.px]=220>
-            <mat-label>Enter first name</mat-label>
-            <input  [formControl]="EditForm.controls.FIRSTNAME" class="same" matInput
-              placeholder="name">
-          </mat-form-field>
-        </div>
-        <div class="lastname">
-  
-          <mat-form-field appearance="standard" [style.width.px]=220>
-            <mat-label>Enter last name</mat-label>
-            <input  [formControl]="EditForm.controls.LASTNAME" autofocus class="same" matInput
-              placeholder="lastname">
-          </mat-form-field>
-  
-        </div>
-  
-        <div class='adress'>
-          <mat-form-field appearance="standard" [style.width.px]=220>
-            <mat-label>Enter your Adress</mat-label>
-            <input  [formControl]="EditForm.controls.ADRESS" matInput placeholder="Adress">
-          </mat-form-field>
-         
-        </div>
-  
-        <mat-form-field class="phone">
-          <mat-label>Telephone</mat-label>
-          <span matPrefix>+355 &nbsp;</span>
-          <input  [formControl]="EditForm.controls.PHONE" type="tel" matInput
-            placeholder="68-555-5654">
-          
-        </mat-form-field>
-     
-  
-        <div class='btn'>
-          <button class="btn-close" mat-button mat-dialog-close>
+        <form [formGroup]="EditForm" (ngSubmit)="stopEdit()" novalidate>
+            <mat-form-field appearance="standard" [style.width.px]=70>
+                <input class="id" [formControl]="EditForm.controls.ID" type="number" id="id" class="same" matInput placeholder="####" required>
+                <mat-error *ngIf="ID.invalid">{{getIDErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <div class="username">
+
+                <mat-form-field appearance="standard" [style.width.px]=445>
+                    <mat-label>Enter your email</mat-label>
+                    <input [formControl]="EditForm.controls.EMAIL" class="same" matInput placeholder="name@example.com">
+                    <mat-error *ngIf="EMAIL.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="name">
+
+                <mat-form-field appearance="standard" [style.width.px]=220>
+                    <mat-label>Enter first name</mat-label>
+                    <input [formControl]="EditForm.controls.FIRSTNAME" class="same" matInput placeholder="name">
+                </mat-form-field>
+            </div>
+            <div class="lastname">
+
+                <mat-form-field appearance="standard" [style.width.px]=220>
+                    <mat-label>Enter last name</mat-label>
+                    <input [formControl]="EditForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname">
+                </mat-form-field>
+
+            </div>
+
+            <div class='adress'>
+                <mat-form-field appearance="standard" [style.width.px]=220>
+                    <mat-label>Enter your Adress</mat-label>
+                    <input [formControl]="EditForm.controls.ADRESS" matInput placeholder="Adress">
+                </mat-form-field>
+
+            </div>
+
+            <mat-form-field class="phone">
+                <mat-label>Telephone</mat-label>
+                <span matPrefix>+355 &nbsp;</span>
+                <input [formControl]="EditForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654">
+
+            </mat-form-field>
+
+
+            <div class='btn'>
+                <button class="btn-close" mat-button mat-dialog-close>
             <mat-icon>cancel</mat-icon>&nbsp; cancel
           </button>
-          <button cdkFocusInitial type="submit" class="btn-edit" mat-raised-button color="accent">
+                <button cdkFocusInitial type="submit" mat-dialog-close class="btn-edit" mat-raised-button color="accent">
             <mat-icon>edit</mat-icon>Edit
           </button>
-        </div>
-      </form>
-  
+            </div>
+        </form>
+
     </div>
-  </div>
-  
-  
-  
-  
-  
-  
+</div>
