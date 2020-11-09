@@ -30,10 +30,11 @@ export class DataService {
     
   };
   AddUser(adduser): Observable<UserResponse | void> {
-    return this.http.post<UserResponse>('http://localhost:3000/users/add', adduser)
+    return this.http.post<UserResponse>('http://localhost:3000/users/add', adduser,this.httpOptions)
   
   }
   getAll(): Observable<USER[]> {
+    console.log(this.httpOptions)
     return this.http
       .get<USER[]>('http://localhost:3000/users',this.httpOptions )
       .pipe(catchError(this.handlerError));
@@ -47,15 +48,18 @@ export class DataService {
 
   delete(ID: number): Observable<{}> {
     return this.http
-      .delete<USER>(`http://localhost:3000/users/delete/${ID}`)
+      .delete<USER>(`http://localhost:3000/users/delete/${ID}`,this.httpOptions)
       .pipe(catchError(this.handlerError));
   }
 
   edit(editUser): Observable<UserResponse | void> {
-    return this.http.patch<UserResponse>(`http://localhost:3000/users/edit/${editUser.ID}`, editUser)
+    return this.http.patch<UserResponse>(`http://localhost:3000/users/edit/${editUser.ID}`, editUser,this.httpOptions)
       .pipe(catchError(this.handlerError));
   }
-
+  editdata(editUser): Observable<UserResponse | void> {
+    return this.http.put<UserResponse>(`http://localhost:3000/edit/${editUser.ID}`, editUser)
+      .pipe(catchError(this.handlerError));
+  }
   handlerError(err): Observable<never> {
     let errorMessage = 'An errror occured retrienving data';
     if (err) {

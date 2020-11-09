@@ -13,7 +13,18 @@ import { AuthService } from '../auth.service';
 })
 
 export class LoginComponent implements OnInit {
-        public subscription: Subscription = new Subscription();
+   constructor(private router: Router,
+            public sharedService:SharedService, 
+            private authService: AuthService ,
+            private fb : FormBuilder ) 
+{ 
+  this.getRole() 
+      this.name= "value";
+      this.sharedService.getClickEvent();
+       this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
+        this.Showhide() })
+
+}     public subscription: Subscription = new Subscription();
           clickEventsubscription:Subscription;
              name: string;
                 hide = true;
@@ -46,16 +57,7 @@ errorpasw(){
     incorrect(){
       return "  hide pasword "}
 
-constructor(private router: Router,
-            public sharedService:SharedService, 
-            private authService: AuthService ,
-            private fb : FormBuilder ) 
-{ 
-  this.getRole() 
-      this.name= "value";
-       this.clickEventsubscription= this.sharedService.getClickEvent().subscribe(()=>{
-        this.Showhide() })
-}
+
          invalidLogin: boolean = false;
             LoginForm: FormGroup;
  ngOnInit(): void
@@ -106,21 +108,22 @@ onlogin(): void
  
    //after click sign up need hiden
  Showhide() {
+   
       let x = document.getElementById("myDiv");
       if (x.style.display === "none") {
-        x.style.display = "block";
+       return x.style.display = "block";
       } else {
-        x.style.display = "none";
+      return  x.style.display = "none";
       }
     }
     getroles(){
       const ROLE = this.authService.userValue.ROLE
-      console.log(ROLE) ;
+      
       localStorage.setItem('ROLE', ROLE)
      
     } getRole() {
         let roleAs = localStorage.getItem('ROLE');
-        console.log(roleAs) ;
+       
         return roleAs;
       }
   }

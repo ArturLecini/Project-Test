@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'list-user', component: ListUserComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
   { path: 'edit-user', component: EditDialogComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
-  { path: 'home-root', component: MainHomeComponent },
+  { path: 'profil', component: MainHomeComponent },
   { path: 'home', component: HomeComponent },
 
   { path: 'about-us', component: AboutComponent },

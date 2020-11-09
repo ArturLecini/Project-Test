@@ -75,7 +75,7 @@ export class SettingsComponent implements OnInit {
       EMAIL: this.EditForm.controls.EMAIL.value,
     
     }
-    this.dataService.edit(editUser).subscribe((data) => {
+    this.dataService.editdata(editUser).subscribe((data) => {
       this.router.navigateByUrl('/layout')
     });
 

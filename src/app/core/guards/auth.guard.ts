@@ -16,7 +16,8 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const userRole = this.authService.getRole();
       if (route.data.role && route.data.role.indexOf(userRole) === -1) {
-        this.router.navigate(['/home-root']);
+
+        this.router.navigate(['/profil']);
         return false;
       }
       return true;

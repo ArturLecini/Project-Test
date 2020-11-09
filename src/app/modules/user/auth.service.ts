@@ -16,7 +16,11 @@ import { UserResponse, USER,LOGIN, ROLES } from '../../shared/models/user.interf
   providedIn: 'root',
 })
 export class AuthService { 
-  constructor(private http: HttpClient,private router : Router) {}
+  constructor(private http: HttpClient,private router : Router) {
+
+    //if change token in localstorage this.checkToken()
+    
+  }
   //for activate admin mode with guards
   roleAs: string;
   getRole() {
@@ -36,7 +40,7 @@ export class AuthService {
     return this.http.post<UserResponse>('http://localhost:3000/login',loginPayload)
     .pipe(
       map((user: UserResponse) => {
-        this.saveLocalStorage(user);
+     
         this.saveLocalStorage(user);
         this.user.next(user);
         return user;
@@ -45,7 +49,7 @@ export class AuthService {
     );
 }
   signup(signupPayload): Observable<UserResponse| void>{
-    return this.http.post<UserResponse>('http://localhost:3000/users/add/',signupPayload)
+    return this.http.post<UserResponse>('http://localhost:3000/signup/',signupPayload)
     .pipe(
       map((user: UserResponse) => {
       }),
@@ -74,8 +78,8 @@ export class AuthService {
   }
 //save token
   private saveLocalStorage(user: UserResponse): void {
-    const { token, ID, message, ...rest } = user;
-    localStorage.setItem('token', JSON.stringify(rest));
+    const { token } = user;
+    localStorage.setItem('token', token);
   }
 
  

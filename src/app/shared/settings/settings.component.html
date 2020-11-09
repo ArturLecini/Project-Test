@@ -1,6 +1,6 @@
 <div class='edit-div'>
     <div class='logo'> </div>
-    <div class='title'>Edit User
+    <div class='title'>Edit Profile
     </div>
 
     <div class='form'>
@@ -20,14 +20,14 @@
             <div class="name">
 
                 <mat-form-field appearance="standard" [style.width.px]=220>
-                    <mat-label>Enter first name</mat-label>
+                    <mat-label>change first name</mat-label>
                     <input [formControl]="EditForm.controls.FIRSTNAME" class="same" matInput placeholder="name">
                 </mat-form-field>
             </div>
             <div class="lastname">
 
                 <mat-form-field appearance="standard" [style.width.px]=220>
-                    <mat-label>Enter last name</mat-label>
+                    <mat-label>change last name</mat-label>
                     <input [formControl]="EditForm.controls.LASTNAME" autofocus class="same" matInput placeholder="lastname">
                 </mat-form-field>
 
@@ -35,18 +35,18 @@
 
             <div class='adress'>
                 <mat-form-field appearance="standard" [style.width.px]=220>
-                    <mat-label>Enter your Adress</mat-label>
+                    <mat-label>change your Adress</mat-label>
                     <input [formControl]="EditForm.controls.ADRESS" matInput placeholder="Adress">
                 </mat-form-field>
+                <mat-form-field class="phone">
+                    <mat-label>change Telephone</mat-label>
+                    <span matPrefix>+355 &nbsp;</span>
+                    <input [formControl]="EditForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654">
 
+                </mat-form-field>
             </div>
 
-            <mat-form-field class="phone">
-                <mat-label>Telephone</mat-label>
-                <span matPrefix>+355 &nbsp;</span>
-                <input [formControl]="EditForm.controls.PHONE" type="tel" matInput placeholder="68-555-5654">
 
-            </mat-form-field>
 
 
             <div class='btn'>

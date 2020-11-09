@@ -1,84 +1,86 @@
-.edit-div{
+.edit-div {
     margin-top: 0%;
     text-align: top;
-    margin:10px auto;
-    width: auto;
+    margin: 10px auto;
+    width: max-content;
     background-color: rgb(255, 255, 255);
     padding: 50px;
-   height: auto;
-  
-   border-radius: 5px;
-  }
-  .logo{
-  margin-top: 0%;
-  width: 0px;
-  height: 0px;
-  position: top;
-  margin-left: 65px;
-  margin-bottom: 10px;
-  }
-  
-  .title{
-  text-align: center;
-  text-shadow: teal;
-  font-size:xx-large;
-  margin-bottom: 20px;
-  font-family: monospace;
-  }  
-  .name{
+    height: 350px;
+    border-radius: 5px;
+}
+
+.logo {
+    margin-top: 0%;
+    width: 0px;
+    height: 0px;
+    position: top;
+    margin-left: 65px;
+    margin-bottom: 10px;
+}
+
+.title {
+    text-align: center;
+    text-shadow: teal;
+    font-size: xx-large;
+    margin-bottom: 20px;
+    font-family: monospace;
+    color: red;
+    font-weight: bold;
+}
+
+.name {
     position: absolute;
     padding-left: 225px;
-  }
-  .username{
+}
+
+.username {
     margin-top: 5px;
     margin-bottom: 5px;
-    }
-    .password{
-      margin-top: 5px;
-      margin-bottom: 5px;
-      
-    }
-  .same{
-   width:200px ;
-   flex-direction: row;
-  }
-  .notmember{
+}
+
+.password {
     margin-top: 5px;
-  
     margin-bottom: 5px;
-    }
-    .btn{
-      margin-top: 5px;
-  
-      margin-bottom: 5px;
-    }
-    .btn-edit{
-        background-color: rgb(230, 9, 9);
-          background-repeat: no-repeat;
-          border: none;
-          cursor:pointer;
-          overflow: hidden;
-          outline:none;
-          font-size: 0.9em;
-          padding: 0px;
-          width: 100px;
-    }
-    .btn-close{
-        background-color: rgb(238, 214, 214);
-          background-repeat: no-repeat;
-          border: none;
-          cursor:pointer;
-          overflow: hidden;
-          outline:none;
-          font-size: 0.9em;
-          padding: 0px;
-          width: 100px;
-          margin-left: 100px;
-          margin-right: 40px;
-    }
-    .phone{
-      width: 450px;
-    }
-    .Role{
-      margin-left: 5px;
-    }
+}
+
+.same {
+    width: 200px;
+    flex-direction: row;
+}
+
+.notmember {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-edit {
+    background-color: whitesmoke;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0px;
+    width: 100px;
+    font-weight: bold;
+}
+
+.btn-close {
+    background-color: whitesmoke;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0px;
+    width: 100px;
+    margin-left: 100px;
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+.phone {
+    width: 220px;
+}

@@ -8,9 +8,9 @@
         {{user.EMAIL}} you are {{user.ROLE}} </h2>
     <p>What are you waiting for?</p>
     <div class='hero-btns'>
-        <a mat-button color='primary' class='btns'>
-        GET STARTED</a>
-        <a class='btns' mat-button color='primary'>
+        <a (click)="openEditDialog()" mat-button color='primary' class='btns'>
+        EDIT PROFILE </a>
+        <a routerLink="/profil" class='btns' mat-button color='primary'>
         WATCH PROFILE
       </a> </div>
 </div>
