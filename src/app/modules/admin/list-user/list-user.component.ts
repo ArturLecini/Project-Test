@@ -31,7 +31,9 @@ export class ListUserComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource();
   users: USER[];
   ID: number;
-
+  get totalRows(): number {
+    return this.dataSource.filteredData.length
+  }
   //sord and paginator
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;

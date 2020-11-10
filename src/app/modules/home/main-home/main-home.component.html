@@ -1,12 +1,10 @@
 <app-minitoolbar></app-minitoolbar>
 <div class='hero-container'>
-  <h1 *ngIf="(authService.user$ | async) as user">Welcome </h1>
-  <h2 *ngIf="(authService.user$ | async) as user">
-    {{user.FIRSTNAME}}  {{user.LASTNAME}}  {{user.FIRSTNAME}}you are {{user.ROLE}} </h2>
-  <p>Your Profile</p>
-  <div class='hero-btns'>
-    <a  mat-button color='primary' class='btns'>
-      Settings</a>
-    <a class='btns' mat-button color='primary'>
-    Detalis    </a> </div>
+    <h1 *ngIf="(authService.user$ | async) as user">Welcome </h1>
+    <p>Your Profile</p>
+    <h2 *ngIf="(authService.user$ | async) as user">
+        {{user.FIRSTNAME}} {{user.LASTNAME}} you are {{user.ROLE}} </h2>
+
+
 </div>
+<app-footer></app-footer>

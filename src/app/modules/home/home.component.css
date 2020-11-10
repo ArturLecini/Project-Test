@@ -18,7 +18,7 @@
 h1 {
     font-style: initial;
     font-weight: bold;
-    color: rgb(28, 56, 34);
+    color: rgb(19, 34, 22);
     font-size: 70px;
     margin-bottom: 70px;
     margin-top: 5%;
@@ -27,26 +27,26 @@ h1 {
 .hero-container>h2 {
     font-style: initial;
     font-weight: bold;
-    color: rgb(80, 65, 65);
+    color: rgb(61, 47, 47);
     font-size: 60px;
     margin-top: 10px;
 }
 
 .hero-container>p {
     margin-top: 8px;
-    color: rgb(73, 64, 64);
+    color: rgb(46, 38, 38);
     font-size: 32px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .hero-btns {
     margin-top: 39px;
-    color: rgb(25, 39, 39);
+    color: rgb(18, 24, 24);
 }
 
 .hero-btns .btn {
     margin: 9px;
-    color: darkcyan;
+    color: rgb(13, 104, 104);
 }
 
 
