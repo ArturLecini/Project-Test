@@ -40,7 +40,7 @@ errorpasw(){
 
  getErrorMessage() {
       if (this.EMAIL.hasError('required') ){
-        return 'You must enter youremail';
+        return 'You must enter your email';
            } else if (this.EMAIL.hasError('email')) {
         return  'Not a valid email'  ;
            }}
@@ -49,7 +49,7 @@ errorpasw(){
        if (this.PASSWORD.hasError('required')) {
             return  'Please must enter your password ';
               }else if (this.PASSWORD.hasError('minlength')) {
-           return  'Please continu more your password is min 8 characters '  ;
+           return  'Please continue more, your password is min 8 characters '  ;
           }
             return  'Max length is 12 characters'  ;
             } 
